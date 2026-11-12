@@ -37,14 +37,35 @@ namespace Pedigree
         private JsonObject? _document;
         private string? _currentPath;
         private readonly List<PersonRow> _people = new();
-        private sealed record PersonRow(string Name, string Tg, string Details)
+        private readonly bool _isExperimental;
+        private Form1? _experimentalView;
+        private JsonObject? _matchSettings;
+        private JsonObject? _friendsDocument;
+        private sealed record PersonRow(string Name, string Tg, string Details, string Verify)
         {
             public override string ToString() => string.IsNullOrWhiteSpace(Tg) ? Name : $"{Name} ({Tg})";
         }
 
-        public Form1() => InitializeComponent();
+        public Form1()
+        {
+            _isExperimental = false;
+            InitializeComponent();
+        }
+
+        private Form1(bool experimental)
+        {
+            _isExperimental = experimental;
+            InitializeComponent();
+            if (experimental) ConfigureExperimentalMatching();
+        }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            InitializeView();
+            CreateExperimentalView();
+        }
+
+        private void InitializeView()
         {
             BackColor = Color.FromArgb(245, 249, 255);
             headerPanel.BackColor = Color.FromArgb(218, 232, 252);
@@ -58,11 +79,19 @@ namespace Pedigree
                 button.FlatStyle = FlatStyle.Flat;
                 button.FlatAppearance.BorderColor = Color.FromArgb(162, 189, 228);
             }
+            foreach (var button in new[] { updateImportButton, updateExportButton })
+            {
+                button.BackColor = Color.FromArgb(225, 236, 252);
+                button.FlatStyle = FlatStyle.Flat;
+                button.FlatAppearance.BorderColor = Color.FromArgb(162, 189, 228);
+            }
+            updateInstructionsTextBox.Text = ChatGptInstructions();
+            friendsInstructionsTextBox.Text = FriendsInstructions();
             exportStyleTextBox.Text = "CLASSROOM POSTER STYLE\r\n" +
                 "Parents above • Selected person in the center • Children below\r\n" +
                 "Each card includes a name and TG identifier. A fact box holds original notes.\r\n" +
                 "Unverified research is never silently presented as proven.\r\n" +
-                "The first 128 family members are written in C# source. Import JSON adds relatives.\r\n" +
+                "The built-in family members are written in C# source. Import JSON adds relatives.\r\n" +
                 "Export PDF creates a one-page landscape family project poster.";
             // Build the entire original family tree from C# statements.
             // No PS1 installer, external JSON, or resource file is needed.
@@ -73,6 +102,116 @@ namespace Pedigree
                 MessageBox.Show(this, ex.Message, "Built-in family tree error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            LoadFriendsDocument();
+        }
+
+        private void CreateExperimentalView()
+        {
+            _experimentalView = new Form1(true);
+            _experimentalView.InitializeView();
+            experimentalTabPage.Controls.Clear();
+            experimentalTabPage.Controls.Add(_experimentalView.DetachMainLayout());
+        }
+
+        private Control DetachMainLayout()
+        {
+            mainTabPage.Controls.Remove(mainTableLayout);
+            mainTableLayout.Dock = DockStyle.Fill;
+            return mainTableLayout;
+        }
+
+        private static string ExperimentalSettingsPath()
+        {
+            string projectFolder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "source", "repos", "Pedigree", "Pedigree");
+            Directory.CreateDirectory(projectFolder);
+            return Path.Combine(projectFolder, "settings_experimental_familymatch.json");
+        }
+
+        private void ConfigureExperimentalMatching()
+        {
+            familyListBox.DrawMode = DrawMode.OwnerDrawFixed;
+            familyListBox.DrawItem += familyListBox_DrawItem;
+            LoadMatchSettings();
+
+        }
+
+        private void LoadMatchSettings()
+        {
+            try
+            {
+                string path = ExperimentalSettingsPath();
+                _matchSettings = File.Exists(path)
+                    ? JsonNode.Parse(File.ReadAllText(path)) as JsonObject
+                    : null;
+            }
+            catch
+            {
+                _matchSettings = null;
+            }
+            _matchSettings ??= new JsonObject { ["matches"] = new JsonArray() };
+            if (_matchSettings["matches"] is not JsonArray)
+                _matchSettings["matches"] = new JsonArray();
+        }
+
+        private JsonArray MatchRecords => (JsonArray)_matchSettings!["matches"]!;
+
+        private void SaveMatchSettings()
+        {
+            File.WriteAllText(ExperimentalSettingsPath(),
+                _matchSettings!.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+        }
+
+        private void RefreshMatchState()
+        {
+            if (!_isExperimental || _document == null) return;
+            var knownNames = _people.Select(p => p.Name)
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var previous = MatchRecords.Where(record => Flag(record, "manual"))
+                .ToDictionary(record => Value(record, "display_name"), StringComparer.OrdinalIgnoreCase);
+            var records = new JsonArray();
+            foreach (PersonRow person in _people)
+            {
+                if (previous.TryGetValue(person.Name, out JsonNode? manualRecord))
+                {
+                    records.Add(manualRecord.DeepClone());
+                    continue;
+                }
+
+                string[] parents = ParentsOf(person.Name).ToArray();
+                string[] spouses = SpousesOf(person.Name).Concat(CoparentsOf(person.Name)).Distinct(StringComparer.OrdinalIgnoreCase).ToArray();
+                string[] children = ChildrenOf(person.Name).ToArray();
+                bool matched = parents.Concat(spouses).Concat(children).All(knownNames.Contains);
+                records.Add(new JsonObject
+                {
+                    ["display_name"] = person.Name,
+                    ["parents"] = ToJsonArray(parents),
+                    ["spouses"] = ToJsonArray(spouses),
+                    ["children"] = ToJsonArray(children),
+                    ["justification"] = "Automatically matched by exact family-member name.",
+                    ["manual"] = false,
+                    ["matched"] = matched
+                });
+            }
+            _matchSettings["matches"] = records;
+            SaveMatchSettings();
+            familyListBox.Invalidate();
+        }
+
+        private bool IsFamilyMatchComplete(string name) =>
+            MatchRecords.FirstOrDefault(record => Value(record, "display_name") == name) is JsonNode record &&
+            Flag(record, "matched");
+
+        private void familyListBox_DrawItem(object? sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0 || e.Index >= familyListBox.Items.Count) return;
+            e.DrawBackground();
+            var person = (PersonRow)familyListBox.Items[e.Index];
+            Color color = IsFamilyMatchComplete(person.Name) ? Color.ForestGreen : e.ForeColor;
+            using var brush = new SolidBrush(color);
+            e.Graphics.DrawString(person.ToString(), e.Font, brush, e.Bounds);
+            e.DrawFocusRectangle();
         }
 
         private static JsonArray EnsureArray(JsonObject document, string key)
@@ -81,24 +220,25 @@ namespace Pedigree
             throw new InvalidDataException($"Expected a JSON array named '{key}'. The file was not modified.");
         }
         private static string Value(JsonNode? node, string key) => node?[key]?.ToString() ?? "";
+        private static bool Flag(JsonNode? node, string key) => node?[key]?.GetValue<bool>() ?? false;
         private JsonArray PeopleArray => EnsureArray(_document!, "people");
         private JsonArray IdentifierArray => EnsureArray(_document!, "identifiers");
         private JsonArray RelationshipArray => EnsureArray(_document!, "relationships");
 
         private void ReadBuiltInDocument()
         {
-            // Every member of the original 128-person family tree is encoded in
+            // Every member of the original family tree is encoded in
             // BuiltInFamilyData.cs along with every associated data section.
             // Each run recreates a fresh in-memory copy without touching the C# source.
             JsonObject loaded = BuiltInFamilyData.Create();
             foreach (string name in new[] { "people", "identifiers", "relationships" })
                 EnsureArray(loaded, name);
-            if (EnsureArray(loaded, "people").Count != 128)
-                throw new InvalidDataException("Built-in tree must contain 128 original people.");
+            if (EnsureArray(loaded, "people").Count != 129)
+                throw new InvalidDataException("Built-in tree must contain 129 original people.");
             _document = loaded;
             _currentPath = null;
             RefreshPeople();
-            UpdateStatus("128 original family members loaded from C# source code. Import JSON to add more family members.");
+            UpdateStatus("129 original family members loaded from C# source code. Import JSON to add more family members.");
         }
 
         private void ReadDocument(string path)
@@ -189,7 +329,7 @@ namespace Pedigree
                 $"and {linksAdded} relationships. Now {_people.Count} people. Export JSON to save a copy.");
             MessageBox.Show(this,
                 $"Added {peopleAdded} family members, {identifiersAdded} identifiers, and {linksAdded} relationships.\n" +
-                $"The original 128 built-in family members were not changed.",
+                $"The original 129 built-in family members were not changed.",
                 "Family members imported", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -205,7 +345,7 @@ namespace Pedigree
                     string tg = IdentifierArray
                         .Where(id => Value(id, "display_name") == name && Value(id, "kind") == "TG")
                         .Select(id => Value(id, "code")).FirstOrDefault() ?? "";
-                    _people.Add(new PersonRow(name, tg, Value(p, "details")));
+                    _people.Add(new PersonRow(name, tg, Value(p, "details"), Value(p, "verify")));
                 }
             }
             familyListBox.BeginUpdate();
@@ -223,6 +363,56 @@ namespace Pedigree
                 familyListBox.SelectedIndex = idx;
             }
             else ClearPerson();
+            BuildRelationshipTree();
+            if (_isExperimental) RefreshMatchState();
+        }
+
+        private void BuildRelationshipTree()
+        {
+            if (_document == null) return;
+            const string startingPerson = "Jeremiah O'Neal";
+            PersonRow? start = _people.FirstOrDefault(person =>
+                person.Name.Equals(startingPerson, StringComparison.OrdinalIgnoreCase));
+
+            treeView.BeginUpdate();
+            treeView.Nodes.Clear();
+            try
+            {
+                if (start == null)
+                {
+                    treeView.Nodes.Add("Jeremiah O'Neal was not found in the family members.");
+                    return;
+                }
+
+                string DisplayName(string name)
+                {
+                    PersonRow? person = _people.FirstOrDefault(candidate =>
+                        candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+                    return person?.ToString() ?? name;
+                }
+
+                void AddAncestors(string name, TreeNodeCollection nodes, HashSet<string> path)
+                {
+                    foreach (string parent in ParentsOf(name))
+                    {
+                        bool cycle = path.Contains(parent);
+                        TreeNode parentNode = nodes.Add("Parent: " + DisplayName(parent) +
+                            (cycle ? " (cycle detected)" : ""));
+                        if (cycle) continue;
+                        var nextPath = new HashSet<string>(path, StringComparer.OrdinalIgnoreCase) { parent };
+                        AddAncestors(parent, parentNode.Nodes, nextPath);
+                    }
+                }
+
+                TreeNode root = treeView.Nodes.Add(start.ToString());
+                AddAncestors(start.Name, root.Nodes,
+                    new HashSet<string>(new[] { start.Name }, StringComparer.OrdinalIgnoreCase));
+                root.Expand();
+            }
+            finally
+            {
+                treeView.EndUpdate();
+            }
         }
         private void ClearPerson()
         {
@@ -259,6 +449,37 @@ namespace Pedigree
             if (_document?["person_notes"] is not JsonArray notes) return "";
             return string.Join(Environment.NewLine, notes.Where(n => Value(n, "display_name") == name)
                 .Select(n => Value(n, "note")));
+        }
+        private static JsonArray ToJsonArray(IEnumerable<string> values)
+        {
+            var array = new JsonArray();
+            foreach (string value in values) array.Add(value);
+            return array;
+        }
+        private JsonObject CreatePersonSnapshot(PersonRow person)
+        {
+            return new JsonObject
+            {
+                ["display_name"] = person.Name,
+                ["tg_number"] = person.Tg,
+                ["born"] = Provisional(person.Name, "birth_date") ?? "See original notes",
+                ["died"] = Provisional(person.Name, "death_date") ?? "See original notes",
+                ["parents"] = ToJsonArray(ParentsOf(person.Name)),
+                ["spouse"] = ToJsonArray(SpousesOf(person.Name)),
+                ["other_parents"] = ToJsonArray(CoparentsOf(person.Name)),
+                ["children"] = ToJsonArray(ChildrenOf(person.Name)),
+                ["details"] = person.Details,
+                ["notes"] = NotesOf(person.Name),
+                ["verify"] = person.Verify,
+                ["captured_at_utc"] = DateTime.UtcNow.ToString("O")
+            };
+        }
+        private void CaptureAllPeople()
+        {
+            var captured = new JsonArray();
+            foreach (PersonRow person in _people)
+                captured.Add(CreatePersonSnapshot(person));
+            _document!["captured_people"] = captured;
         }
         private void AddPersonNote(string person)
         {
@@ -308,7 +529,11 @@ namespace Pedigree
                 spouseValueLabel.Text += "  |  Other parent(s): " + ListOrUnknown(CoparentsOf(person.Name)) + " (not proof of marriage)";
             childrenValueLabel.Text = ListOrUnknown(ChildrenOf(person.Name));
             string notes = NotesOf(person.Name);
-            funFactTextBox.Text = string.Join(Environment.NewLine, new[] { person.Details, notes }
+            funFactTextBox.Text = string.Join(Environment.NewLine, new[] {
+                person.Details,
+                notes,
+                string.IsNullOrWhiteSpace(person.Verify) ? "" : "Verify: " + person.Verify
+            }
                 .Where(x => !string.IsNullOrWhiteSpace(x)));
             if (string.IsNullOrWhiteSpace(funFactTextBox.Text)) funFactTextBox.Text = "No notes recorded.";
             UpdateStatus($"Showing {person.Name}. Birth/death field suggestions are labeled unverified.");
@@ -320,10 +545,444 @@ namespace Pedigree
         private static string TreeFolder()
         {
             // Keep all user-selected imports and exports in C:\tree by default.
-            // No installers or external files are required for the original 128 members or resume.
+            // No installers or external files are required for the original members or resume.
             string path = @"C:\Users\161119\source\repos\John-McCabe-et-al-628417\";
             Directory.CreateDirectory(path);
             return path;
+        }
+
+        private static string FriendsPath() => Path.Combine(UpdatePackageFolder(), "BP.json");
+        private static string FriendsSamplePath() => Path.Combine(UpdatePackageFolder(), "BP-sample.json");
+        private static string FriendsInstructionsPath() => Path.Combine(UpdatePackageFolder(), "bp.md");
+
+        private static string FriendsInstructions()
+        {
+            return "BP.json FORMAT\r\n\r\n" +
+                "Create a separate friend-family tree in the people and relationships arrays. " +
+                "Use roles subject, father, mother, grandmother-father-line, grandfather-father-line, " +
+                "grandmother-mother-line, and grandfather-mother-line, continuing the same pattern for generation 3.\r\n" +
+                "Each person needs display_name, role, birth_year, source_apa, and findagrave. " +
+                "Use tg_number when the person matches someone in Tree; also preserve tree_marker when supplied. " +
+                "When no identifier is supplied, the program assigns a permanent UF###### identifier.\r\n" +
+                "Relationships use child and parent names with relation parent. Spouses use person1 and person2.\r\n";
+        }
+
+        private static string FriendsMarkdown()
+        {
+            return "# BP.json instructions for ChatGPT\r\n\r\n" +
+                "Use BP-sample.json as the template and write the completed result to BP.json. This is a separate Friends family tree; do not rename or delete people in the main Pedigree Tree.\r\n\r\n" +
+                "## Required fields\r\n" +
+                "Every person requires `display_name`, `role`, `birth_year`, `source_apa`, and `findagrave`. Use an empty string for `findagrave` if no Find a Grave page exists. Use a valid APA citation in `source_apa`.\r\n\r\n" +
+                "## Three generations\r\n" +
+                "Fill every sample line beginning with `subject` for generation 1, `father` and `mother` for generation 2, and the four grandparent lines for generation 3: `grandmother-father-line`, `grandfather-father-line`, `grandmother-mother-line`, and `grandfather-mother-line`. Use plausible birth years for a subject born in the 1970s: parents commonly around 1940–1955 and grandparents around 1905–1935.\r\n\r\n" +
+                "## Tree links\r\n" +
+                "If a Friends person is also in the existing Tree, include `tg_number` and `tree_marker` in that person. Do not invent a TG number. The program preserves supplied identifiers and assigns UF###### when none is supplied.\r\n\r\n" +
+                "## Relationships\r\n" +
+                "Add `{ \"child\": \"Name\", \"parent\": \"Name\", \"relation\": \"parent\" }` for every parent-child link. Add spouse records to `spouse_relationships`.\r\n";
+        }
+
+        private static JsonObject CreateFriendsSample()
+        {
+            var people = new JsonArray();
+            void Add(string name, string role, int year) => people.Add(new JsonObject
+            {
+                ["display_name"] = name, ["role"] = role, ["birth_year"] = year,
+                ["source_apa"] = "Author, A. A. (2026). Family record title. Archive or database.",
+                ["findagrave"] = "", ["tg_number"] = "", ["tree_marker"] = ""
+            });
+            Add("Subject Example", "subject", 1974);
+            Add("Father Example", "father", 1948);
+            Add("Mother Example", "mother", 1950);
+            Add("Grandfather Father Example", "grandfather-father-line", 1920);
+            Add("Grandmother Father Example", "grandmother-father-line", 1924);
+            Add("Grandfather Mother Example", "grandfather-mother-line", 1922);
+            Add("Grandmother Mother Example", "grandmother-mother-line", 1927);
+            return new JsonObject
+            {
+                ["schema"] = "Pedigree.BP.FriendsFamily.v1",
+                ["family_name"] = "Replace with the friend family name",
+                ["people"] = people,
+                ["relationships"] = new JsonArray
+                {
+                    new JsonObject { ["child"] = "Subject Example", ["parent"] = "Father Example", ["relation"] = "parent" },
+                    new JsonObject { ["child"] = "Subject Example", ["parent"] = "Mother Example", ["relation"] = "parent" },
+                    new JsonObject { ["child"] = "Father Example", ["parent"] = "Grandfather Father Example", ["relation"] = "parent" },
+                    new JsonObject { ["child"] = "Father Example", ["parent"] = "Grandmother Father Example", ["relation"] = "parent" },
+                    new JsonObject { ["child"] = "Mother Example", ["parent"] = "Grandfather Mother Example", ["relation"] = "parent" },
+                    new JsonObject { ["child"] = "Mother Example", ["parent"] = "Grandmother Mother Example", ["relation"] = "parent" }
+                },
+                ["spouse_relationships"] = new JsonArray(),
+                ["tree_links"] = new JsonArray()
+            };
+        }
+
+        private void LoadFriendsDocument()
+        {
+            if (!File.Exists(FriendsPath())) return;
+            try { ImportFriendsPackage(FriendsPath(), false); }
+            catch { _friendsDocument = null; friendsTreeView.Nodes.Clear(); }
+        }
+
+        private void friendsSampleButton_Click(object? sender, EventArgs e)
+        {
+            try
+            {
+                File.WriteAllText(FriendsSamplePath(), CreateFriendsSample().ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+                File.WriteAllText(FriendsInstructionsPath(), FriendsMarkdown());
+                friendsInstructionsTextBox.Text = FriendsInstructions();
+                UpdateStatus($"Created {FriendsSamplePath()} and {FriendsInstructionsPath()}.");
+                MessageBox.Show(this, "BP-sample.json and bp.md were created.", "Friends template created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Could not create Friends template", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void friendsExportButton_Click(object? sender, EventArgs e)
+        {
+            if (_friendsDocument == null) { MessageBox.Show(this, "Import or create a Friends BP package first."); return; }
+            try
+            {
+                File.WriteAllText(FriendsPath(), _friendsDocument.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+                File.WriteAllText(FriendsInstructionsPath(), FriendsMarkdown());
+                UpdateStatus($"Wrote Friends family to {FriendsPath()}.");
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Could not write BP.json", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void friendsImportButton_Click(object? sender, EventArgs e)
+        {
+            using var dialog = new OpenFileDialog { Title = "Import BP.json", Filter = "BP JSON (*.json)|*.json|All files (*.*)|*.*", InitialDirectory = UpdatePackageFolder(), FileName = "BP.json" };
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
+            try
+            {
+                ImportFriendsPackage(dialog.FileName, true);
+                UpdateStatus("Imported BP.json into the Friends tab and wrote a validated BP.json copy.");
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Could not import BP.json", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void ImportFriendsPackage(string path, bool persist)
+        {
+            JsonObject package = JsonNode.Parse(File.ReadAllText(path)) as JsonObject
+                ?? throw new InvalidDataException("BP.json must contain a JSON object.");
+            if (Value(package, "schema") != "Pedigree.BP.FriendsFamily.v1")
+                throw new InvalidDataException("BP.json has an unsupported schema.");
+            if (package["people"] is not JsonArray people || package["relationships"] is not JsonArray relationships)
+                throw new InvalidDataException("BP.json must contain people and relationships arrays.");
+
+            var names = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var identifiers = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (JsonNode? person in people)
+            {
+                string name = Value(person, "display_name");
+                if (string.IsNullOrWhiteSpace(name) || !names.Add(name))
+                    throw new InvalidDataException("Every Friends person must have a unique display_name.");
+                if (string.IsNullOrWhiteSpace(Value(person, "role")) || !int.TryParse(Value(person, "birth_year"), out _))
+                    throw new InvalidDataException($"Friends person {name} must have role and birth_year.");
+                if (string.IsNullOrWhiteSpace(Value(person, "source_apa")))
+                    throw new InvalidDataException($"Friends person {name} must have source_apa.");
+                string supplied = Value(person, "identifier");
+                if (string.IsNullOrWhiteSpace(supplied)) supplied = Value(person, "tg_number");
+                string identifier = string.IsNullOrWhiteSpace(supplied) ? NextFriendUf(identifiers) : supplied;
+                if (!identifiers.Add(identifier)) throw new InvalidDataException($"Duplicate Friends identifier: {identifier}.");
+                person!["identifier"] = identifier;
+                person["findagrave"] = Value(person, "findagrave");
+            }
+            foreach (JsonNode? relation in relationships)
+            {
+                if (!names.Contains(Value(relation, "child")) || !names.Contains(Value(relation, "parent")))
+                    throw new InvalidDataException("Every Friends relationship must reference people in the people array.");
+            }
+            if (package["spouse_relationships"] is JsonArray spouses)
+                foreach (JsonNode? spouse in spouses)
+                    if (!names.Contains(Value(spouse, "person1")) || !names.Contains(Value(spouse, "person2")))
+                        throw new InvalidDataException("Every Friends spouse relationship must reference people in the people array.");
+
+            _friendsDocument = package;
+            RenderFriendsTree();
+            if (persist)
+            {
+                File.WriteAllText(FriendsPath(), package.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+                File.WriteAllText(FriendsInstructionsPath(), FriendsMarkdown());
+            }
+        }
+
+        private static string NextFriendUf(HashSet<string> current)
+        {
+            for (int i = 0; i < 1_000_000; i++)
+            {
+                string candidate = $"UF{i:D6}";
+                if (!current.Contains(candidate)) return candidate;
+            }
+            throw new InvalidOperationException("No UF###### identifiers remain available for Friends.");
+        }
+
+        private void RenderFriendsTree()
+        {
+            friendsTreeView.BeginUpdate();
+            friendsTreeView.Nodes.Clear();
+            try
+            {
+                if (_friendsDocument?["people"] is not JsonArray people || _friendsDocument["relationships"] is not JsonArray relationships) return;
+                var children = relationships.GroupBy(r => Value(r, "child"), StringComparer.OrdinalIgnoreCase)
+                    .ToDictionary(g => g.Key, g => g.Select(r => Value(r, "parent")).ToArray(), StringComparer.OrdinalIgnoreCase);
+                string Label(string name)
+                {
+                    JsonNode? person = people.FirstOrDefault(p => Value(p, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                    if (person == null) return name;
+                    string identifier = Value(person, "identifier");
+                    string marker = Value(person, "tree_marker");
+                    return $"{name} ({identifier})" + (string.IsNullOrWhiteSpace(marker) ? "" : $" [{marker}]");
+                }
+                var roots = people.Select(p => Value(p, "display_name"))
+                    .Where(name => !relationships.Any(r => Value(r, "child").Equals(name, StringComparison.OrdinalIgnoreCase)))
+                    .ToArray();
+                foreach (string rootName in roots)
+                {
+                    TreeNode root = friendsTreeView.Nodes.Add(Label(rootName));
+                    AddFriendParents(rootName, root.Nodes, children, Label, new HashSet<string>(StringComparer.OrdinalIgnoreCase) { rootName });
+                    root.Expand();
+                }
+            }
+            finally { friendsTreeView.EndUpdate(); }
+        }
+
+        private static void AddFriendParents(string name, TreeNodeCollection nodes,
+            Dictionary<string, string[]> parents, Func<string, string> label, HashSet<string> path)
+        {
+            if (!parents.TryGetValue(name, out string[]? values)) return;
+            foreach (string parent in values)
+            {
+                bool cycle = !path.Add(parent);
+                TreeNode node = nodes.Add("Parent: " + label(parent) + (cycle ? " (cycle detected)" : ""));
+                if (!cycle) AddFriendParents(parent, node.Nodes, parents, label, path);
+                path.Remove(parent);
+            }
+        }
+
+        private static string WholeTreePath()
+        {
+            string projectFolder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "source", "repos", "Pedigree", "Pedigree");
+            Directory.CreateDirectory(projectFolder);
+            return Path.Combine(projectFolder, "whole_tree.json");
+        }
+
+        private static string UpdatePackageFolder()
+        {
+            string path = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "source", "repos", "Pedigree", "Pedigree");
+            Directory.CreateDirectory(path);
+            return path;
+        }
+
+        private static string BuildVersion()
+        {
+            Version version = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Version ?? new Version(1, 0, 0, 0);
+            return version.ToString();
+        }
+
+        private static string ChatGptInstructions()
+        {
+            return "CHATGPT FAMILY TREE UPDATE FORMAT\r\n\r\n" +
+                "This file is an interchange package. Do not rewrite or delete existing people. " +
+                "Add requested people to updates.people and relationships to updates.relationships.\r\n" +
+                "Each new person must have display_name, source_apa, and findagrave (use an empty string when unavailable). " +
+                "A TG number may be supplied as tg_number; if it is omitted, the program assigns a permanent UF###### identifier.\r\n" +
+                "To update an existing person, include display_name and verify: 11/11/2026 in updates.verify_updates. " +
+                "Do not change existing names or TG identifiers. Use parent links with child and parent names. " +
+                "Add spouse links with person1 and person2. You may include people and links for parents of newly added people.\r\n\r\n" +
+                "Example: updates.people can contain Linda McCabe and Kerrie McCabe; updates.relationships can contain " +
+                "Dudley McCabe -> Linda McCabe as spouse, Dudley McCabe -> Kerrie McCabe as parent, and Linda McCabe -> Kerrie McCabe as parent.\r\n";
+        }
+
+        private static string InstructionsMarkdown()
+        {
+            return "# Pedigree ChatGPT Update Instructions\r\n\r\n" +
+                "The exported JSON is a read-only copy of the current family tree. Do not delete or rename existing people.\r\n\r\n" +
+                "## How to add people\r\n" +
+                "Add objects to `updates.people`. Each object requires `display_name`, `source_apa`, and `findagrave`. " +
+                "Use an empty string for `findagrave` when no Find a Grave page exists. You may provide `tg_number`; otherwise the program assigns a permanent `UF######` identifier.\r\n\r\n" +
+                "## How to update verification\r\n" +
+                "Add `{ \"display_name\": \"Name\", \"verify\": \"11/11/2026\" }` to `updates.verify_updates`. Existing names and TG identifiers are preserved.\r\n\r\n" +
+                "## How to preserve relationships\r\n" +
+                "Use `updates.relationships` with `{ \"child\": \"Child\", \"parent\": \"Parent\", \"relation\": \"parent\" }`. " +
+                "Use `updates.spouse_relationships` with `{ \"person1\": \"Dudley McCabe\", \"person2\": \"Linda McCabe\" }`. " +
+                "Include parents of newly added people as additional people and links in the same package.\r\n\r\n" +
+                "## Example\r\n" +
+                "```json\r\n" +
+                "{\r\n  \"updates\": {\r\n    \"people\": [\r\n      { \"display_name\": \"Linda McCabe\", \"source_apa\": \"Author, A. (2026). Record title. Archive.\", \"findagrave\": \"\" },\r\n      { \"display_name\": \"Kerrie McCabe\", \"source_apa\": \"Author, A. (2026). Record title. Archive.\", \"findagrave\": \"\" }\r\n    ],\r\n    \"relationships\": [\r\n      { \"child\": \"Kerrie McCabe\", \"parent\": \"Dudley McCabe\", \"relation\": \"parent\" },\r\n      { \"child\": \"Kerrie McCabe\", \"parent\": \"Linda McCabe\", \"relation\": \"parent\" }\r\n    ],\r\n    \"spouse_relationships\": [\r\n      { \"person1\": \"Dudley McCabe\", \"person2\": \"Linda McCabe\", \"relation\": \"spouse\" }\r\n    ],\r\n    \"verify_updates\": [\r\n      { \"display_name\": \"Sarah McAvoy\", \"verify\": \"11/11/2026\" }\r\n    ]\r\n  }\r\n}\r\n" +
+                "```\r\n";
+        }
+
+        private string UniqueUf()
+        {
+            var used = PeopleArray.Select(p => Value(p, "uf_number"))
+                .Concat(IdentifierArray.Select(p => Value(p, "code")))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            for (int i = 0; i < 1_000_000; i++)
+            {
+                string candidate = $"UF{i:D6}";
+                if (!used.Contains(candidate)) return candidate;
+            }
+            throw new InvalidOperationException("No UF###### identifiers remain available.");
+        }
+
+        private JsonObject CreateUpdatePackage()
+        {
+            CaptureAllPeople();
+            var updates = new JsonObject
+            {
+                ["people"] = new JsonArray(),
+                ["relationships"] = new JsonArray(),
+                ["spouse_relationships"] = new JsonArray(),
+                ["verify_updates"] = new JsonArray()
+            };
+            return new JsonObject
+            {
+                ["schema"] = "Pedigree.ChatGptFamilyTreeUpdate.v1",
+                ["export_version_build"] = BuildVersion(),
+                ["read_only"] = true,
+                ["read_only_notice"] = "This is a read-only family tree export. Editing this file does not change the Pedigree program until it is imported.",
+                ["instructions"] = ChatGptInstructions(),
+                ["examples"] = JsonNode.Parse("[{\"description\":\"Dudley McCabe and Linda McCabe have Kerrie McCabe\",\"updates\":{\"people\":[{\"display_name\":\"Linda McCabe\",\"source_apa\":\"Author, A. (2026). Record title. Archive.\",\"findagrave\":\"\"},{\"display_name\":\"Kerrie McCabe\",\"source_apa\":\"Author, A. (2026). Record title. Archive.\",\"findagrave\":\"\"}],\"relationships\":[{\"child\":\"Kerrie McCabe\",\"parent\":\"Dudley McCabe\",\"relation\":\"parent\"},{\"child\":\"Kerrie McCabe\",\"parent\":\"Linda McCabe\",\"relation\":\"parent\"}],\"spouse_relationships\":[{\"person1\":\"Dudley McCabe\",\"person2\":\"Linda McCabe\",\"relation\":\"spouse\"}]}}]")!, 
+                ["tree"] = _document!.DeepClone(),
+                ["updates"] = updates
+            };
+        }
+
+        private void updateExportButton_Click(object? sender, EventArgs e)
+        {
+            if (_document == null) { MessageBox.Show(this, "The family tree could not be loaded."); return; }
+            try
+            {
+                string folder = UpdatePackageFolder();
+                string version = BuildVersion();
+                string path = Path.Combine(folder, $"Pedigree-ver-{version}.json");
+                File.WriteAllText(path, CreateUpdatePackage().ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+                File.WriteAllText(Path.Combine(folder, "instructions.md"), InstructionsMarkdown());
+                UpdateStatus($"Exported ChatGPT update package to {path}");
+                MessageBox.Show(this, $"The versioned family tree package and instructions.md were saved in:\n{folder}", "ChatGPT package exported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "ChatGPT export failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void updateImportButton_Click(object? sender, EventArgs e)
+        {
+            using var dialog = new OpenFileDialog { Title = "Import ChatGPT family tree updates", Filter = "Pedigree update JSON (*.json)|*.json|All files (*.*)|*.*", InitialDirectory = UpdatePackageFolder() };
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
+            try
+            {
+                ImportUpdatePackage(dialog.FileName);
+                MessageBox.Show(this, "The ChatGPT family tree updates were imported into Main, Experimental, and Tree.", "Updates imported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "ChatGPT import failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void ImportUpdatePackage(string path)
+        {
+            JsonObject package = JsonNode.Parse(File.ReadAllText(path)) as JsonObject
+                ?? throw new InvalidDataException("The selected file must contain a JSON object.");
+            if (Value(package, "schema") != "Pedigree.ChatGptFamilyTreeUpdate.v1")
+                throw new InvalidDataException("This is not a supported Pedigree ChatGPT update package.");
+            if (_document == null) ReadBuiltInDocument();
+            if (package["updates"] is not JsonObject updates)
+                throw new InvalidDataException("The package must contain an updates object.");
+
+            var existingNames = PeopleArray.Select(p => Value(p, "display_name"))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var knownCodes = IdentifierArray.Select(p => Value(p, "code"))
+                .Where(c => !string.IsNullOrWhiteSpace(c))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            int nextPerson = PeopleArray.Select(p => int.TryParse(Value(p, "person_no"), out int n) ? n : 0)
+                .DefaultIfEmpty(0).Max() + 1;
+
+            if (updates["people"] is JsonArray people)
+            {
+                foreach (JsonNode? source in people)
+                {
+                    string name = Value(source, "display_name");
+                    if (string.IsNullOrWhiteSpace(name)) continue;
+                    if (existingNames.Contains(name)) continue;
+                    string supplied = Value(source, "tg_number");
+                    string code = string.IsNullOrWhiteSpace(supplied) ? UniqueUf() : supplied;
+                    if (knownCodes.Contains(code))
+                        throw new InvalidDataException($"The identifier {code} is already assigned.");
+                    var person = new JsonObject
+                    {
+                        ["person_no"] = nextPerson++, ["display_name"] = name,
+                        ["details"] = Value(source, "details"), ["name_permanent"] = 0,
+                        ["source_apa"] = Value(source, "source_apa"),
+                        ["findagrave"] = Value(source, "findagrave")
+                    };
+                    if (!string.IsNullOrWhiteSpace(Value(source, "verify")))
+                        person["verify"] = Value(source, "verify");
+                    PeopleArray.Add(person);
+                    IdentifierArray.Add(new JsonObject
+                    {
+                        ["display_name"] = name, ["code"] = code,
+                        ["kind"] = string.IsNullOrWhiteSpace(supplied) ? "UF" : "TG",
+                        ["permanent"] = 1
+                    });
+                    existingNames.Add(name);
+                    knownCodes.Add(code);
+                }
+            }
+
+            AddImportedRelationships(updates["relationships"] as JsonArray, "parent");
+            AddImportedSpouses(updates["spouse_relationships"] as JsonArray);
+            if (updates["verify_updates"] is JsonArray verifications)
+            {
+                foreach (JsonNode? update in verifications)
+                {
+                    string name = Value(update, "display_name");
+                    JsonNode? person = PeopleArray.FirstOrDefault(p => Value(p, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                    if (person != null && Value(update, "verify") == "11/11/2026") person["verify"] = "11/11/2026";
+                }
+            }
+            RefreshPeople();
+            SynchronizeExperimentalView();
+            UpdateStatus($"Imported ChatGPT updates. The tree now contains {_people.Count} people.");
+        }
+
+        private void AddImportedRelationships(JsonArray? relationships, string defaultRelation)
+        {
+            if (relationships == null) return;
+            var known = RelationshipArray.Select(r => (Value(r, "child"), Value(r, "parent"), Value(r, "relation"))).ToHashSet();
+            foreach (JsonNode? relation in relationships)
+            {
+                string child = Value(relation, "child"), parent = Value(relation, "parent");
+                string type = string.IsNullOrWhiteSpace(Value(relation, "relation")) ? defaultRelation : Value(relation, "relation");
+                if (string.IsNullOrWhiteSpace(child) || string.IsNullOrWhiteSpace(parent) ||
+                    !PeopleArray.Any(p => Value(p, "display_name").Equals(child, StringComparison.OrdinalIgnoreCase)) ||
+                    !PeopleArray.Any(p => Value(p, "display_name").Equals(parent, StringComparison.OrdinalIgnoreCase))) continue;
+                if (known.Add((child, parent, type)))
+                    RelationshipArray.Add(new JsonObject { ["child"] = child, ["parent"] = parent, ["relation"] = type, ["confidence"] = 1.0, ["permanent"] = 0 });
+            }
+        }
+
+        private void AddImportedSpouses(JsonArray? spouses)
+        {
+            if (spouses == null) return;
+            var target = SupplementalArray("spouse_relationships");
+            foreach (JsonNode? spouse in spouses)
+            {
+                string first = Value(spouse, "person1"), second = Value(spouse, "person2");
+                if (string.IsNullOrWhiteSpace(first) || string.IsNullOrWhiteSpace(second) || first.Equals(second, StringComparison.OrdinalIgnoreCase) ||
+                    !PeopleArray.Any(p => Value(p, "display_name").Equals(first, StringComparison.OrdinalIgnoreCase)) ||
+                    !PeopleArray.Any(p => Value(p, "display_name").Equals(second, StringComparison.OrdinalIgnoreCase))) continue;
+                bool exists = target.Any(r => (Value(r, "person1").Equals(first, StringComparison.OrdinalIgnoreCase) && Value(r, "person2").Equals(second, StringComparison.OrdinalIgnoreCase)) ||
+                    (Value(r, "person1").Equals(second, StringComparison.OrdinalIgnoreCase) && Value(r, "person2").Equals(first, StringComparison.OrdinalIgnoreCase)));
+                if (!exists) target.Add(new JsonObject { ["person1"] = first, ["person2"] = second, ["relation"] = "spouse", ["source"] = "ChatGPT update", ["permanent"] = 0 });
+            }
+        }
+
+        private void SynchronizeExperimentalView()
+        {
+            if (_experimentalView == null || _document == null) return;
+            _experimentalView._document = _document.DeepClone() as JsonObject;
+            _experimentalView.RefreshPeople();
         }
 
         private void importButton_Click(object? sender, EventArgs e)
@@ -427,19 +1086,15 @@ namespace Pedigree
         private void exportJsonButton_Click(object? sender, EventArgs e)
         {
             if (_document == null) { MessageBox.Show(this, "The built-in family tree could not be loaded."); return; }
-            using var dialog = new SaveFileDialog { Title = "Save a copy of your family tree", Filter = "JSON files (*.json)|*.json", FileName = "my-family-tree-updated.json", OverwritePrompt = true };
-            dialog.InitialDirectory = TreeFolder();
-            if (dialog.ShowDialog(this) != DialogResult.OK) return;
             try
             {
-                // Never silently overwrite the imported master file.
-                if (_currentPath != null && string.Equals(Path.GetFullPath(dialog.FileName), Path.GetFullPath(_currentPath), StringComparison.OrdinalIgnoreCase))
-                { MessageBox.Show(this, "Choose a different file name. Your imported master JSON is protected from overwriting."); return; }
-                File.WriteAllText(dialog.FileName, _document.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
-                UpdateStatus($"Saved a copy: {dialog.FileName}");
-                MessageBox.Show(this, "Your family tree copy was saved. Review privacy before publishing this JSON to GitHub.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CaptureAllPeople();
+                string path = WholeTreePath();
+                File.WriteAllText(path, _document.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
+                UpdateStatus($"Exported {_people.Count} people to {path}");
+                MessageBox.Show(this, $"The complete family tree was saved to:\n{path}", "Whole tree exported", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Save failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Whole-tree export failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void exportPdfButton_Click(object? sender, EventArgs e)
@@ -566,7 +1221,7 @@ namespace Pedigree
             // EmbeddedResume.cs. No file access is performed when opening About.
             resume.Controls.Add(ReadOnlyPage(EmbeddedResume.Text));
 
-            // Family members and editing tools stay inside About. All 128 built-in
+            // Family members and editing tools stay inside About. All built-in
             // people remain in C#; newcomers, spouse links, and notes are supplemental.
             var familyLayout = new TableLayoutPanel { Dock = DockStyle.Fill, RowCount = 3, ColumnCount = 1 };
             familyLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
@@ -577,7 +1232,7 @@ namespace Pedigree
             var memberList = new ListBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 11F) };
             void RefreshAboutMembers(string? selectedName = null)
             {
-                familyCount.Text = $"{_people.Count} family members (128 built into C#)";
+                familyCount.Text = $"{_people.Count} family members (129 built into C#)";
                 memberList.Items.Clear();
                 foreach (var entry in _people.OrderBy(x => x.Name, StringComparer.OrdinalIgnoreCase))
                     memberList.Items.Add(entry);

@@ -1,0 +1,103 @@
+{
+  "schema": "Pedigree.BP.FriendsFamily.v1",
+  "family_name": "Replace with the friend family name",
+  "people": [
+    {
+      "display_name": "Subject Example",
+      "role": "subject",
+      "birth_year": 1974,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    },
+    {
+      "display_name": "Father Example",
+      "role": "father",
+      "birth_year": 1948,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    },
+    {
+      "display_name": "Mother Example",
+      "role": "mother",
+      "birth_year": 1950,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    },
+    {
+      "display_name": "Grandfather Father Example",
+      "role": "grandfather-father-line",
+      "birth_year": 1920,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    },
+    {
+      "display_name": "Grandmother Father Example",
+      "role": "grandmother-father-line",
+      "birth_year": 1924,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    },
+    {
+      "display_name": "Grandfather Mother Example",
+      "role": "grandfather-mother-line",
+      "birth_year": 1922,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    },
+    {
+      "display_name": "Grandmother Mother Example",
+      "role": "grandmother-mother-line",
+      "birth_year": 1927,
+      "source_apa": "Author, A. A. (2026). Family record title. Archive or database.",
+      "findagrave": "",
+      "tg_number": "",
+      "tree_marker": ""
+    }
+  ],
+  "relationships": [
+    {
+      "child": "Subject Example",
+      "parent": "Father Example",
+      "relation": "parent"
+    },
+    {
+      "child": "Subject Example",
+      "parent": "Mother Example",
+      "relation": "parent"
+    },
+    {
+      "child": "Father Example",
+      "parent": "Grandfather Father Example",
+      "relation": "parent"
+    },
+    {
+      "child": "Father Example",
+      "parent": "Grandmother Father Example",
+      "relation": "parent"
+    },
+    {
+      "child": "Mother Example",
+      "parent": "Grandfather Mother Example",
+      "relation": "parent"
+    },
+    {
+      "child": "Mother Example",
+      "parent": "Grandmother Mother Example",
+      "relation": "parent"
+    }
+  ],
+  "spouse_relationships": [],
+  "tree_links": []
+}

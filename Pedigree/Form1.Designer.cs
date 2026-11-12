@@ -48,6 +48,32 @@ namespace Pedigree
         /// </summary>
         private void InitializeComponent()
         {
+            rootTableLayout = new TableLayoutPanel();
+            sharedNotesPanel = new Panel();
+            sharedNotesLabel = new Label();
+            sharedNotesTextBox = new TextBox();
+            tabControl = new TabControl();
+            mainTabPage = new TabPage();
+            experimentalTabPage = new TabPage();
+            treeTabPage = new TabPage();
+            updateTabPage = new TabPage();
+            friendsTabPage = new TabPage();
+            treeView = new TreeView();
+            friendsTableLayout = new TableLayoutPanel();
+            friendsNoticeLabel = new Label();
+            friendsInstructionsTextBox = new TextBox();
+            friendsButtonsFlowLayout = new FlowLayoutPanel();
+            friendsImportButton = new Button();
+            friendsExportButton = new Button();
+            friendsSampleButton = new Button();
+            friendsTreeView = new TreeView();
+            updateTableLayout = new TableLayoutPanel();
+            updateNoticeLabel = new Label();
+            updateInstructionsTextBox = new TextBox();
+            updateButtonsFlowLayout = new FlowLayoutPanel();
+            updateImportButton = new Button();
+            updateExportButton = new Button();
+            experimentalTextLabel = new Label();
             mainTableLayout = new TableLayoutPanel();
             headerPanel = new Panel();
             subtitleLabel = new Label();
@@ -89,6 +115,17 @@ namespace Pedigree
             exportStyleTextBox = new TextBox();
             footerPanel = new Panel();
             statusLabel = new Label();
+            rootTableLayout.SuspendLayout();
+            sharedNotesPanel.SuspendLayout();
+            tabControl.SuspendLayout();
+            mainTabPage.SuspendLayout();
+            experimentalTabPage.SuspendLayout();
+            updateTabPage.SuspendLayout();
+            updateTableLayout.SuspendLayout();
+            updateButtonsFlowLayout.SuspendLayout();
+            friendsTabPage.SuspendLayout();
+            friendsTableLayout.SuspendLayout();
+            friendsButtonsFlowLayout.SuspendLayout();
             mainTableLayout.SuspendLayout();
             headerPanel.SuspendLayout();
             contentTableLayout.SuspendLayout();
@@ -119,6 +156,261 @@ namespace Pedigree
             mainTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 46F));
             mainTableLayout.Size = new Size(1692, 983);
             mainTableLayout.TabIndex = 0;
+            // 
+            // rootTableLayout
+            // 
+            rootTableLayout.ColumnCount = 1;
+            rootTableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            rootTableLayout.Controls.Add(sharedNotesPanel, 0, 0);
+            rootTableLayout.Controls.Add(tabControl, 0, 1);
+            rootTableLayout.Dock = DockStyle.Fill;
+            rootTableLayout.Location = new Point(0, 0);
+            rootTableLayout.Name = "rootTableLayout";
+            rootTableLayout.RowCount = 2;
+            rootTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 72F));
+            rootTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            rootTableLayout.Size = new Size(1692, 983);
+            rootTableLayout.TabIndex = 0;
+            // sharedNotesPanel
+            // 
+            sharedNotesPanel.Controls.Add(sharedNotesTextBox);
+            sharedNotesPanel.Controls.Add(sharedNotesLabel);
+            sharedNotesPanel.Dock = DockStyle.Fill;
+            sharedNotesPanel.Location = new Point(3, 3);
+            sharedNotesPanel.Name = "sharedNotesPanel";
+            sharedNotesPanel.Padding = new Padding(12, 8, 12, 8);
+            sharedNotesPanel.Size = new Size(1686, 66);
+            sharedNotesPanel.TabIndex = 0;
+            // 
+            // sharedNotesLabel
+            // 
+            sharedNotesLabel.AutoSize = true;
+            sharedNotesLabel.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            sharedNotesLabel.Location = new Point(12, 20);
+            sharedNotesLabel.Name = "sharedNotesLabel";
+            sharedNotesLabel.Size = new Size(105, 28);
+            sharedNotesLabel.TabIndex = 0;
+            sharedNotesLabel.Text = "Shared Notes:";
+            // 
+            // sharedNotesTextBox
+            // 
+            sharedNotesTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            sharedNotesTextBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            sharedNotesTextBox.Location = new Point(130, 11);
+            sharedNotesTextBox.Multiline = true;
+            sharedNotesTextBox.Name = "sharedNotesTextBox";
+            sharedNotesTextBox.ScrollBars = ScrollBars.Vertical;
+            sharedNotesTextBox.Size = new Size(1542, 46);
+            sharedNotesTextBox.TabIndex = 1;
+            // 
+            // tabControl
+            // 
+            tabControl.Controls.Add(mainTabPage);
+            tabControl.Controls.Add(experimentalTabPage);
+            tabControl.Controls.Add(treeTabPage);
+            tabControl.Controls.Add(updateTabPage);
+            tabControl.Controls.Add(friendsTabPage);
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.Location = new Point(0, 0);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(1692, 983);
+            tabControl.TabIndex = 0;
+            // 
+            // mainTabPage
+            // 
+            mainTabPage.Controls.Add(mainTableLayout);
+            mainTabPage.Location = new Point(4, 34);
+            mainTabPage.Name = "mainTabPage";
+            mainTabPage.Padding = new Padding(3);
+            mainTabPage.Size = new Size(1684, 945);
+            mainTabPage.TabIndex = 0;
+            mainTabPage.Text = "Main";
+            mainTabPage.UseVisualStyleBackColor = true;
+            // 
+            // experimentalTabPage
+            // 
+            experimentalTabPage.Location = new Point(4, 34);
+            experimentalTabPage.Name = "experimentalTabPage";
+            experimentalTabPage.Padding = new Padding(3);
+            experimentalTabPage.Size = new Size(1684, 945);
+            experimentalTabPage.TabIndex = 1;
+            experimentalTabPage.Text = "Experimental";
+            experimentalTabPage.UseVisualStyleBackColor = true;
+            // 
+            // treeTabPage
+            // 
+            treeTabPage.Controls.Add(treeView);
+            treeTabPage.Location = new Point(4, 34);
+            treeTabPage.Name = "treeTabPage";
+            treeTabPage.Padding = new Padding(3);
+            treeTabPage.Size = new Size(1684, 945);
+            treeTabPage.TabIndex = 2;
+            treeTabPage.Text = "Tree";
+            treeTabPage.UseVisualStyleBackColor = true;
+            // 
+            // treeView
+            // 
+            treeView.Dock = DockStyle.Fill;
+            treeView.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            treeView.Location = new Point(3, 3);
+            treeView.Name = "treeView";
+            treeView.Size = new Size(1678, 939);
+            treeView.TabIndex = 0;
+            // 
+            // updateTabPage
+            // 
+            updateTabPage.Controls.Add(updateTableLayout);
+            updateTabPage.Location = new Point(4, 34);
+            updateTabPage.Name = "updateTabPage";
+            updateTabPage.Padding = new Padding(3);
+            updateTabPage.Size = new Size(1684, 945);
+            updateTabPage.TabIndex = 3;
+            updateTabPage.Text = "ChatGPT Updates";
+            updateTabPage.UseVisualStyleBackColor = true;
+            // 
+            // updateTableLayout
+            // 
+            updateTableLayout.ColumnCount = 1;
+            updateTableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            updateTableLayout.Controls.Add(updateNoticeLabel, 0, 0);
+            updateTableLayout.Controls.Add(updateInstructionsTextBox, 0, 1);
+            updateTableLayout.Controls.Add(updateButtonsFlowLayout, 0, 2);
+            updateTableLayout.Dock = DockStyle.Fill;
+            updateTableLayout.RowCount = 3;
+            updateTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            updateTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            updateTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 72F));
+            updateTableLayout.Padding = new Padding(20);
+            updateTableLayout.Name = "updateTableLayout";
+            // 
+            // updateNoticeLabel
+            // 
+            updateNoticeLabel.Dock = DockStyle.Fill;
+            updateNoticeLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            updateNoticeLabel.Text = "READ-ONLY FAMILY TREE\r\nChanges to the data below will not change the names in the Pedigree program. Use the import format to request additions and relationship updates.";
+            updateNoticeLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // updateInstructionsTextBox
+            // 
+            updateInstructionsTextBox.Dock = DockStyle.Fill;
+            updateInstructionsTextBox.Multiline = true;
+            updateInstructionsTextBox.ReadOnly = true;
+            updateInstructionsTextBox.ScrollBars = ScrollBars.Both;
+            updateInstructionsTextBox.Font = new Font("Consolas", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            updateInstructionsTextBox.Name = "updateInstructionsTextBox";
+            // 
+            // updateButtonsFlowLayout
+            // 
+            updateButtonsFlowLayout.Dock = DockStyle.Fill;
+            updateButtonsFlowLayout.FlowDirection = FlowDirection.LeftToRight;
+            updateButtonsFlowLayout.Controls.Add(updateImportButton);
+            updateButtonsFlowLayout.Controls.Add(updateExportButton);
+            // 
+            // updateImportButton
+            // 
+            updateImportButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            updateImportButton.Size = new Size(220, 50);
+            updateImportButton.Text = "Import ChatGPT JSON";
+            updateImportButton.Click += updateImportButton_Click;
+            // 
+            // updateExportButton
+            // 
+            updateExportButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            updateExportButton.Size = new Size(220, 50);
+            updateExportButton.Text = "Export ChatGPT JSON";
+            updateExportButton.Click += updateExportButton_Click;
+            // 
+            // friendsTabPage
+            // 
+            friendsTabPage.Controls.Add(friendsTableLayout);
+            friendsTabPage.Location = new Point(4, 34);
+            friendsTabPage.Name = "friendsTabPage";
+            friendsTabPage.Padding = new Padding(3);
+            friendsTabPage.Size = new Size(1684, 945);
+            friendsTabPage.TabIndex = 4;
+            friendsTabPage.Text = "Friends";
+            friendsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // friendsTableLayout
+            // 
+            friendsTableLayout.ColumnCount = 1;
+            friendsTableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            friendsTableLayout.Controls.Add(friendsNoticeLabel, 0, 0);
+            friendsTableLayout.Controls.Add(friendsInstructionsTextBox, 0, 1);
+            friendsTableLayout.Controls.Add(friendsButtonsFlowLayout, 0, 2);
+            friendsTableLayout.Controls.Add(friendsTreeView, 0, 3);
+            friendsTableLayout.Dock = DockStyle.Fill;
+            friendsTableLayout.Name = "friendsTableLayout";
+            friendsTableLayout.Padding = new Padding(20);
+            friendsTableLayout.RowCount = 4;
+            friendsTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 55F));
+            friendsTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 180F));
+            friendsTableLayout.RowStyles.Add(new RowStyle(SizeType.Absolute, 70F));
+            friendsTableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            // 
+            // friendsNoticeLabel
+            // 
+            friendsNoticeLabel.Dock = DockStyle.Fill;
+            friendsNoticeLabel.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            friendsNoticeLabel.Text = "FRIENDS FAMILY TREE\r\nBP.json is a separate family package. Tree links identify existing people without changing their names.";
+            friendsNoticeLabel.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // friendsInstructionsTextBox
+            // 
+            friendsInstructionsTextBox.Dock = DockStyle.Fill;
+            friendsInstructionsTextBox.Font = new Font("Consolas", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            friendsInstructionsTextBox.Multiline = true;
+            friendsInstructionsTextBox.ReadOnly = true;
+            friendsInstructionsTextBox.ScrollBars = ScrollBars.Both;
+            friendsInstructionsTextBox.Name = "friendsInstructionsTextBox";
+            // 
+            // friendsButtonsFlowLayout
+            // 
+            friendsButtonsFlowLayout.Controls.Add(friendsImportButton);
+            friendsButtonsFlowLayout.Controls.Add(friendsExportButton);
+            friendsButtonsFlowLayout.Controls.Add(friendsSampleButton);
+            friendsButtonsFlowLayout.Dock = DockStyle.Fill;
+            friendsButtonsFlowLayout.FlowDirection = FlowDirection.LeftToRight;
+            // 
+            // friendsImportButton
+            // 
+            friendsImportButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            friendsImportButton.Size = new Size(210, 50);
+            friendsImportButton.Text = "Import BP.json";
+            friendsImportButton.Click += friendsImportButton_Click;
+            // 
+            // friendsExportButton
+            // 
+            friendsExportButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            friendsExportButton.Size = new Size(210, 50);
+            friendsExportButton.Text = "Write BP.json";
+            friendsExportButton.Click += friendsExportButton_Click;
+            // 
+            // friendsSampleButton
+            // 
+            friendsSampleButton.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            friendsSampleButton.Size = new Size(250, 50);
+            friendsSampleButton.Text = "Create BP-sample.json";
+            friendsSampleButton.Click += friendsSampleButton_Click;
+            // 
+            // friendsTreeView
+            // 
+            friendsTreeView.Dock = DockStyle.Fill;
+            friendsTreeView.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            friendsTreeView.Name = "friendsTreeView";
+            // 
+            // experimentalTextLabel
+            // 
+            experimentalTextLabel.Dock = DockStyle.Fill;
+            experimentalTextLabel.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            experimentalTextLabel.Location = new Point(3, 3);
+            experimentalTextLabel.Name = "experimentalTextLabel";
+            experimentalTextLabel.Padding = new Padding(20);
+            experimentalTextLabel.Size = new Size(1678, 939);
+            experimentalTextLabel.TabIndex = 0;
+            experimentalTextLabel.Text = "To remove this text, tell the agent that we're using process 2. The agent should add any future changes to this tab";
+            experimentalTextLabel.TextAlign = ContentAlignment.TopLeft;
             // 
             // headerPanel
             // 
@@ -572,7 +864,7 @@ namespace Pedigree
             exportJsonButton.Name = "exportJsonButton";
             exportJsonButton.Size = new Size(190, 50);
             exportJsonButton.TabIndex = 2;
-            exportJsonButton.Text = "Export JSON";
+            exportJsonButton.Text = "Export Everything";
             exportJsonButton.UseVisualStyleBackColor = true;
             exportJsonButton.Click += exportJsonButton_Click;
             // 
@@ -623,12 +915,26 @@ namespace Pedigree
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1692, 983);
-            Controls.Add(mainTableLayout);
+            Controls.Add(rootTableLayout);
             MinimumSize = new Size(1300, 850);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "My Family Tree";
             Load += Form1_Load;
+            rootTableLayout.ResumeLayout(false);
+            sharedNotesPanel.ResumeLayout(false);
+            sharedNotesPanel.PerformLayout();
+            tabControl.ResumeLayout(false);
+            mainTabPage.ResumeLayout(false);
+            experimentalTabPage.ResumeLayout(false);
+            updateTabPage.ResumeLayout(false);
+            updateTableLayout.ResumeLayout(false);
+            updateTableLayout.PerformLayout();
+            updateButtonsFlowLayout.ResumeLayout(false);
+            friendsTabPage.ResumeLayout(false);
+            friendsTableLayout.ResumeLayout(false);
+            friendsTableLayout.PerformLayout();
+            friendsButtonsFlowLayout.ResumeLayout(false);
             mainTableLayout.ResumeLayout(false);
             headerPanel.ResumeLayout(false);
             headerPanel.PerformLayout();
@@ -652,6 +958,32 @@ namespace Pedigree
         #endregion
 
         private TableLayoutPanel mainTableLayout;
+        private TableLayoutPanel rootTableLayout;
+        private Panel sharedNotesPanel;
+        private Label sharedNotesLabel;
+        private TextBox sharedNotesTextBox;
+        private TabControl tabControl;
+        private TabPage mainTabPage;
+        private TabPage experimentalTabPage;
+        private TabPage treeTabPage;
+        private TabPage updateTabPage;
+        private TabPage friendsTabPage;
+        private TreeView treeView;
+        private TableLayoutPanel friendsTableLayout;
+        private Label friendsNoticeLabel;
+        private TextBox friendsInstructionsTextBox;
+        private FlowLayoutPanel friendsButtonsFlowLayout;
+        private Button friendsImportButton;
+        private Button friendsExportButton;
+        private Button friendsSampleButton;
+        private TreeView friendsTreeView;
+        private TableLayoutPanel updateTableLayout;
+        private Label updateNoticeLabel;
+        private TextBox updateInstructionsTextBox;
+        private FlowLayoutPanel updateButtonsFlowLayout;
+        private Button updateImportButton;
+        private Button updateExportButton;
+        private Label experimentalTextLabel;
         private Panel headerPanel;
         private Label titleLabel;
         private Label subtitleLabel;
