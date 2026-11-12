@@ -1978,7 +1978,7 @@
       {
         "person_no": 1,
         "display_name": "Jeremiah O\u0027Neal",
-        "details": "B:24 Mar 1981 San Diego, CA",
+        "details": "B:01 Jan 1985 San Diego, CA",
         "name_permanent": 1
       },
       {
@@ -8385,7 +8385,7 @@
       {
         "display_name": "Jeremiah O\u0027Neal",
         "field": "birth_date",
-        "value": "03/24/1981",
+        "value": "01/01/1985",
         "confidence": 1.0,
         "source_url": "user-entered",
         "source_title": "User-provided family information",
@@ -9305,7 +9305,7 @@
       {
         "display_name": "Jeremiah O\u0027Neal",
         "tg_number": "",
-        "born": "03/24/1981",
+        "born": "01/01/1985",
         "died": "See original notes",
         "parents": [
           "Dudley McCabe",
@@ -9314,7 +9314,7 @@
         "spouse": [],
         "other_parents": [],
         "children": [],
-        "details": "B:24 Mar 1981 San Diego, CA",
+        "details": "B:01 Jan 1985 San Diego, CA",
         "notes": "",
         "verify": "",
         "captured_at_utc": "2026-11-10T20:14:24.9865266Z"

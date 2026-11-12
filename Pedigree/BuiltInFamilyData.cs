@@ -341,7 +341,7 @@ namespace Pedigree
             {
                 var records = new JsonArray();
                 // Family member 1: Me
-                records.Add(JsonNode.Parse("{\"person_no\":1,\"display_name\":\"Jeremiah O'Neal\",\"details\":\"B:24 Mar 1981 San Diego, CA\",\"name_permanent\":1}")!);
+                records.Add(JsonNode.Parse("{\"person_no\":1,\"display_name\":\"Jeremiah O'Neal\",\"details\":\"B:01 Jan 1985 San Diego, CA\",\"name_permanent\":1}")!);
                 // Family member 2: Dudley McCabe
                 records.Add(JsonNode.Parse("{\"person_no\":2,\"display_name\":\"Dudley McCabe\",\"details\":\"1946\\u20132019 San Diego, San Diego, California, USA\",\"name_permanent\":1}")!);
                 // Family member 3: mom
@@ -1114,7 +1114,7 @@ namespace Pedigree
                 records.Add(JsonNode.Parse("{\"display_name\":\"Patrick Henry Shapley\",\"field\":\"birth_description\",\"value\":\"10 APR 1846\\u00a0Emmett, Calhoun, Michigan\",\"confidence\":0.55,\"source_url\":\"archive:treeresearch/user_notes/12b_20261028.csv\",\"source_title\":\"User-collected 12b genealogy CSV (unverified)\",\"status\":\"active\",\"permanent\":0,\"fact_hash\":\"f7228a5d52a92e2dcecd3cc334fb3818bba6d88fa269b0d4639caed444ff262c\"}")!);
                 records.Add(JsonNode.Parse("{\"display_name\":\"Clare Levi Hillman\",\"field\":\"birth_description\",\"value\":\"23 Dec 1896\\u00a0Cannon Falls, Goodhue, Minnesota, USA\",\"confidence\":0.55,\"source_url\":\"archive:treeresearch/user_notes/12b_20261028.csv\",\"source_title\":\"User-collected 12b genealogy CSV (unverified)\",\"status\":\"active\",\"permanent\":0,\"fact_hash\":\"9efd717697d9c809c38a41a537a9861a908bbc9670c2cd8c56551249002c0533\"}")!);
                 records.Add(JsonNode.Parse("{\"display_name\":\"Clare Levi Hillman\",\"field\":\"death_description\",\"value\":\"7 Feb 1980\\u00a0Minneapolis, Hennepin, Minnesota, United States of America\",\"confidence\":0.55,\"source_url\":\"archive:treeresearch/user_notes/12b_20261028.csv\",\"source_title\":\"User-collected 12b genealogy CSV (unverified)\",\"status\":\"active\",\"permanent\":0,\"fact_hash\":\"29d85523b2a64bedac1688dd968eba3818fc966adff93facd3615a8d3d080666\"}")!);
-                records.Add(JsonNode.Parse("{\"display_name\":\"Jeremiah O'Neal\",\"field\":\"birth_date\",\"value\":\"03/24/1981\",\"confidence\":1.0,\"source_url\":\"user-entered\",\"source_title\":\"User-provided family information\",\"status\":\"active\",\"permanent\":1}")!);
+                records.Add(JsonNode.Parse("{\"display_name\":\"Jeremiah O'Neal\",\"field\":\"birth_date\",\"value\":\"01/01/1985\",\"confidence\":1.0,\"source_url\":\"user-entered\",\"source_title\":\"User-provided family information\",\"status\":\"active\",\"permanent\":1}")!);
                 records.Add(JsonNode.Parse("{\"display_name\":\"mom\",\"field\":\"birth_date\",\"value\":\"01/01/1955\",\"confidence\":1.0,\"source_url\":\"user-entered\",\"source_title\":\"User-provided family information\",\"status\":\"active\",\"permanent\":1}")!);
                 document["provisional_facts"] = records;
             }
