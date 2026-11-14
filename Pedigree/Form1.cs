@@ -24,8 +24,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Nodes;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Pedigree
@@ -39,8 +41,14 @@ namespace Pedigree
         private readonly List<PersonRow> _people = new();
         private readonly bool _isExperimental;
         private Form1? _experimentalView;
+        private Form1? _mainViewOwner;
         private JsonObject? _matchSettings;
         private JsonObject? _friendsDocument;
+        private Label? _chronologicalSummaryLabel;
+        private DataGridView? _chronologicalGrid;
+        private DataGridView? _geographyGrid;
+        private sealed record GeographyRow(string Name, string Location, string LocationBasis,
+            string TimePeriod, string RecommendedSources, int Difficulty, string DifficultyReason);
         private sealed record PersonRow(string Name, string Tg, string Details, string Verify)
         {
             public override string ToString() => string.IsNullOrWhiteSpace(Tg) ? Name : $"{Name} ({Tg})";
@@ -50,12 +58,16 @@ namespace Pedigree
         {
             _isExperimental = false;
             InitializeComponent();
+            InitializeChronologicalConsistencyTab();
+            InitializeGeographyTab();
         }
 
         private Form1(bool experimental)
         {
             _isExperimental = experimental;
             InitializeComponent();
+            InitializeChronologicalConsistencyTab();
+            InitializeGeographyTab();
             if (experimental) ConfigureExperimentalMatching();
         }
 
@@ -108,6 +120,7 @@ namespace Pedigree
         private void CreateExperimentalView()
         {
             _experimentalView = new Form1(true);
+            _experimentalView._mainViewOwner = this;
             _experimentalView.InitializeView();
             experimentalTabPage.Controls.Clear();
             experimentalTabPage.Controls.Add(_experimentalView.DetachMainLayout());
@@ -231,6 +244,7 @@ namespace Pedigree
             // BuiltInFamilyData.cs along with every associated data section.
             // Each run recreates a fresh in-memory copy without touching the C# source.
             JsonObject loaded = BuiltInFamilyData.Create();
+            BuiltInFamilyData.ApplyVerifiedBirthYearCorrections(loaded);
             foreach (string name in new[] { "people", "identifiers", "relationships" })
                 EnsureArray(loaded, name);
             if (EnsureArray(loaded, "people").Count != 129)
@@ -238,8 +252,144 @@ namespace Pedigree
             _document = loaded;
             _currentPath = null;
             RefreshPeople();
-            UpdateStatus("129 original family members loaded from C# source code. Import JSON to add more family members.");
+            if (!_isExperimental) GenerateRecheckFiles();
+            UpdateStatus("129 original family members and verified birth-year corrections loaded from C# source code. Import JSON to add more family members.");
         }
+
+        private void GenerateRecheckFiles()
+        {
+            if (_document == null) throw new InvalidOperationException("Load the family tree before generating recheck files.");
+
+            var rows = new List<string>
+            {
+                "RecordType,PersonSerial,Name,BirthYear,FullDateOfBirth,CaseID,Child,ParentAgeAtChildBirth,RelatedCaseID,ReviewNote"
+            };
+            var usedSuffixes = new HashSet<string>(StringComparer.Ordinal);
+            var visitedPeople = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var visitedLinks = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var parentReviews = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var otherParentReviews = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+
+            string NewSuffix()
+            {
+                string suffix;
+                do suffix = RandomNumberGenerator.GetInt32(1_000_000, 10_000_000).ToString();
+                while (!usedSuffixes.Add(suffix));
+                return suffix;
+            }
+
+            void AddRow(params string[] columns) => rows.Add(string.Join(",", columns.Select(Csv)));
+
+            string? SerialFor(string name)
+            {
+                JsonNode? record = PeopleArray.FirstOrDefault(person =>
+                    Value(person, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                return int.TryParse(Value(record, "person_no"), out int number) ? $"TS{number:D6}" : null;
+            }
+
+            string FullBirthDate(string name)
+            {
+                string recorded = BirthDateOf(name) ?? "";
+                string details = _people.FirstOrDefault(person =>
+                    person.Name.Equals(name, StringComparison.OrdinalIgnoreCase))?.Details ?? "";
+                string birthEvidence = string.Join(" ", recorded, BirthDetailsOnly(details), BirthDetailsOnly(NotesOf(name)));
+                Match exactDate = Regex.Match(birthEvidence,
+                    @"\b(?:\d{1,2}[/-]\d{1,2}[/-]\d{4}|\d{4}-\d{1,2}-\d{1,2}|\d{1,2}\s+[A-Za-z]{3,9}\.?[,]?\s+\d{4}|[A-Za-z]{3,9}\.?\s+\d{1,2},?\s+\d{4})\b");
+                return exactDate.Success ? exactDate.Value : "";
+            }
+
+            void AddUnverifiedPerson(int personNo, string relatedPerson, string reason)
+            {
+                JsonNode? person = PeopleArray.FirstOrDefault(item =>
+                    int.TryParse(Value(item, "person_no"), out int number) && number == personNo);
+                if (person == null)
+                    throw new InvalidDataException($"Unresolved record TS{personNo:D6} refers to a person not found in the built-in tree.");
+                string name = Value(person, "display_name");
+                int? year = BirthYearOf(name);
+                string suffix = NewSuffix();
+                AddRow("UnverifiedPerson", $"TS{personNo:D6}", name,
+                    year?.ToString() ?? "", FullBirthDate(name), "E" + suffix, relatedPerson, "", "",
+                    reason + " Ask whether this person or the related person needs a date correction.");
+            }
+
+            foreach (var unresolved in BuiltInFamilyData.UnverifiedDateCorrections)
+                AddUnverifiedPerson(unresolved.PersonNo, unresolved.RelatedPerson, unresolved.Reason);
+
+            if (!_people.Any(person => person.Name.Equals("Jeremiah O'Neal", StringComparison.OrdinalIgnoreCase)))
+                throw new InvalidDataException("Jeremiah O'Neal was not found; the requested ancestor-line check cannot run.");
+
+            void VisitAncestors(string child)
+            {
+                if (!visitedPeople.Add(child)) return;
+                int? childYear = BirthYearOf(child);
+                foreach (string parent in ParentsOf(child))
+                {
+                    string linkKey = parent + "\u001f" + child;
+                    if (!visitedLinks.Add(linkKey)) continue;
+                    int? parentYear = BirthYearOf(parent);
+                    if (parentYear.HasValue && childYear.HasValue)
+                    {
+                        int parentAge = childYear.Value - parentYear.Value;
+                        if (parentAge < 16 || parentAge > 42)
+                        {
+                            string reviewKey = parent + "\u001f" + child;
+                            string suffix = NewSuffix();
+                            parentReviews.Add(reviewKey);
+                            AddRow("ParentDateCheck", SerialFor(parent) ?? "", parent, parentYear.Value.ToString(),
+                                FullBirthDate(parent), "E" + suffix, child, parentAge.ToString(), "",
+                                $"Year-only age is outside the requested maternal review range of 16-42. Confirm whether this parent is the mother and verify the child birth year first.");
+
+                            if (parentAge >= 50)
+                            {
+                                int approximateYear = parentYear.Value + 25;
+                                AddRow("PossibleMissingGeneration", "", "missing", approximateYear.ToString(),
+                                    $"01/01/{approximateYear:D4}", "U" + NewSuffix(), child, "", "E" + suffix,
+                                    $"Possible intermediate generation only; inferred from a {parentAge}-year parent-child year gap. Verify with Mr. O'Neal.");
+                            }
+
+                            if (parentAge > 42)
+                            {
+                                foreach (string otherParent in ParentsOf(child).Where(name =>
+                                    !name.Equals(parent, StringComparison.OrdinalIgnoreCase)))
+                                {
+                                    int? otherYear = BirthYearOf(otherParent);
+                                    if (!otherYear.HasValue || childYear.Value - otherYear.Value <= 48) continue;
+                                    string otherKey = otherParent + "\u001f" + child;
+                                    if (!otherParentReviews.Add(otherKey)) continue;
+                                    AddRow("OtherParentDateCheck", SerialFor(otherParent) ?? "", otherParent,
+                                        otherYear.Value.ToString(), FullBirthDate(otherParent), "U" + suffix, child,
+                                        (childYear.Value - otherYear.Value).ToString(), "E" + suffix,
+                                        "Other parent is over 48 by year-only calculation; verify identity, role, and date. U shares the associated E case number.");
+                                }
+                            }
+                        }
+                    }
+                    VisitAncestors(parent);
+                }
+            }
+
+            VisitAncestors("Jeremiah O'Neal");
+            string outputFolder = TreeFolder();
+            string csvPath = Path.Combine(outputFolder, "recheck.csv");
+            string instructionsPath = Path.Combine(outputFolder, "recheck.md");
+            File.WriteAllText(csvPath, string.Join(Environment.NewLine, rows) + Environment.NewLine, Encoding.UTF8);
+            File.WriteAllText(instructionsPath, RecheckInstructions(), Encoding.UTF8);
+        }
+
+        private static string Csv(string value) => "\"" + value.Replace("\"", "\"\"") + "\"";
+
+        private static string RecheckInstructions() =>
+            "# Instructions for reviewing recheck.csv\r\n\r\n" +
+            "Review every row with Mr. O'Neal and ask him to confirm or correct the information. Do not silently assume a relationship, a person's sex, or an exact date. The requested hard deadline is 11/16/2026.\r\n\r\n" +
+            "## How to read the file\r\n\r\n" +
+            "- `BirthYear` contains only a four-digit year; age checks use year subtraction only, not place names or other numbers.\r\n" +
+            "- `FullDateOfBirth` is included only when an exact day/month/year was recorded. Do not infer a full date from a year or location.\r\n" +
+            "- `ParentDateCheck` rows have an E followed by seven digits and are parent-child links whose year-only age is below 16 or above 42. The tree has no mother/father field, so ask whether the parent is the mother before applying the maternal rule. Verify the child's date first; if still outside the requested range, ask to verify the parent's date. Unusual ages are investigation prompts, not proof the link is wrong.\r\n" +
+            "- `OtherParentDateCheck` rows have a U followed by seven digits whose number matches the associated E parent case. The other parent is over 48 by year-only calculation and is included for confirmation when relevant.\r\n" +
+            "- `PossibleMissingGeneration` rows say `missing`, use an approximate year and `01/01/YYYY`, and have a U followed by seven digits. The program suggests one only for a parent-child year gap of at least 50 years, using the parent's year plus 25 as an estimate. These are hypotheses for possible intermediate people, not known people. Confirm or reject each; never add one as fact without evidence.\r\n" +
+            "- `UnverifiedPerson` rows preserve the 14 items from persons.csv that could not be resolved. Their E-plus-seven-digit IDs are individual research cases, not proof that the listed date or relationship is wrong.\r\n\r\n" +
+            "## Your response\r\n\r\n" +
+            "Ask Mr. O'Neal for each case. Then write only confirmed corrections or explicit unresolved decisions to `fixes.csv` with columns `CaseID,PersonSerial,Name,Field,OldValue,CorrectedValue,Decision,SourceOrNotes`. Preserve the exact case ID; use `birth_year` for a year-only correction or `birth_date` for a confirmed full date. For a possible missing generation, use `Decision` = `confirmed_missing`, `not_missing`, or `needs_research`, and provide a name/year only when Mr. O'Neal confirms it. Do not overwrite recheck.csv.\r\n";
 
         private void ReadDocument(string path)
         {
@@ -364,7 +514,755 @@ namespace Pedigree
             }
             else ClearPerson();
             BuildRelationshipTree();
+            RefreshChronologicalConsistencySummary();
+            RefreshGeographyReport();
             if (_isExperimental) RefreshMatchState();
+        }
+
+        private void InitializeChronologicalConsistencyTab()
+        {
+            var tab = new TabPage("Chronological Consistency Summary") { BackColor = Color.White };
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(18),
+                ColumnCount = 1,
+                RowCount = 5
+            };
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 130F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 82F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+
+            var heading = new Label
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 18F, FontStyle.Bold),
+                Text = "Genealogical chronological consistency check",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            _chronologicalSummaryLabel = new Label
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 11F, FontStyle.Bold),
+                Text = "Load the family tree to calculate the summary.",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            var guidance = new Label
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 9F),
+                Text = "Birth years come from active birth_date facts, or from the first year in a person's recorded details/notes when no fact is available. Age is estimated by subtracting years (not exact dates). Detail rows for parent ages 17-36 are hidden but included in totals. Unknown parent names imported from corrections.csv remain visible as unassessed links. Under 12 is flagged as highly implausible; ages 12-14 are unusually young and need review; 15-49 are plausible; 50+ is unusual but possible. A listed parent may be adoptive, a step-parent, or a guardian, and an unusual gap is not proof that a relationship is incorrect.",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            _chronologicalGrid = new DataGridView
+            {
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                BackgroundColor = Color.White,
+                Dock = DockStyle.Fill,
+                ReadOnly = true,
+                RowHeadersVisible = false,
+                SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            };
+            foreach (string column in new[] { "Parent", "Child", "Parent birth year", "Child birth year", "Parent age at child's birth", "Assessment" })
+                _chronologicalGrid.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = column, Name = column });
+
+            var correctionButtons = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                FlowDirection = FlowDirection.LeftToRight,
+                WrapContents = false
+            };
+            var makeCorrectionsButton = new Button { Text = "Make Corrections", Width = 205, Height = 38 };
+            makeCorrectionsButton.Click += makeCorrectionsButton_Click;
+            correctionButtons.Controls.Add(makeCorrectionsButton);
+
+            layout.Controls.Add(heading, 0, 0);
+            layout.Controls.Add(_chronologicalSummaryLabel, 0, 1);
+            layout.Controls.Add(guidance, 0, 2);
+            layout.Controls.Add(correctionButtons, 0, 3);
+            layout.Controls.Add(_chronologicalGrid, 0, 4);
+            tab.Controls.Add(layout);
+            tabControl.TabPages.Add(tab);
+        }
+
+        private void makeCorrectionsButton_Click(object? sender, EventArgs e)
+        {
+            if (_document == null) { MessageBox.Show(this, "The family tree could not be loaded."); return; }
+
+            var reviewWindow = new Form
+            {
+                Text = "Make Corrections",
+                Width = 680,
+                Height = 260,
+                MinimumSize = new Size(600, 220),
+                StartPosition = FormStartPosition.CenterParent,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+            var layout = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(18), ColumnCount = 1, RowCount = 3 };
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            var instructions = new Label
+            {
+                Dock = DockStyle.Fill,
+                Text = "This review uses four-digit birth years only to calculate parent ages. It checks parent ages outside 16-38 at a child's birth, then asks about the parent only if the child's verified year still leaves an unusual age. It also checks spouse/co-parent birth-year gaps of 20 or more years and parent ages over 48 at a shared child's birth. Verified years are written to corrections.csv; dates that cannot be verified are listed in persons.csv.",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            var status = new Label { Dock = DockStyle.Fill, Text = "Ready to review the current family tree.", TextAlign = ContentAlignment.MiddleLeft };
+            var actions = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.RightToLeft };
+            var closeButton = new Button { Text = "Close", Width = 100, Height = 34, DialogResult = DialogResult.Cancel };
+            var startButton = new Button { Text = "Start Review", Width = 130, Height = 34 };
+            actions.Controls.Add(closeButton);
+            actions.Controls.Add(startButton);
+            layout.Controls.Add(instructions, 0, 0);
+            layout.Controls.Add(status, 0, 1);
+            layout.Controls.Add(actions, 0, 2);
+            reviewWindow.Controls.Add(layout);
+            reviewWindow.CancelButton = closeButton;
+            startButton.Click += (_, __) =>
+            {
+                startButton.Enabled = false;
+                try
+                {
+                    (int verified, int unresolved, string outputFolder) = RunDateCorrectionReview(reviewWindow, message => status.Text = message);
+                    instructions.Text = $"Review complete. Verified {verified} date(s); could not verify {unresolved} person/date item(s).\r\nFiles saved to: {outputFolder}\r\nCorrections are applied in memory; export the family tree JSON to save them in the tree.";
+                    status.Text = "The chronological summary and both family views have been refreshed.";
+                    closeButton.Text = "Done";
+                    UpdateStatus($"Date review complete: {verified} verified, {unresolved} unresolved. CSV files saved to {outputFolder}.");
+                    MessageBox.Show(reviewWindow, $"Review complete.\nVerified dates: {verified}\nUnresolved people: {unresolved}\n\nFiles saved to:\n{outputFolder}\n\nExport JSON to save verified dates in the family tree.", "Corrections ready", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (OperationCanceledException)
+                {
+                    status.Text = "Review cancelled; no date changes or CSV files were saved.";
+                    startButton.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    status.Text = "Could not complete the review.";
+                    MessageBox.Show(reviewWindow, ex.Message, "Make Corrections failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    startButton.Enabled = true;
+                }
+            };
+            reviewWindow.ShowDialog(this);
+        }
+
+        private Dictionary<string, int> CorrectionSerialNumbers()
+        {
+            var result = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+            var used = new HashSet<int>();
+            foreach (PersonRow person in _people)
+            {
+                JsonNode? record = PeopleArray.FirstOrDefault(item =>
+                    Value(item, "display_name").Equals(person.Name, StringComparison.OrdinalIgnoreCase));
+                if (int.TryParse(Value(record, "person_no"), out int number) && number is >= 1 and <= 999999 && used.Add(number))
+                    result.Add(person.Name, number);
+            }
+
+            int next = 1;
+            foreach (PersonRow person in _people)
+            {
+                if (result.ContainsKey(person.Name)) continue;
+                while (!used.Add(next)) next++;
+                result.Add(person.Name, next++);
+            }
+            return result;
+        }
+
+        private static string CsvEscape(string value) => "\"" + value.Replace("\"", "\"\"") + "\"";
+
+        private sealed record DateReviewAnswer(string? BirthDate, bool UnableToVerify, bool Cancelled);
+
+        private (int Verified, int Unresolved, string OutputFolder) RunDateCorrectionReview(
+            IWin32Window owner, Action<string> reportProgress)
+        {
+            if (_document == null) throw new InvalidOperationException("Load the family tree before reviewing dates.");
+
+            var verifiedDates = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+            var unresolved = new Dictionary<string, (string Reason, string Related)>(StringComparer.OrdinalIgnoreCase);
+            var correctionRows = new List<(string Name, string Date, string Reason, string Related)>();
+
+            int? WorkingBirthYear(string name) => verifiedDates.TryGetValue(name, out string? correctedDate)
+                ? ExtractYear(correctedDate)
+                : BirthYearOf(name);
+
+            void AddUnresolved(string name, string reason, string related)
+            {
+                if (unresolved.TryGetValue(name, out var existing))
+                {
+                    string combinedReason = string.Join("; ", new[] { existing.Reason, reason }.Distinct(StringComparer.OrdinalIgnoreCase));
+                    string combinedRelated = string.Join("; ", new[] { existing.Related, related }.Where(value => !string.IsNullOrWhiteSpace(value)).Distinct(StringComparer.OrdinalIgnoreCase));
+                    unresolved[name] = (combinedReason, combinedRelated);
+                }
+                else unresolved.Add(name, (reason, related));
+            }
+
+            int? VerifyBirthDate(string name, string reason, string related)
+            {
+                if (verifiedDates.TryGetValue(name, out string? alreadyVerified)) return ExtractYear(alreadyVerified);
+                if (unresolved.ContainsKey(name)) return null;
+                if (!_people.Any(person => person.Name.Equals(name, StringComparison.OrdinalIgnoreCase)))
+                {
+                    AddUnresolved(name, "Person is referenced by a family link but is not in the people list", related);
+                    return null;
+                }
+
+                reportProgress($"Verifying birth year for {name}. {reason}");
+                DateReviewAnswer answer = AskForBirthDate(owner, name, reason, WorkingBirthYear(name)?.ToString());
+                if (answer.Cancelled) throw new OperationCanceledException();
+                if (answer.UnableToVerify || string.IsNullOrWhiteSpace(answer.BirthDate))
+                {
+                    AddUnresolved(name, reason, related);
+                    return null;
+                }
+
+                verifiedDates.Add(name, answer.BirthDate);
+                correctionRows.Add((name, answer.BirthDate, reason, related));
+                return ExtractYear(answer.BirthDate);
+            }
+
+            var parentChildLinks = RelationshipArray
+                .Where(relationship => Value(relationship, "relation") == "parent")
+                .Select(relationship => (Parent: Value(relationship, "parent"), Child: Value(relationship, "child")))
+                .Where(link => !string.IsNullOrWhiteSpace(link.Parent) && !string.IsNullOrWhiteSpace(link.Child))
+                .Distinct()
+                .ToList();
+
+            foreach (var link in parentChildLinks)
+            {
+                int? parentYear = WorkingBirthYear(link.Parent);
+                int? childYear = WorkingBirthYear(link.Child);
+                bool needsReview = !parentYear.HasValue || !childYear.HasValue ||
+                    childYear.Value - parentYear.Value < 16 || childYear.Value - parentYear.Value > 38;
+                if (!needsReview) continue;
+
+                string issue = !parentYear.HasValue || !childYear.HasValue
+                    ? "A parent or child birth year is missing, so the parent age cannot be checked."
+                    : $"Recorded parent age at the child's birth is {childYear.Value - parentYear.Value}; the review range is 16-38.";
+                int? verifiedChildYear = VerifyBirthDate(link.Child,
+                    $"First verify the child's birth date. {issue}", link.Parent);
+                if (!verifiedChildYear.HasValue) continue;
+
+                int? checkedParentYear = WorkingBirthYear(link.Parent);
+                if (checkedParentYear.HasValue)
+                {
+                    int ageAtChildBirth = verifiedChildYear.Value - checkedParentYear.Value;
+                    if (ageAtChildBirth is >= 16 and <= 38) continue;
+                    issue = $"After verifying the child's date, the parent would be age {ageAtChildBirth}; verify the parent's birth date next.";
+                }
+                else
+                {
+                    issue = "The child's date is verified, but the parent's birth year is missing; verify the parent's birth date.";
+                }
+                VerifyBirthDate(link.Parent, issue, link.Child);
+            }
+
+            var spousePairs = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var spousePairNames = new List<(string First, string Second)>();
+            foreach (PersonRow person in _people)
+            foreach (string partner in SpousesOf(person.Name).Concat(CoparentsOf(person.Name)))
+            {
+                if (person.Name.Equals(partner, StringComparison.OrdinalIgnoreCase)) continue;
+                string first = string.Compare(person.Name, partner, StringComparison.OrdinalIgnoreCase) <= 0 ? person.Name : partner;
+                string second = first.Equals(person.Name, StringComparison.OrdinalIgnoreCase) ? partner : person.Name;
+                if (spousePairs.Add(first + "\u001f" + second)) spousePairNames.Add((first, second));
+            }
+
+            foreach (var pair in spousePairNames)
+            {
+                int? firstYear = WorkingBirthYear(pair.First);
+                int? secondYear = WorkingBirthYear(pair.Second);
+                if (!firstYear.HasValue || !secondYear.HasValue) continue;
+
+                int ageGap = Math.Abs(firstYear.Value - secondYear.Value);
+                bool parentAgeOver48 = parentChildLinks
+                    .Where(link => (link.Parent.Equals(pair.First, StringComparison.OrdinalIgnoreCase) &&
+                                    linkChildHasOtherParent(link.Child, pair.Second)) ||
+                                   (link.Parent.Equals(pair.Second, StringComparison.OrdinalIgnoreCase) &&
+                                    linkChildHasOtherParent(link.Child, pair.First)))
+                    .Any(link =>
+                    {
+                        int? childYear = WorkingBirthYear(link.Child);
+                        int? parentYear = WorkingBirthYear(link.Parent);
+                        return childYear.HasValue && parentYear.HasValue && childYear.Value - parentYear.Value > 48;
+                    });
+                if (ageGap < 20 && !parentAgeOver48) continue;
+
+                string reason = parentAgeOver48
+                    ? "Spouse/co-parent dates imply a parent age over 48 at a shared child's birth. Verify both partners' birth dates."
+                    : $"Spouse/co-parent birth years are {ageGap} years apart. Verify both partners' birth dates.";
+                VerifyBirthDate(pair.First, reason, pair.Second);
+                VerifyBirthDate(pair.Second, reason, pair.First);
+            }
+
+            string outputFolder = TreeFolder();
+            Dictionary<string, int> serialNumbers = CorrectionSerialNumbers();
+            string correctionsPath = Path.Combine(outputFolder, "corrections.csv");
+            string personsPath = Path.Combine(outputFolder, "persons.csv");
+            using (var writer = new StreamWriter(correctionsPath, false, new UTF8Encoding(true)))
+            {
+                writer.WriteLine("SerialNumber,DisplayName,VerifiedBirthYear,Reason,RelatedPerson");
+                foreach (var correction in correctionRows)
+                {
+                    string serial = "TS" + serialNumbers[correction.Name].ToString("D6");
+                    writer.WriteLine(string.Join(",", new[] { serial, correction.Name, correction.Date, correction.Reason, correction.Related }.Select(CsvEscape)));
+                }
+            }
+            using (var writer = new StreamWriter(personsPath, false, new UTF8Encoding(true)))
+            {
+                writer.WriteLine("SerialNumber,DisplayName,Reason,RelatedPerson");
+                foreach (var item in unresolved.OrderBy(entry => entry.Key, StringComparer.OrdinalIgnoreCase))
+                {
+                    string serial = serialNumbers.TryGetValue(item.Key, out int number) ? "TS" + number.ToString("D6") : "";
+                    writer.WriteLine(string.Join(",", new[] { serial, item.Key, item.Value.Reason, item.Value.Related }.Select(CsvEscape)));
+                }
+            }
+
+            foreach (var correction in verifiedDates)
+                ApplyVerifiedBirthDate(correction.Key, correction.Value);
+            RefreshPeople();
+            SynchronizeExperimentalView();
+            UpdateStatus($"Applied {verifiedDates.Count} verified birth dates. Chronological summary refreshed.");
+            return (verifiedDates.Count, unresolved.Count, outputFolder);
+
+            bool linkChildHasOtherParent(string childName, string otherParent) =>
+                ParentsOf(childName).Any(parent => parent.Equals(otherParent, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private DateReviewAnswer AskForBirthDate(IWin32Window owner, string person, string reason, string? currentDate)
+        {
+            using var dialog = new Form
+            {
+                Text = $"Verify Birth Year: {person}",
+                Width = 620,
+                Height = 300,
+                MinimumSize = new Size(560, 260),
+                StartPosition = FormStartPosition.CenterParent,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false,
+                MinimizeBox = false
+            };
+            var layout = new TableLayoutPanel { Dock = DockStyle.Fill, Padding = new Padding(18), ColumnCount = 1, RowCount = 4 };
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 34F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 46F));
+                var personLabel = new Label { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 11F, FontStyle.Bold), Text = person, TextAlign = ContentAlignment.MiddleLeft };
+            var reasonLabel = new Label { Dock = DockStyle.Fill, Text = reason, TextAlign = ContentAlignment.MiddleLeft };
+            var dateBox = new TextBox { Dock = DockStyle.Fill, Text = currentDate ?? "", PlaceholderText = "Four-digit birth year, e.g. 1926" };
+            var actions = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.RightToLeft, WrapContents = false };
+            var cancel = new Button { Text = "Cancel Review", Width = 110, Height = 34, DialogResult = DialogResult.Cancel };
+            var unable = new Button { Text = "Can't Verify", Width = 110, Height = 34 };
+            var verify = new Button { Text = "Verify Year", Width = 110, Height = 34 };
+            actions.Controls.Add(cancel);
+            actions.Controls.Add(unable);
+            actions.Controls.Add(verify);
+            layout.Controls.Add(personLabel, 0, 0);
+            layout.Controls.Add(reasonLabel, 0, 1);
+            layout.Controls.Add(dateBox, 0, 2);
+            layout.Controls.Add(actions, 0, 3);
+            dialog.Controls.Add(layout);
+            dialog.CancelButton = cancel;
+
+            DateReviewAnswer answer = new(null, false, true);
+            verify.Click += (_, __) =>
+            {
+                string enteredYear = dateBox.Text.Trim();
+                if (!Regex.IsMatch(enteredYear, @"^\d{4}$") ||
+                    !int.TryParse(enteredYear, out int year) || year < 1000 || year > DateTime.Now.Year)
+                {
+                    MessageBox.Show(dialog, "Enter only a four-digit birth year between 1000 and the current year. Location text and full dates are not accepted here.", "Birth year required", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                answer = new DateReviewAnswer(enteredYear, false, false);
+                dialog.DialogResult = DialogResult.OK;
+                dialog.Close();
+            };
+            unable.Click += (_, __) =>
+            {
+                answer = new DateReviewAnswer(null, true, false);
+                dialog.DialogResult = DialogResult.OK;
+                dialog.Close();
+            };
+            DialogResult result = dialog.ShowDialog(owner);
+            return result == DialogResult.OK ? answer : new DateReviewAnswer(null, false, true);
+        }
+
+        private void ApplyVerifiedBirthDate(string name, string birthDate)
+        {
+            JsonArray facts = SupplementalArray("provisional_facts");
+            foreach (JsonNode? fact in facts.Where(item =>
+                Value(item, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase) &&
+                Value(item, "field") == "birth_date" && Value(item, "status") == "active"))
+                fact!["status"] = "inactive";
+            facts.Add(new JsonObject
+            {
+                ["display_name"] = name,
+                ["field"] = "birth_date",
+                ["value"] = birthDate,
+                ["confidence"] = 1.0,
+                ["source_url"] = "user-correction:guided-date-review",
+                ["source_title"] = "User-verified birth year",
+                ["status"] = "active",
+                ["permanent"] = 0
+            });
+        }
+
+        private static string ReplaceBirthDateInDetails(string details, string birthDate)
+        {
+            int birthIndex = details.IndexOf("B:", StringComparison.OrdinalIgnoreCase);
+            int deathIndex = details.IndexOf("D:", StringComparison.OrdinalIgnoreCase);
+            if (birthIndex >= 0)
+            {
+                int birthEnd = deathIndex > birthIndex ? deathIndex : details.Length;
+                string recordedBirthDetails = details[(birthIndex + 2)..birthEnd].Trim();
+                Match oldDate = Regex.Match(recordedBirthDetails,
+                    @"\b\d{1,2}\s+[A-Za-z]{3,9}\.?[,]?\s+\d{4}\b|\b[A-Za-z]{3,9}\.?\s*\d{4}\b|\b\d{4}\b");
+                if (oldDate.Success)
+                    recordedBirthDetails = recordedBirthDetails.Remove(oldDate.Index, oldDate.Length).Trim(' ', ',', '-');
+
+                string birthValue = string.Join(" ", new[] { birthDate, recordedBirthDetails }
+                    .Where(value => !string.IsNullOrWhiteSpace(value)));
+                string prefix = details[..birthIndex].Trim();
+                string birthDetails = string.IsNullOrWhiteSpace(birthValue) ? "" : $"B:{birthValue}";
+                string deathDetails = deathIndex > birthIndex ? details[deathIndex..].Trim() : "";
+                return string.Join(" ", new[] { prefix, birthDetails, deathDetails }
+                    .Where(value => !string.IsNullOrWhiteSpace(value)));
+            }
+            if (string.IsNullOrWhiteSpace(birthDate))
+            {
+                if (deathIndex == 0) return details;
+                MatchCollection dates = Regex.Matches(details, @"\b\d{1,2}\s+[A-Za-z]{3,9}\.?[,]?\s+\d{4}\b|\b\d{4}\b");
+                if (dates.Count > 1) return $"D:{details[dates[1].Index..]}";
+                if (dates.Count == 1) return details.Remove(dates[0].Index, dates[0].Length).Trim();
+                return details;
+            }
+            return $"B:{birthDate} {details}".Trim();
+        }
+
+        private void InitializeGeographyTab()
+        {
+            var tab = new TabPage("Geography") { BackColor = Color.White };
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(18),
+                ColumnCount = 1,
+                RowCount = 4
+            };
+            layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 78F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 48F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+
+            var heading = new Label
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 18F, FontStyle.Bold),
+                Text = "Geographic research planner",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            var guidance = new Label
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 9F),
+                Text = "Recorded birth places are taken from active birth_place facts or birth details. If a location is missing, a parent's recorded birth place is shown only as an unverified family-region estimate; otherwise the location remains unknown. Difficulty is a rough research-priority guide based on location certainty and birth period, not a guarantee of record availability. Recommendations are starting points; record access depends on jurisdiction, privacy, and historical boundaries.",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            _geographyGrid = new DataGridView
+            {
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                BackgroundColor = Color.White,
+                Dock = DockStyle.Fill,
+                ReadOnly = true,
+                RowHeadersVisible = false,
+                SelectionMode = DataGridViewSelectionMode.FullRowSelect
+            };
+            foreach (string column in new[] { "Person", "Location and basis", "Birth period", "Difficulty", "Recommended sources for person and family" })
+                _geographyGrid.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = column, Name = column });
+
+            var actions = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.LeftToRight, WrapContents = false };
+            var exportButton = new Button { Text = "Export geography.csv", Width = 205, Height = 38 };
+            exportButton.Click += exportGeographyButton_Click;
+            actions.Controls.Add(exportButton);
+
+            layout.Controls.Add(heading, 0, 0);
+            layout.Controls.Add(guidance, 0, 1);
+            layout.Controls.Add(actions, 0, 2);
+            layout.Controls.Add(_geographyGrid, 0, 3);
+            tab.Controls.Add(layout);
+            tabControl.TabPages.Add(tab);
+        }
+
+        private void exportGeographyButton_Click(object? sender, EventArgs e)
+        {
+            if (_document == null) { MessageBox.Show(this, "The family tree could not be loaded."); return; }
+            using var dialog = new SaveFileDialog
+            {
+                Title = "Export geographic research plan",
+                Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*",
+                FileName = "geography.csv",
+                InitialDirectory = TreeFolder(),
+                OverwritePrompt = true
+            };
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
+
+            try
+            {
+                List<GeographyRow> report = BuildGeographyReport();
+                Dictionary<string, int> serialNumbers = CorrectionSerialNumbers();
+                using var writer = new StreamWriter(dialog.FileName, false, new UTF8Encoding(true));
+                writer.WriteLine("SerialNumber,DisplayName,Difficulty,InformationType,Information");
+                foreach (GeographyRow row in report)
+                {
+                    string serial = "TS" + serialNumbers[row.Name].ToString("D6");
+                    string difficulty = $"{row.Difficulty}/5 - {row.DifficultyReason}";
+                    foreach ((string type, string information) in new[]
+                    {
+                        ("Location", $"{row.Location} ({row.LocationBasis})"),
+                        ("Time period", row.TimePeriod),
+                        ("Recommended sources", row.RecommendedSources)
+                    })
+                    {
+                        writer.WriteLine(string.Join(",", new[] { serial, row.Name, difficulty, type, information }.Select(CsvEscape)));
+                    }
+                }
+                UpdateStatus($"Exported geographic research plan for {report.Count} people, hardest to easiest, to {dialog.FileName}.");
+                MessageBox.Show(this, "Exported one three-row section per person, sorted from most difficult to easiest: Location, Time period, and Recommended sources. Estimates are labeled and should be verified.", "Geography exported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex) { MessageBox.Show(this, ex.Message, "Geography export failed", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void RefreshGeographyReport()
+        {
+            if (_geographyGrid == null) return;
+            _geographyGrid.Rows.Clear();
+            foreach (GeographyRow row in BuildGeographyReport())
+                _geographyGrid.Rows.Add(row.Name, $"{row.Location} ({row.LocationBasis})", row.TimePeriod,
+                    $"{row.Difficulty}/5 - {row.DifficultyReason}", row.RecommendedSources);
+        }
+
+        private List<GeographyRow> BuildGeographyReport()
+        {
+            return _people.Select(BuildGeographyRow)
+                .OrderByDescending(row => row.Difficulty)
+                .ThenBy(row => row.Name, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+        }
+
+        private GeographyRow BuildGeographyRow(PersonRow person)
+        {
+            int? birthYear = BirthYearOf(person.Name);
+            string timePeriod = birthYear.HasValue
+                ? $"Around {birthYear.Value} ({birthYear.Value / 10 * 10}s)"
+                : "Unknown; establish an approximate birth date first";
+
+            string? recordedLocation = BirthPlaceOf(person.Name);
+            string location;
+            string basis;
+            bool estimated = false;
+            if (!string.IsNullOrWhiteSpace(recordedLocation))
+            {
+                location = recordedLocation;
+                basis = "recorded; verify source";
+            }
+            else
+            {
+                string[] parentPlaces = ParentsOf(person.Name)
+                    .Select(BirthPlaceOf)
+                    .Where(place => !string.IsNullOrWhiteSpace(place))
+                    .Distinct(StringComparer.OrdinalIgnoreCase)
+                    .ToArray()!;
+                if (parentPlaces.Length > 0)
+                {
+                    location = string.Join(" / ", parentPlaces);
+                    basis = "possible family-region estimate from parent birth place; unverified";
+                    estimated = true;
+                }
+                else
+                {
+                    location = "Unknown";
+                    basis = "no defensible location estimate from available records";
+                }
+            }
+
+            int difficulty = !birthYear.HasValue ? 4 : birthYear.Value < 1800 ? 5 :
+                birthYear.Value < 1850 ? 4 : birthYear.Value < 1900 ? 3 :
+                birthYear.Value < 1950 ? 2 : 1;
+            if (recordedLocation == null) difficulty = Math.Min(5, difficulty + 1);
+            if (estimated) difficulty = Math.Min(5, difficulty + 1);
+            string difficultyReason = recordedLocation == null
+                ? estimated ? "location estimated" : "birth location unknown"
+                : "location recorded";
+            difficultyReason += birthYear.HasValue
+                ? $"; {birthYear.Value / 10 * 10}s records"
+                : "; birth period unknown";
+
+            string sources = RecommendedGeographySources(person.Name, recordedLocation ?? (estimated ? location : null), birthYear);
+            return new GeographyRow(person.Name, location, basis, timePeriod, sources, difficulty, difficultyReason);
+        }
+
+        private string? BirthPlaceOf(string name)
+        {
+            string? fact = Provisional(name, "birth_place");
+            if (!string.IsNullOrWhiteSpace(fact)) return fact.Trim();
+
+            PersonRow? person = _people.FirstOrDefault(candidate =>
+                candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            string details = person?.Details ?? "";
+            Match birth = Regex.Match(details, @"\bB:\s*(.*?)(?=\s+D:|$)", RegexOptions.IgnoreCase);
+            if (birth.Success)
+            {
+                string birthText = birth.Groups[1].Value.Trim();
+                Match year = Regex.Match(birthText, @"\b\d{4}\b");
+                if (year.Success) birthText = (birthText[..year.Index] + birthText[(year.Index + year.Length)..]).Trim(' ', ',', '-');
+                if (!string.IsNullOrWhiteSpace(birthText)) return birthText;
+            }
+
+            string detailsWithoutDate = BirthDetailsOnly(details);
+            MatchCollection dates = Regex.Matches(detailsWithoutDate, @"\b\d{1,2}\s+[A-Za-z]{3,9}\.?[,]?\s+\d{4}\b|\b\d{4}\b");
+            if (dates.Count > 0)
+            {
+                Match birthDate = dates[0];
+                int locationEnd = dates.Count > 1 ? dates[1].Index : detailsWithoutDate.Length;
+                string place = (detailsWithoutDate[..birthDate.Index] + detailsWithoutDate[(birthDate.Index + birthDate.Length)..locationEnd]).Trim(' ', ',', '-');
+                if (!string.IsNullOrWhiteSpace(place)) return place;
+            }
+            return null;
+        }
+
+        private string RecommendedGeographySources(string name, string? location, int? birthYear)
+        {
+            var sources = new List<string>();
+            if (!string.IsNullOrWhiteSpace(location))
+            {
+                sources.Add("local civil vital-registration office and county/state archives for birth records");
+                if (birthYear < 1900) sources.Add("church/parish baptism registers and local historical or genealogical society collections");
+                if (birthYear is >= 1850 and <= 1950) sources.Add("census schedules and household records for parents and siblings");
+                if (birthYear < 1850) sources.Add("probate, land, tax, church, and town/county records to identify parents and siblings");
+                if (location.Contains("England", StringComparison.OrdinalIgnoreCase) ||
+                    location.Contains("Scotland", StringComparison.OrdinalIgnoreCase) ||
+                    location.Contains("Ireland", StringComparison.OrdinalIgnoreCase) ||
+                    location.Contains("Germany", StringComparison.OrdinalIgnoreCase) ||
+                    location.Contains("Russia", StringComparison.OrdinalIgnoreCase))
+                    sources.Add("jurisdiction-specific civil and church registers, plus emigration/immigration and naturalization records");
+            }
+            else
+            {
+                sources.Add("identify the jurisdiction first using relatives' records, obituaries, census households, and family correspondence");
+                sources.Add("search parents' and siblings' birth, marriage, death, church, probate, and immigration records for shared locations");
+            }
+            sources.Add("search obituaries, probate files, marriage records, and census households for sibling names and both parents");
+            sources.Add("check the record dates, historical jurisdiction boundaries, image citations, and access/privacy restrictions before treating a match as proof");
+            return string.Join("; ", sources.Distinct(StringComparer.OrdinalIgnoreCase));
+        }
+
+        private void RefreshChronologicalConsistencySummary()
+        {
+            if (_chronologicalSummaryLabel == null || _chronologicalGrid == null) return;
+
+            var birthYears = _people.ToDictionary(person => person.Name,
+                person => BirthYearOf(person.Name), StringComparer.OrdinalIgnoreCase);
+            var knownPeople = birthYears.Keys.ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var relationships = RelationshipArray
+                .Where(relationship => Value(relationship, "relation") == "parent")
+                .Select(relationship => (Parent: Value(relationship, "parent"), Child: Value(relationship, "child")))
+                .Where(link => !string.IsNullOrWhiteSpace(link.Parent) && !string.IsNullOrWhiteSpace(link.Child))
+                .Distinct()
+                .OrderBy(link => link.Parent, StringComparer.OrdinalIgnoreCase)
+                .ThenBy(link => link.Child, StringComparer.OrdinalIgnoreCase)
+                .ToList();
+
+            var linkedPeople = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var peopleMissingDates = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var peopleNeedingYoungParentReview = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var peopleWithImplausibleGaps = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var peopleWithReversedBirthOrder = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            int assessedLinks = 0;
+            int hiddenPlausibleLinks = 0;
+            _chronologicalGrid.Rows.Clear();
+            foreach (var link in relationships)
+            {
+                bool knownParent = knownPeople.Contains(link.Parent);
+                bool knownChild = knownPeople.Contains(link.Child);
+                if (knownParent) linkedPeople.Add(link.Parent);
+                if (knownChild) linkedPeople.Add(link.Child);
+                int? parentYear = knownParent ? birthYears[link.Parent] : null;
+                int? childYear = knownChild ? birthYears[link.Child] : null;
+                string ageText = "Not assessed";
+                string assessment;
+                if (parentYear is int parentBirthYear && childYear is int childBirthYear)
+                {
+                    int age = childBirthYear - parentBirthYear;
+                    ageText = age.ToString();
+                    assessedLinks++;
+                    if (knownParent && knownChild)
+                    {
+                        if (age < 15)
+                        {
+                            peopleNeedingYoungParentReview.Add(link.Parent);
+                            peopleNeedingYoungParentReview.Add(link.Child);
+                        }
+                        if (age < 0)
+                        {
+                            peopleWithReversedBirthOrder.Add(link.Parent);
+                            peopleWithReversedBirthOrder.Add(link.Child);
+                        }
+                        else if (age < 12)
+                        {
+                            peopleWithImplausibleGaps.Add(link.Parent);
+                            peopleWithImplausibleGaps.Add(link.Child);
+                        }
+                    }
+                    assessment = age < 0 ? "Inconsistent: child year precedes parent" :
+                        age < 12 ? "Highly implausible: parent under 12" :
+                        age < 15 ? "Unusually young: review" :
+                        age < 50 ? "Plausible" : "Unusual, but possible";
+                }
+                else
+                {
+                    assessment = "Not assessed: birth year missing";
+                    if (knownParent) peopleMissingDates.Add(link.Parent);
+                    if (knownChild) peopleMissingDates.Add(link.Child);
+                }
+                if (parentYear.HasValue && childYear.HasValue)
+                {
+                    int age = childYear.Value - parentYear.Value;
+                    if (age >= 17 && age <= 36)
+                    {
+                        hiddenPlausibleLinks++;
+                        continue;
+                    }
+                }
+                _chronologicalGrid.Rows.Add(link.Parent, link.Child,
+                    parentYear?.ToString() ?? "Not recorded", childYear?.ToString() ?? "Not recorded",
+                    ageText, assessment);
+            }
+
+            int consistentPeople = linkedPeople.Count(person =>
+                !peopleMissingDates.Contains(person) && !peopleNeedingYoungParentReview.Contains(person));
+            int peopleWithoutParentChildLinks = _people.Count - linkedPeople.Count;
+            _chronologicalSummaryLabel.Text =
+                $"Total people: {_people.Count}\n" +
+                $"Chronologically consistent: {consistentPeople} (among people with parent-child links, complete birth-year evidence, and no parent age under 15)\n" +
+                $"People whose child birth year precedes a listed parent: {peopleWithReversedBirthOrder.Count}    " +
+                $"People with a highly implausible parent age (0-11): {peopleWithImplausibleGaps.Count}\n" +
+                $"People with an unusually young parent age (12-14) needing review: {peopleNeedingYoungParentReview.Except(peopleWithImplausibleGaps, StringComparer.OrdinalIgnoreCase).Except(peopleWithReversedBirthOrder, StringComparer.OrdinalIgnoreCase).Count()}\n" +
+                $"Plausible parent-child links hidden from details (ages 17-36): {hiddenPlausibleLinks}\n" +
+                $"People missing birth-year evidence on at least one link: {peopleMissingDates.Count}    " +
+                $"People without parent-child links: {peopleWithoutParentChildLinks}\n" +
+                $"Parent-child links assessed: {assessedLinks} of {relationships.Count}";
         }
 
         private void BuildRelationshipTree()
@@ -516,12 +1414,67 @@ namespace Pedigree
                 .Select(f => Value(f, "value")).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
         }
 
+        private string? BirthDateOf(string name)
+        {
+            string? recordedDate = Provisional(name, "birth_date");
+            if (!string.IsNullOrWhiteSpace(recordedDate)) return recordedDate;
+
+            PersonRow? person = _people.FirstOrDefault(candidate =>
+                candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            string details = person?.Details ?? "";
+            Match birth = Regex.Match(details, @"\bB:\s*(.*?)(?=\s+D:|$)", RegexOptions.IgnoreCase);
+            if (birth.Success && !string.IsNullOrWhiteSpace(birth.Groups[1].Value)) return birth.Groups[1].Value.Trim();
+            string birthDetails = BirthDetailsOnly(details);
+            Match date = Regex.Match(birthDetails, @"\b\d{1,2}\s+[A-Za-z]{3,9}\.?[,]?\s+\d{4}\b|\b\d{4}\b");
+            return date.Success ? date.Value : null;
+        }
+
+        private int? BirthYearOf(string name)
+        {
+            if (_document?["provisional_facts"] is JsonArray facts)
+            {
+                foreach (JsonNode? fact in facts.Where(f =>
+                    Value(f, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase) &&
+                    Value(f, "field") == "birth_date" && Value(f, "status") == "active"))
+                {
+                    int? year = ExtractYear(Value(fact, "value"));
+                    if (year.HasValue) return year;
+                }
+            }
+
+            PersonRow? person = _people.FirstOrDefault(candidate =>
+                candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            return ExtractYearFromDetails(person?.Details) ?? ExtractYear(NotesOf(name));
+        }
+
+        private static string BirthDetailsOnly(string details)
+        {
+            int birthIndex = details.IndexOf("B:", StringComparison.OrdinalIgnoreCase);
+            if (birthIndex >= 0)
+            {
+                int deathIndex = details.IndexOf("D:", birthIndex, StringComparison.OrdinalIgnoreCase);
+                return details[(birthIndex + 2)..(deathIndex >= 0 ? deathIndex : details.Length)];
+            }
+            int onlyDeathIndex = details.IndexOf("D:", StringComparison.OrdinalIgnoreCase);
+            return onlyDeathIndex == 0 ? "" : onlyDeathIndex > 0 ? details[..onlyDeathIndex] : details;
+        }
+
+        private static int? ExtractYearFromDetails(string? details) =>
+            string.IsNullOrWhiteSpace(details) ? null : ExtractYear(BirthDetailsOnly(details));
+
+        private static int? ExtractYear(string? text)
+        {
+            if (string.IsNullOrWhiteSpace(text)) return null;
+            Match match = Regex.Match(text, @"\b\d{4}\b");
+            return match.Success && int.TryParse(match.Value, out int year) ? year : null;
+        }
+
         private void familyListBox_SelectedIndexChanged(object? sender, EventArgs e)
         {
             if (familyListBox.SelectedItem is not PersonRow person) { ClearPerson(); return; }
             nameValueLabel.Text = person.Name;
             tgValueLabel.Text = string.IsNullOrEmpty(person.Tg) ? "Unassigned" : person.Tg;
-            birthValueLabel.Text = Provisional(person.Name, "birth_date") is string bd ? bd + " (unverified)" : "See original notes";
+            birthValueLabel.Text = BirthDateOf(person.Name) is string bd ? bd + " (recorded)" : "See original notes";
             deathValueLabel.Text = Provisional(person.Name, "death_date") is string dd ? dd + " (unverified)" : "See original notes";
             parentsValueLabel.Text = ListOrUnknown(ParentsOf(person.Name));
             spouseValueLabel.Text = ListOrUnknown(SpousesOf(person.Name));
@@ -980,7 +1933,14 @@ namespace Pedigree
 
         private void SynchronizeExperimentalView()
         {
-            if (_experimentalView == null || _document == null) return;
+            if (_document == null) return;
+            if (_isExperimental && _mainViewOwner != null)
+            {
+                _mainViewOwner._document = _document.DeepClone() as JsonObject;
+                _mainViewOwner.RefreshPeople();
+                return;
+            }
+            if (_experimentalView == null) return;
             _experimentalView._document = _document.DeepClone() as JsonObject;
             _experimentalView.RefreshPeople();
         }

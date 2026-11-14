@@ -351,7 +351,7 @@ namespace Pedigree
                 // Family member 5: Noma Vade Smith
                 records.Add(JsonNode.Parse("{\"person_no\":5,\"display_name\":\"Noma Vade Smith\",\"details\":\"B:19 Mar 1927 San Diego, California D:20 Dec 1991 San Diego County, California, USA\",\"name_permanent\":1}")!);
                 // Family member 6: grandpa
-                records.Add(JsonNode.Parse("{\"person_no\":6,\"display_name\":\"grandpa\",\"details\":\"D:2015 San Diego, CA\",\"name_permanent\":1}")!);
+                records.Add(JsonNode.Parse("{\"person_no\":6,\"display_name\":\"grandpa\",\"details\":\"B:1925 D:2015 San Diego, CA\",\"name_permanent\":1}")!);
                 // Family member 7: grandma
                 records.Add(JsonNode.Parse("{\"person_no\":7,\"display_name\":\"grandma\",\"details\":\"D:2016 San Diego, CA\",\"name_permanent\":1}")!);
                 // Family member 8: John McCabe
@@ -1253,5 +1253,69 @@ namespace Pedigree
             }
             return document;
         }
+
+        internal static void ApplyVerifiedBirthYearCorrections(JsonObject document)
+        {
+            if (document["people"] is not JsonArray people || document["provisional_facts"] is not JsonArray facts)
+                throw new InvalidDataException("The built-in tree is missing people or provisional facts.");
+
+            var corrections = new (int PersonNo, int BirthYear)[]
+            {
+                (1, 1980), (2, 1946), (3, 1955), (7, 1925), (5, 1927), (11, 1887),
+                (8, 1896), (16, 1861), (9, 1906), (18, 1855), (14, 1901), (112, 1798),
+                (15, 1905), (30, 1867), (19, 1887), (38, 1858), (20, 1862), (40, 1821),
+                (21, 1869), (42, 1829), (56, 1846), (57, 1849), (29, 1876), (58, 1838),
+                (72, 1817), (76, 1813), (77, 1819), (41, 1827), (82, 1784), (44, 1830),
+                (88, 1787), (45, 1837), (90, 1797), (51, 1857), (103, 1817), (55, 1850),
+                (111, 1811), (113, 1804), (114, 1805), (115, 1810), (59, 1840), (118, 1792),
+                (119, 1790), (138, 1850)
+            };
+
+            foreach ((int personNo, int birthYear) in corrections)
+            {
+                JsonObject person = people.FirstOrDefault(item =>
+                    int.TryParse(item?["person_no"]?.ToString(), out int number) && number == personNo) as JsonObject
+                    ?? throw new InvalidDataException($"Correction TS{personNo:D6} refers to a person not found in the built-in tree.");
+                string name = person["display_name"]?.ToString() ??
+                    throw new InvalidDataException($"Person TS{personNo:D6} has no display name.");
+
+                foreach (JsonNode? fact in facts.Where(item =>
+                    string.Equals(item?["display_name"]?.ToString(), name, StringComparison.OrdinalIgnoreCase) &&
+                    item?["field"]?.ToString() == "birth_date" && item?["status"]?.ToString() == "active"))
+                    fact!["status"] = "inactive";
+
+                facts.Add(new JsonObject
+                {
+                    ["display_name"] = name,
+                    ["field"] = "birth_date",
+                    ["value"] = birthYear.ToString(),
+                    ["confidence"] = 1.0,
+                    ["source_url"] = "user-correction:corrections.csv",
+                    ["source_title"] = personNo == 1
+                        ? "User-specified birth year (updated from 1985 to 1980)"
+                        : "User-verified birth year",
+                    ["status"] = "active",
+                    ["permanent"] = 0
+                });
+            }
+        }
+
+        internal static (int PersonNo, string RelatedPerson, string Reason)[] UnverifiedDateCorrections => new[]
+        {
+            (133, "Raymon Vester Bowman", "Could not verify the child's birth date."),
+            (144, "John Rossow", "Could not verify the child's birth date."),
+            (137, "Fred Ernest Hillman", "Could not verify the child's birth date."),
+            (136, "Fred Ernest Hillman", "Could not verify the child's birth date."),
+            (134, "Raymon Vester Bowman", "Could not verify the child's birth date."),
+            (135, "James Prickett", "Parent age was reported as 40; birth date needs review."),
+            (139, "Joseph Kiehlbauch", "Could not verify the parent's birth date."),
+            (140, "Joseph Kiehlbauch", "Could not verify the child's birth date."),
+            (129, "James Elliott", "Could not verify the parent's birth date."),
+            (130, "Mary Richards Marlow", "Could not verify the child's birth date."),
+            (141, "Joseph Kiehlbauch", "Could not verify the child's birth date."),
+            (143, "John Rossow", "Could not verify the child's birth date."),
+            (145, "John Rossow", "Could not verify the child's birth date."),
+            (131, "Mary Richards Marlow", "Could not verify the child's birth date.")
+        };
     }
 }
