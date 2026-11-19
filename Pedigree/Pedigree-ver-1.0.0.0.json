@@ -64,13 +64,13 @@
         "permanent": 1
       },
       {
-        "display_name": "Natalie O\u0027Neal",
+        "display_name": "mom",
         "code": "TG264819",
         "kind": "TG",
         "permanent": 1
       },
       {
-        "display_name": "Natalie O\u0027Neal",
+        "display_name": "mom",
         "code": "AKA_TE324545",
         "kind": "AKA_TE",
         "permanent": 0
@@ -1989,8 +1989,8 @@
       },
       {
         "person_no": 3,
-        "display_name": "Natalie O\u0027Neal",
-        "details": "B:01 Jan 1955 Alamedia, CA",
+        "display_name": "mom",
+        "details": "B:01 Jan 1955 Alamedia, CA D:ed | Other parent(s): Dudley McCabe (not proof of marriage) this can be changed to Spouse: Dudley McCabe - in fact this format can apply to everyone unless i make a note stating otherwise.",
         "name_permanent": 1
       },
       {
@@ -2008,13 +2008,13 @@
       {
         "person_no": 6,
         "display_name": "grandpa",
-        "details": "D:2015 San Diego, CA",
+        "details": "B:1925 D:pa)",
         "name_permanent": 1
       },
       {
         "person_no": 7,
         "display_name": "grandma",
-        "details": "D:2016 San Diego, CA",
+        "details": "D:ma)",
         "name_permanent": 1
       },
       {
@@ -2026,19 +2026,19 @@
       {
         "person_no": 9,
         "display_name": "Alice S Elliott",
-        "details": "B:12 June 1906 Butler, Pennsylvania D:24 Dec 1951 New Castle, Pennsylvania",
+        "details": "B:12 June 1906 Butler, Pennsylvania D:24 Dec 1951 New Castle, Pennsylvania.",
         "name_permanent": 1
       },
       {
         "person_no": 10,
         "display_name": "Archie T Smith",
-        "details": "B:21 Sept., 1894 Greeley, Weld Co. Colorado, USA D:8 May, 1973 San Diego, San Diego Co., California, USA",
+        "details": "B:21 Sept., 1894 Greeley, Weld Co. Colorado, USA D:8 May 1973 San Diego, San Diego Co. California, USA",
         "name_permanent": 1
       },
       {
         "person_no": 11,
         "display_name": "Polly Myrtle Bowman",
-        "details": "B:18 May 1887 Morgan County, Indiana, USA D:24 Jun 1955 San Diego, San Diego, California, United States",
+        "details": "B:18 May 1887 Morgan County, Indiana, USA D:24 June 1955 San Diego, San Diego, California USA",
         "name_permanent": 1
       },
       {
@@ -2056,19 +2056,19 @@
       {
         "person_no": 14,
         "display_name": "Percy W Shapley",
-        "details": "B:6 May 1901 Floyd, Floyd, Iowa, USA D:11 Sep 1946 Pasco, Franklin, Washington",
+        "details": "B:6 May 1901 Floyd, Floyd, Iowa, USA D:11 Sep 1946 Pasco, Franklin, Washington)",
         "name_permanent": 0
       },
       {
         "person_no": 15,
         "display_name": "Minnie Schlorff",
-        "details": "B:1 Mar 1905 10920 Mackinaw Avenue, Chicago, Illinois D:12 Apr 1946 Minneapolis, Hennepin, Minnesota, United States",
+        "details": "B:1 Mar 1905 10920 Mackinaw Avenue, Chicago, Illinois D:12 Apr 1946 Minneapolis, Hennepin, Minnesota, USA",
         "name_permanent": 1
       },
       {
         "person_no": 16,
         "display_name": "Edward Mccabe",
-        "details": "B:Mar1861 Scotland D:1900 Pennsylvania",
+        "details": "B:Mar1861 Scotland D:ward)",
         "name_permanent": 1
       },
       {
@@ -2088,31 +2088,31 @@
       {
         "person_no": 19,
         "display_name": "Elizabeth McQuiston",
-        "details": "B:7 Jan 1887 Pennsylvania D:27 Aug 1940 New Castle, Lawrence, Pennsylvania",
+        "details": "B:7 Jan 1887 Pennsylvania D:27 Aug 1940 New Castle, Lawrence, Pensylvania",
         "name_permanent": 1
       },
       {
         "person_no": 20,
         "display_name": "Albert Franklin Smith",
-        "details": "B:15 Mar., 1862 Mattoon, Coles Co., Illinois, USA D:20 Dec., 1946 Fairlawn Burial Park , Hutchinson, Reno Co., Kansas, USA",
+        "details": "B:15 Mar., 1862 Mattoon, Coles Co., Illinois, USA D:20 dec 1946 Fairlawn Burial Park Hutchinson Reno Colorado Kansas USA",
         "name_permanent": 1
       },
       {
         "person_no": 21,
         "display_name": "Rose Ann Prickett",
-        "details": "B:30 Jul 1869 Braceville, Grundy County, Illinois, USA D:28 Oct 1952 Yuma, Yuma County, Colorado, USA",
+        "details": "B:30 Jul 1869 Braceville, Grundy County, Illinois, USA D:28 Oct 1952 Yuma, Yuma County, COlorado, USA",
         "name_permanent": 1
       },
       {
         "person_no": 22,
         "display_name": "Thomas S Bowman",
-        "details": "B:Feb 1863 Eminence, Morgan, Indiana, USA D:1904 Eminence, Morgan, Indiana, USA",
+        "details": "B:Feb 1863 Eminence, Morgan, Indiana, USA D:1904 Emience, Morgan, Indiana, USA",
         "name_permanent": 1
       },
       {
         "person_no": 23,
         "display_name": "Nancy Jane Lambert",
-        "details": "B:8 Jun 1864 Morgan County, Indiana, USA D:5 Nov 1946 Jefferson County, Indiana, USA",
+        "details": "B:8 Jun 1864 Morgan County, Indiana, USA D:5 Nov 946 Jefferson County, Indiana, USA",
         "name_permanent": 1
       },
       {
@@ -2130,25 +2130,25 @@
       {
         "person_no": 26,
         "display_name": "Robert R Hedtke",
-        "details": "B:18 Jan 1876 Sibley, Minnesota D:13 FEB 1954 Fresno, California, USA",
+        "details": "B:18 Jan 1876 Sibley, Minnesota D:13 Feb 1954 Fresno, California, USA",
         "name_permanent": 1
       },
       {
         "person_no": 27,
         "display_name": "Amelia Kiehlbauch",
-        "details": "B:12 Jan 1880 Tyndall, Bon Homme, South Dakota, United States D:29 Aug 1969 , Fresno, California, USA",
+        "details": "B:12 Jan 1880 Tyndall, Bon Homme, South Dakota, United States D:15 May 1979 Morro Bay , San Luis Obispo, California, USA",
         "name_permanent": 1
       },
       {
         "person_no": 112,
         "display_name": "William Shapley",
-        "details": "B:ABT 1798/9 Granville, Washington, New York D:BET 1861 AND 1864 Iowa",
+        "details": "B:ABT 1798/9 Granville, Washington, New York D:Between 1925 to 1928",
         "name_permanent": 0
       },
       {
         "person_no": 29,
         "display_name": "Olive G Stafford",
-        "details": "B:30 Apr 1876 Calamus, Wisconsin D:22 May 1946 Charles City, Floyd, Iowa, USA",
+        "details": "B:30 Apr 1876 Calamus, Wisconsin D:, Iowa, USA",
         "name_permanent": 1
       },
       {
@@ -2160,32 +2160,32 @@
       {
         "person_no": 31,
         "display_name": "Mary Johannsen",
-        "details": "B:28 Nov 1868 Tondern, Schleswig-Holstein, Deutschland D:1951 Shawano County, Wisconsin, United States",
+        "details": "B:28 Nov 1868 Tondern, Schleswig-Holstein, Deutschland D:1951 Shawano County, Wisconsin, USA",
         "name_permanent": 1
       },
       {
         "person_no": 32,
         "display_name": "James McCabe",
-        "details": "B:About 1840 Ireland",
+        "details": "B:About 1840 Ireland D:1951 Shawano County, Wisconsin, USA",
         "name_permanent": 0
       },
       {
         "person_no": 33,
         "display_name": "Mary",
-        "details": "B:Abt 1844 Ireland",
+        "details": "B:Abt 1844 Ireland D:None at this time",
         "name_permanent": 0
       },
       {
         "person_no": 34,
         "display_name": "James McAvoy",
-        "details": "B:17 Mar 1833 Ireland D:24 Oct 1906 Scott, Allegheny, Pennsylvania, USA",
+        "details": "B:17 Mar 1833 Ireland D:None at this time",
         "verify": "11/11/2026",
         "name_permanent": 1
       },
       {
         "person_no": 35,
         "display_name": "Rosamund Sloan",
-        "details": "B:1838 Ireland D:10 Nov 1912 Scott, Allegheny, Pennsylvania, USA",
+        "details": "B:1838 Ireland D:)",
         "name_permanent": 1
       },
       {
@@ -2198,21 +2198,21 @@
       {
         "person_no": 129,
         "display_name": "John Elliott",
-        "details": "",
+        "details": "D:in the ledgen say that i need to investigate this person cause the person is in the family tree but i cannot figure out where - AI might be able to investigate this person (if you can can you fix the record)",
         "verify": "11/11/2026",
         "name_permanent": 0
       },
       {
         "person_no": 37,
         "display_name": "Margaret Jane Boudin",
-        "details": "B:Oct 1824 Venango Co, PA D:19 Nov 1903 Somerset, Pennsylvania, United States",
+        "details": "B:Oct 1824 Venango Co, PA D:moving forward *** next to the TG and first name indicate to put the name in purple. Also I investigated further and now I know, *** is a person in the tree but has no connectivity record therefore for *** keep the connections as they are but dont list them in chronological consistency summary.",
         "verify": "11/11/2026",
         "name_permanent": 1
       },
       {
         "person_no": 38,
         "display_name": "Charles McQuiston",
-        "details": "B:25MAR1850 Butler County, Pennsylvania D:31 Jul 1917 Butler, Butler, Pennsylvania, USA",
+        "details": "B:25MAR1850 Butler County, Pennsylvania D:31 Jul 1917 Butler, Butler Pennsylvania, USA",
         "verify": "11/11/2026",
         "name_permanent": 1
       },
@@ -2225,13 +2225,13 @@
       {
         "person_no": 40,
         "display_name": "John Isaac Smith",
-        "details": "B:18 Feb 1821 Pittsburgh, Allegheny, Pennsylvania D:7 Dec 1916 Wray, Yuma County, Colorado",
+        "details": "B:18 Feb 1821 Pittsburgh, Allegheny, Pennsylvania D:7 Dec 1916 Wray, Yuma, County, Colorado",
         "name_permanent": 1
       },
       {
         "person_no": 41,
         "display_name": "Ruanna Hamilton",
-        "details": "B:27 Jul 1827 Gnadenhutten, Tuscarawas, Ohio, USA D:19 Feb 1908 Monegaw Springs, St Clair County, Missouri, USA",
+        "details": "B:27 Jul 1827 Gnadenhutten, Tuscarawas, Ohio, USA D:19 Feb 1908 Monegaw Springs, St. Clair County, Missouri, USA",
         "name_permanent": 1
       },
       {
@@ -2243,7 +2243,7 @@
       {
         "person_no": 43,
         "display_name": "Adaline A Holderman",
-        "details": "B:24 Apr 1835 Marion County, Ohio, USA D:28 Sep 1918 Yuma County, Colorado, USA",
+        "details": "B:24 Apr 1835 Marion County, Ohio, USA D:aline)",
         "name_permanent": 1
       },
       {
@@ -2255,19 +2255,19 @@
       {
         "person_no": 45,
         "display_name": "Mary Martha Shumaker",
-        "details": "B:2 Apr 1837 Eminence, Morgan County, Indiana, USA D:Abt. 1923 Morgan County, Illinois, USA",
+        "details": "B:2 Apr 1837 Eminence, Morgan County, Indiana, USA D:About 1923 Morgan County, Illinois, USA",
         "name_permanent": 1
       },
       {
         "person_no": 46,
         "display_name": "Aaron Lorenzo Lambert",
-        "details": "B:13 Oct 1830 ,Randolph, North Carolina, United States D:19 Jan 1910 ,Morgan, Indiana, United States",
+        "details": "B:13 Oct 1830 ,Randolph, North Carolina, United States D:27 April 1915 Hall, Morgan, Indiana, USA",
         "name_permanent": 1
       },
       {
         "person_no": 47,
         "display_name": "Tabitha Ann Brown",
-        "details": "B:10 Aug 1838 Hall, Morgan, Indiana, United States D:27 Apr 1915 Hall, Morgan, Indiana, USA",
+        "details": "B:10 Aug 1838 Hall, Morgan, Indiana, United States D:27 Apr 1915 Hall Morgan, Indiana, USA",
         "name_permanent": 1
       },
       {
@@ -2279,79 +2279,79 @@
       {
         "person_no": 49,
         "display_name": "Margaret Rose Sansom",
-        "details": "B:11 FEB 1859 Logan Co, KY (Wynne Co, West Virginia) D:28 Dec 1928 Rosehill, Covington, Alabama, United States",
+        "details": "B:11 FEB 1859 Logan Co, KY (Wynne Co, West Virginia) D:28 dec 1928 rosehill, Covington, alabama, USA",
         "name_permanent": 1
       },
       {
         "person_no": 50,
         "display_name": "Fred Ernest Hillman",
-        "details": "B:21 Aug 1857 Minnesota, USA D:4 Dec 1950 Bald Eagle Center, Cass County, Minnesota, USA",
+        "details": "B:21 Aug 1857 Minnesota, USA D:)",
         "name_permanent": 1
       },
       {
         "person_no": 51,
         "display_name": "Agnes Maria Platt",
-        "details": "Born: 27 April 1857 \u2013 Palmyra, Jefferson County, Wisconsin, United States)(Died: 23 February 1946 \u2013 Ramsey County, Minnesota, United States",
+        "details": "Born: 27 April 1857 \u2013 Palmyra, Jefferson County, Wisconsin, United States)(Died: 23 February 1946 \u2013 Ramsey County, Minnesota, United States D:23 February 1946 Ramsey County, Minnesota, USA",
         "name_permanent": 1
       },
       {
         "person_no": 52,
         "display_name": "August Friedrich Hedtke",
-        "details": "Born: 23 August 1847 \u2013 Alt Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia) (Died: 31 January 1918 \u2013 Henderson, Sibley County, Minnesota, United States",
+        "details": "Born: 23 August 1847 \u2013 Alt Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia) (Died: 31 January 1918 \u2013 Henderson, Sibley County, Minnesota, United States D:1847 Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia",
         "name_permanent": 1
       },
       {
         "person_no": 53,
         "display_name": "Amelia Carolina Luedtke",
-        "details": "Born: February 1850 \u2013 Pomerania, Prussia)(Died: 24 April 1925 \u2013 Henderson, Sibley County, Minnesota, United States",
+        "details": "Born: February 1850 \u2013 Pomerania, Prussia)(Died: 24 April 1925 \u2013 Henderson, Sibley County, Minnesota, United States D:24 April 1925, Henderson, Sibley County, Minnesota, USA",
         "name_permanent": 1
       },
       {
         "person_no": 54,
         "display_name": "Josef Kiehlbauch",
-        "details": "B:1 Jan 1850 Neuberg, Russia D:14 Sep 1908 Chicago, Cook, Illinois, USA",
+        "details": "B:1 Jan 1850 Neuberg, Russia D:14 Sep 1908 Chicago, Cook, Inninois, USA",
         "name_permanent": 1
       },
       {
         "person_no": 55,
         "display_name": "Barbara Beck",
-        "details": "B:22 Jan 1850 Lustdorf, Russia D:15 July 1923 Tyndall, Bon Homme, South Dakota",
+        "details": "B:22 Jan 1850 Lustdorf, Russia D:all, Bon Homme, South Dakota",
         "name_permanent": 1
       },
       {
         "person_no": 56,
         "display_name": "Patrick Henry Shapley",
-        "details": "B:10 APR 1846 Emmett, Calhoun, Michigan",
+        "details": "B:10 APR 1846 Emmett, Calhoun, Michigan D:date at this time",
         "name_permanent": 1
       },
       {
         "person_no": 57,
         "display_name": "Mary Rice",
-        "details": "B:Feb 1849 Wisconsin, USA",
+        "details": "B:Feb 1849 Wisconsin, USA D:No death date at this time",
         "name_permanent": 1
       },
       {
         "person_no": 58,
         "display_name": "William Mark Stafford",
-        "details": "",
+        "details": "D:12 May 1914 Gardena, Bottineau, North Dakota, USA",
         "name_permanent": 1
       },
       {
         "person_no": 59,
         "display_name": "Alice Waite",
-        "details": "B:27 November 1840 Lorain, Lorain, Ohio D:4 July 1914 Gardena, Bottineau, North Dakota, USA",
+        "details": "B:27 November 1840 Lorain, Lorain, Ohio D:4 Jul 1914 Gardena, Bottineau, North Dakota, USA",
         "name_permanent": 1
       },
       {
         "person_no": 62,
         "display_name": "Johannsen",
-        "details": "B:25 September 1833 D:26 March 1919",
+        "details": "B:25 September 1833 D:1951 Shawano County, Wisconsin, USA",
         "name_permanent": 0
       },
       {
         "person_no": 63,
         "display_name": "Elena M Johannsen",
-        "details": "B:24 June 1836 D:3 June 1920",
+        "details": "B:24 June 1836 D:3 Jun 1920",
         "name_permanent": 1
       },
       {
@@ -2371,7 +2371,7 @@
       {
         "person_no": 70,
         "display_name": "John Sloan",
-        "details": "B:May 1820 County Down, Ireland D:1 August 1900 Washington Township, Cambria County, Pennsylvania, USA",
+        "details": "B:May 1820 County Down, Ireland D:1 Aug 1900 Washington Township, Cambria County, Pennsylvania, USA",
         "name_permanent": 0
       },
       {
@@ -2383,19 +2383,19 @@
       {
         "person_no": 73,
         "display_name": "Margaret Scott",
-        "details": "B:10 Feb 1793 Mercer, Franklin Co., Pennsylvania, United States D:1 Apr 1868 Butler, Butler Co., Pennsylvania, United States",
+        "details": "B:10 Feb 1793 Mercer, Franklin Co., Pennsylvania, United States D:1 April 1968 Butler, Butler Co., Pennsylvania, USA",
         "name_permanent": 0
       },
       {
         "person_no": 74,
         "display_name": "Johann Jacob Friedrich Huber",
-        "details": "B:11 Jan 1804 Attlisberg, Waldshut, Baden-W\u00FCrttemberg, Germany D:7 May 1877 Attlisberg, Waldshut, Baden-W\u00FCrttemberg, Germany",
+        "details": "B:11 Jan 1804 Attlisberg, Waldshut, Baden-W\u00FCrttemberg, Germany D:7 May 1877 Attlisberg, Waldshut, Balden Wurttemberg, Germany)",
         "name_permanent": 0
       },
       {
         "person_no": 75,
         "display_name": "Frederika Regkukel",
-        "details": "B:1800 Attlisberg, Waldshut, Baden-Wuerttemberg, Germany D:1830 Attlisberg, Waldshut, Baden-Wuerttemberg, Germany",
+        "details": "B:1800 Attlisberg, Waldshut, Baden-Wuerttemberg, Germany D:erika)",
         "name_permanent": 0
       },
       {
@@ -2408,19 +2408,19 @@
       {
         "person_no": 77,
         "display_name": "Rebecca Grannis",
-        "details": "B:26 Mar 1819 Massachusetts D:31 Oct 1905 Near Slippery Rock, Butler County, Pennsylvania, USA",
+        "details": "B:26 Mar 1819 Massachusetts D:31 Oct 1905 Near Slippery Rock, Butler County, Pennsylvania",
         "name_permanent": 0
       },
       {
         "person_no": 78,
         "display_name": "William Thorpe",
-        "details": "B:abt 1826 New Jersey D:Abt 1893 Pennsylvania",
+        "details": "B:abt 1826 New Jersey D:About 1893 Pennsylvania",
         "name_permanent": 0
       },
       {
         "person_no": 79,
         "display_name": "Mary Jane Sumner",
-        "details": "B:1839 Pennsylvania D:before 1880 Pennsylvania",
+        "details": "B:1839 Pennsylvania D:Not indicated",
         "name_permanent": 0
       },
       {
@@ -2432,7 +2432,7 @@
       {
         "person_no": 81,
         "display_name": "Lucy Ann Kreidler",
-        "details": "B:15 Feb 1795 Maryland, United States D:1890 Mattoon, Coles, Illinois, United States",
+        "details": "B:15 Feb 1795 Maryland, United States D:1890 Mattoon, Coles, Illinois, USA",
         "name_permanent": 0
       },
       {
@@ -2450,43 +2450,43 @@
       {
         "person_no": 84,
         "display_name": "James Prickett",
-        "details": "B:ABT 1795 Champaign County, Illinois D:14 NOV 1843 Kendall, Illinois, USA",
+        "details": "B:ABT 1795 Champaign County, Illinois D:14 Nov 1843 Kendall, Illinois USA",
         "name_permanent": 0
       },
       {
         "person_no": 85,
         "display_name": "Rebecca Wisham",
-        "details": "B:25 Aug 1799 Gloucester County, New Jersey, USA D:07 Sep 1844 Newark, Kendall County, Illinois,USA",
+        "details": "B:25 Aug 1799 Gloucester County, New Jersey, USA D:07 Sep 1844 Newark, Kendall County, Illinois, USA",
         "name_permanent": 0
       },
       {
         "person_no": 86,
         "display_name": "Jacob Holderman Sr",
-        "details": "1808-1864",
+        "details": "1808-1864 D:1864",
         "name_permanent": 0
       },
       {
         "person_no": 87,
         "display_name": "Mercy Caroline Loveland",
-        "details": "B:08 Oct 1811 Delaware, Ohio, United States D:19 May 1886 Cottage Grove, Lane, Oregon, United States",
+        "details": "B:08 Oct 1811 Delaware, Ohio, United States D:19 May 1886 Cottage Grove, Lane, Oregon, USA",
         "name_permanent": 0
       },
       {
         "person_no": 88,
         "display_name": "George W Bowman Jr",
-        "details": "B:Oct 1787 Lincoln County, North Carolina, United States of America D:5 Aug 1874 Morgan County, Indiana, USA",
+        "details": "B:Oct 1787 Lincoln County, North Carolina, United States of America D:5 Aug 1874 Morgan County, Indiana USA",
         "name_permanent": 0
       },
       {
         "person_no": 89,
         "display_name": "Mary Catherine Eisenhower",
-        "details": "B:13 Feb 1798 Lincoln, North Carolina, United States D:1 Sep 1865 Morgan County, Indiana, USA",
+        "details": "B:13 Feb 1798 Lincoln, North Carolina, United States D:1 sep 1865 morgan county, Indiana usa",
         "name_permanent": 0
       },
       {
         "person_no": 90,
         "display_name": "Thomas J Shoemake",
-        "details": "B:20 Apr 1797 Washington County, Kentucky, USA D:20 Apr 1846 Eminence, Morgan, Indiana, USA",
+        "details": "B:20 Apr 1797 Washington County, Kentucky, USA D:20 April 1846 Eminence, Morgan, Indiana, USA",
         "name_permanent": 0
       },
       {
@@ -2498,49 +2498,49 @@
       {
         "person_no": 92,
         "display_name": "Henry Ira Lambert",
-        "details": "B:24 MAY 1796 North Carolina, United States D:1868 Hendricks County, Indiana, United States",
+        "details": "B:24 MAY 1796 North Carolina, United States D:1868 Hendricks County, Indiana, USA",
         "name_permanent": 0
       },
       {
         "person_no": 93,
         "display_name": "Sarah \u0027Sally\u0027 M Craven",
-        "details": "B:1809 Randolph, North Carolina, United States D:27 JAN 1887 Center Valley, Indiana, United States",
+        "details": "B:1809 Randolph, North Carolina, United States D:iana, USA",
         "name_permanent": 0
       },
       {
         "person_no": 94,
         "display_name": "John W Brown",
-        "details": "B:15 Oct 1817 Kentucky, USA D:27 Feb 1903 Morgan, Indiana, USA",
+        "details": "B:15 Oct 1817 Kentucky, USA D:iana, USA",
         "name_permanent": 0
       },
       {
         "person_no": 95,
         "display_name": "Nancy Jan Wilhite",
-        "details": "B:Abt. 1819 Kentucky, USA D:11 Apr 1890 Morgan, Indiana, USA",
+        "details": "B:Abt. 1819 Kentucky, USA D:11 April 1890 morgan, Indiana, usa",
         "name_permanent": 0
       },
       {
         "person_no": 96,
         "display_name": "William Maynard",
-        "details": "B:18 May 1830 Pike County, Kentucky, United States of America D:25 March 1908 Pierce County, Washington, United States of America",
+        "details": "B:18 May 1830 Pike County, Kentucky, United States of America D:25 March 1908 Pierce County, Washington, USA",
         "name_permanent": 0
       },
       {
         "person_no": 97,
         "display_name": "Sarah Parsons",
-        "details": "B:9 Aug 1821 Kentucky D:14 Mar 1891 Bertha, Todd County, Minnesota, United States of America",
+        "details": "B:9 Aug 1821 Kentucky D:14 Mar 1891 Bertha, Todd County, Minnesota, USA",
         "name_permanent": 0
       },
       {
         "person_no": 98,
         "display_name": "Riley Sansom",
-        "details": "B:10 Feb 1831 pike county kentucky D:6 Apr 1905 Riverside, Snohomish, Washington, USA",
+        "details": "B:10 Feb 1831 pike county kentucky D:6 April 1905 Riverside, Snohomish, Washington",
         "name_permanent": 0
       },
       {
         "person_no": 99,
         "display_name": "Sarah Sally Kline",
-        "details": "B:20 Jul 1836 Glen Alum , Logan, Virginia/West Virginia D:6 September 1928 Snohomish, Snohomish, Washington, United States",
+        "details": "B:20 Jul 1836 Glen Alum , Logan, Virginia/West Virginia D:6 September 1928 Snohomish, Snohomish, Washington USA",
         "name_permanent": 0
       },
       {
@@ -2552,31 +2552,31 @@
       {
         "person_no": 101,
         "display_name": "Mary Marinda Shelly",
-        "details": "B:1830 Connecticut D:11 Mar 1897 Randolph, Dakota County, MN",
+        "details": "B:1830 Connecticut D:olph, Dakota County, MN",
         "name_permanent": 0
       },
       {
         "person_no": 102,
         "display_name": "David C Platt",
-        "details": "B:16 May 1823 Berne, Clinton, New York, United States D:23 Oct 1904 Cannon Falls, Goodhue, Minnesota, United States",
+        "details": "B:16 May 1823 Berne, Clinton, New York, United States D:avid)",
         "name_permanent": 0
       },
       {
         "person_no": 103,
         "display_name": "Miranda McLane",
-        "details": "B:12 Mar 1817 Alburgh, Grand Isle, Vermont, United States D:24 Jul 1861 Werner, Janeau, Wisconsin, United States",
+        "details": "B:12 Mar 1817 Alburgh, Grand Isle, Vermont, United States D:a)",
         "name_permanent": 0
       },
       {
         "person_no": 104,
         "display_name": "Johann E Hedtke",
-        "details": "B:5 Dec 1819 West Prussia D:28 Aug 1894 Chaska, Carver, Minnesota, United States",
+        "details": "B:5 Dec 1819 West Prussia D:28 Aug 1894 Chaska, Carver, Minnesota, USA",
         "name_permanent": 0
       },
       {
         "person_no": 105,
         "display_name": "Florentine Henriette Florence Hedtke",
-        "details": "B:31 Jul 1828 Neu or Alt Paleschken, Berent, Danzig, West Prussia D:18 Feb 1901 Chaska, Carver, Minnesota, USA",
+        "details": "B:31 Jul 1828 Neu or Alt Paleschken, Berent, Danzig, West Prussia D:18 Feb 1901 Chaska Carver, Minnesota, USA",
         "name_permanent": 0
       },
       {
@@ -2588,7 +2588,7 @@
       {
         "person_no": 109,
         "display_name": "Johanna Knoepfle",
-        "details": "B:25 Jul 1824 Alexanderhilf, Grossliebental District, Odessa, Russia D:21 Apr 1910 Medina, Stutsman Co., North Dakota",
+        "details": "B:25 Jul 1824 Alexanderhilf, Grossliebental District, Odessa, Russia D:21 April 1910 medina, Stutsman co. north Dakota",
         "name_permanent": 0
       },
       {
@@ -2600,13 +2600,13 @@
       {
         "person_no": 111,
         "display_name": "Barbara Maier/Beck",
-        "details": "B:18 May 1811 D:11 Jun 1856 Odessa, Odessa, Odessa, Kherson, Russia",
+        "details": "B:18 May 1811 D:11 Hyb 1756 Odessa, Oddessa, Kherson, Russia",
         "name_permanent": 0
       },
       {
         "person_no": 113,
         "display_name": "Clarissa Gridley",
-        "details": "B:ABT 1804 New York",
+        "details": "B:ABT 1804 New York D:Death is unknown or not recorded here",
         "name_permanent": 0
       },
       {
@@ -2624,37 +2624,37 @@
       {
         "person_no": 116,
         "display_name": "Joseph W Stafford",
-        "details": "B:1804 New York",
+        "details": "B:1804 New York D:Death is not recorded",
         "name_permanent": 0
       },
       {
         "person_no": 117,
         "display_name": "Hulda Sylvah",
-        "details": "B:1811 Pennsylvania, United States D:1862 Wisconsin",
+        "details": "B:1811 Pennsylvania, United States D:a)",
         "name_permanent": 0
       },
       {
         "person_no": 118,
         "display_name": "Barton J Waite",
-        "details": "B:1792 New York, United States D:1862/1870 Calamus, Dodge, Wisconsin, United States",
+        "details": "B:1792 New York, United States D:1862 or 187- Calamus, Dodge, Wisconsin, USA",
         "name_permanent": 0
       },
       {
         "person_no": 119,
         "display_name": "Susannah Clark Bacon",
-        "details": "B:20 August 1790 Randolph, Orange, Vermont, USA D:December 1870 Lorain, Lorain, Ohio, USA",
+        "details": "B:20 August 1790 Randolph, Orange, Vermont, USA D:Dec 1870 Lorain, Lorain, Ohio, USA",
         "name_permanent": 0
       },
       {
         "person_no": 127,
         "display_name": "Lorenz Hinrichsen",
-        "details": "B:29 July 1804 D:18 June 1854",
+        "details": "B:29 July 1804 D:18 jun 1854",
         "name_permanent": 0
       },
       {
         "person_no": 128,
         "display_name": "Sophia Margaretha Hinrichsen",
-        "details": "B:25 December 1809 D:17 July 1866",
+        "details": "B:25 December 1809 D:17 Jul 1866",
         "name_permanent": 0
       },
       {
@@ -7223,7 +7223,7 @@
         "confidence": 0.65,
         "source_url": "https://www.findagrave.com/memorial/58156980",
         "source_title": "Find a Grave imported person record (requires source verification)",
-        "status": "active",
+        "status": "inactive",
         "permanent": 0,
         "fact_hash": "f0bc296bd629ff71637cb1efab6ca8137c85b83106544287490bd78a8ba47f44"
       },
@@ -7443,7 +7443,7 @@
         "confidence": 0.65,
         "source_url": "https://www.findagrave.com/memorial/64437597",
         "source_title": "Find a Grave imported person record (requires source verification)",
-        "status": "active",
+        "status": "inactive",
         "permanent": 0,
         "fact_hash": "78023c09928fd014825fea3da712763d5f4c62d1b88a03072475db841a00d02a"
       },
@@ -8389,18 +8389,1488 @@
         "confidence": 1.0,
         "source_url": "user-entered",
         "source_title": "User-provided family information",
-        "status": "active",
+        "status": "inactive",
         "permanent": 1
       },
       {
-        "display_name": "Natalie O\u0027Neal",
+        "display_name": "mom",
         "field": "birth_date",
         "value": "01/01/1955",
         "confidence": 1.0,
         "source_url": "user-entered",
         "source_title": "User-provided family information",
-        "status": "active",
+        "status": "inactive",
         "permanent": 1
+      },
+      {
+        "display_name": "Jeremiah O\u0027Neal",
+        "field": "birth_date",
+        "value": "1980",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-specified birth year (updated from 1985 to 1980)",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Dudley McCabe",
+        "field": "birth_date",
+        "value": "1946",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "mom",
+        "field": "birth_date",
+        "value": "1955",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "grandma",
+        "field": "birth_date",
+        "value": "1925",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Noma Vade Smith",
+        "field": "birth_date",
+        "value": "1927",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Polly Myrtle Bowman",
+        "field": "birth_date",
+        "value": "1887",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John McCabe",
+        "field": "birth_date",
+        "value": "1896",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Edward Mccabe",
+        "field": "birth_date",
+        "value": "1861",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Alice S Elliott",
+        "field": "birth_date",
+        "value": "1906",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James N Elliott",
+        "field": "birth_date",
+        "value": "1855",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Percy W Shapley",
+        "field": "birth_date",
+        "value": "1901",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Shapley",
+        "field": "birth_date",
+        "value": "1798",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Minnie Schlorff",
+        "field": "birth_date",
+        "value": "1905",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William John Ludwig Sclorf",
+        "field": "birth_date",
+        "value": "1867",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Elizabeth McQuiston",
+        "field": "birth_date",
+        "value": "1887",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Charles McQuiston",
+        "field": "birth_date",
+        "value": "1858",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Albert Franklin Smith",
+        "field": "birth_date",
+        "value": "1862",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John Isaac Smith",
+        "field": "birth_date",
+        "value": "1821",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Rose Ann Prickett",
+        "field": "birth_date",
+        "value": "1869",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Charles Prickett",
+        "field": "birth_date",
+        "value": "1829",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Patrick Henry Shapley",
+        "field": "birth_date",
+        "value": "1846",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Rice",
+        "field": "birth_date",
+        "value": "1849",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Olive G Stafford",
+        "field": "birth_date",
+        "value": "1876",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Mark Stafford",
+        "field": "birth_date",
+        "value": "1838",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James Elliott",
+        "field": "birth_date",
+        "value": "1817",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Marshall McQuiston",
+        "field": "birth_date",
+        "value": "1813",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Rebecca Grannis",
+        "field": "birth_date",
+        "value": "1819",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Ruanna Hamilton",
+        "field": "birth_date",
+        "value": "1827",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Thomas Cleophas Hamilton",
+        "field": "birth_date",
+        "value": "1784",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Abel Bowman",
+        "field": "birth_date",
+        "value": "1830",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "George W Bowman Jr",
+        "field": "birth_date",
+        "value": "1787",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Martha Shumaker",
+        "field": "birth_date",
+        "value": "1837",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Thomas J Shoemake",
+        "field": "birth_date",
+        "value": "1797",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Agnes Maria Platt",
+        "field": "birth_date",
+        "value": "1857",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Miranda McLane",
+        "field": "birth_date",
+        "value": "1817",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Barbara Beck",
+        "field": "birth_date",
+        "value": "1850",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Barbara Maier/Beck",
+        "field": "birth_date",
+        "value": "1811",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Clarissa Gridley",
+        "field": "birth_date",
+        "value": "1804",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Ica Foster Rice",
+        "field": "birth_date",
+        "value": "1805",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Kezia Bair",
+        "field": "birth_date",
+        "value": "1810",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Alice Waite",
+        "field": "birth_date",
+        "value": "1840",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Barton J Waite",
+        "field": "birth_date",
+        "value": "1792",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Susannah Clark Bacon",
+        "field": "birth_date",
+        "value": "1790",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Joseph Kiehlbauch",
+        "field": "birth_date",
+        "value": "1850",
+        "confidence": 1,
+        "source_url": "user-correction:corrections.csv",
+        "source_title": "User-verified birth year",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "mom",
+        "field": "death_description",
+        "value": "ed | Other parent(s): Dudley McCabe (not proof of marriage) this can be changed to Spouse: Dudley McCabe - in fact this format can apply to everyone unless i make a note stating otherwise.",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Noma Vade Smith",
+        "field": "death_description",
+        "value": "20 Dec 1991 San Diego County, California, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "grandpa",
+        "field": "death_description",
+        "value": "pa)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "grandma",
+        "field": "death_description",
+        "value": "ma)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John McCabe",
+        "field": "death_description",
+        "value": "Aug 1982 Chestnut Ridge Cemetery, Eldersville, Washington, Pennsylvania, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Alice S Elliott",
+        "field": "death_description",
+        "value": "24 Dec 1951 New Castle, Pennsylvania.",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Archie T Smith",
+        "field": "death_description",
+        "value": "8 May 1973 San Diego, San Diego Co. California, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Polly Myrtle Bowman",
+        "field": "death_description",
+        "value": "24 June 1955 San Diego, San Diego, California USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Burke C Maynard",
+        "field": "death_description",
+        "value": "05 Dec 1986 Morro Bay, San Luis Obispo, California, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Amelia B Hetdke",
+        "field": "death_description",
+        "value": "15 May 1979 Morro Bay, San Luis Obispo, California, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Percy W Shapley",
+        "field": "death_description",
+        "value": "11 Sep 1946 Pasco, Franklin, Washington)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Minnie Schlorff",
+        "field": "death_description",
+        "value": "12 Apr 1946 Minneapolis, Hennepin, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Edward Mccabe",
+        "field": "death_description",
+        "value": "ward)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Sarah McAvoy",
+        "field": "death_description",
+        "value": "1934 Pennsylvania",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James N Elliott",
+        "field": "death_description",
+        "value": "1 Nov 1926 Center, Butler, Pennsylvania, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Elizabeth McQuiston",
+        "field": "death_description",
+        "value": "27 Aug 1940 New Castle, Lawrence, Pensylvania",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Albert Franklin Smith",
+        "field": "death_description",
+        "value": "20 dec 1946 Fairlawn Burial Park Hutchinson Reno Colorado Kansas USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Rose Ann Prickett",
+        "field": "death_description",
+        "value": "28 Oct 1952 Yuma, Yuma County, COlorado, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Thomas S Bowman",
+        "field": "death_description",
+        "value": "1904 Emience, Morgan, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Nancy Jane Lambert",
+        "field": "death_description",
+        "value": "5 Nov 946 Jefferson County, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William R Maynard",
+        "field": "death_description",
+        "value": "24 Nov 1958 Brooksville, Hernando County, Florida",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Gail Agnes Hillman",
+        "field": "death_description",
+        "value": "12 Apr 1982 Saint Paul, Ramsey, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Robert R Hedtke",
+        "field": "death_description",
+        "value": "13 Feb 1954 Fresno, California, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Amelia Kiehlbauch",
+        "field": "death_description",
+        "value": "15 May 1979 Morro Bay , San Luis Obispo, California, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Shapley",
+        "field": "death_description",
+        "value": "Between 1925 to 1928",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Olive G Stafford",
+        "field": "death_description",
+        "value": ", Iowa, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William John Ludwig Sclorf",
+        "field": "death_description",
+        "value": "1937 Wisconsin, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Johannsen",
+        "field": "death_description",
+        "value": "1951 Shawano County, Wisconsin, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James McCabe",
+        "field": "death_description",
+        "value": "1951 Shawano County, Wisconsin, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary",
+        "field": "death_description",
+        "value": "None at this time",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James McAvoy",
+        "field": "death_description",
+        "value": "None at this time",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Rosamund Sloan",
+        "field": "death_description",
+        "value": ")",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James Elliott",
+        "field": "death_description",
+        "value": "1906 Butler County, Pennsylvania",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John Elliott",
+        "field": "death_description",
+        "value": "in the ledgen say that i need to investigate this person cause the person is in the family tree but i cannot figure out where - AI might be able to investigate this person (if you can can you fix the record)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Margaret Jane Boudin",
+        "field": "death_description",
+        "value": "moving forward *** next to the TG and first name indicate to put the name in purple. Also I investigated further and now I know, *** is a person in the tree but has no connectivity record therefore for *** keep the connections as they are but dont list them in chronological consistency summary.",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Charles McQuiston",
+        "field": "death_description",
+        "value": "31 Jul 1917 Butler, Butler Pennsylvania, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Thorpe",
+        "field": "death_description",
+        "value": "30 May 1944 New Castle, Lawrence, Pennsylvania, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John Isaac Smith",
+        "field": "death_description",
+        "value": "7 Dec 1916 Wray, Yuma, County, Colorado",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Ruanna Hamilton",
+        "field": "death_description",
+        "value": "19 Feb 1908 Monegaw Springs, St. Clair County, Missouri, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Charles Prickett",
+        "field": "death_description",
+        "value": "10 Jul 1903 Vernon, Yuma, Colorado, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Adaline A Holderman",
+        "field": "death_description",
+        "value": "aline)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Abel Bowman",
+        "field": "death_description",
+        "value": "4 Nov 1905 Ashland, Morgan County, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Martha Shumaker",
+        "field": "death_description",
+        "value": "About 1923 Morgan County, Illinois, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Aaron Lorenzo Lambert",
+        "field": "death_description",
+        "value": "27 April 1915 Hall, Morgan, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Tabitha Ann Brown",
+        "field": "death_description",
+        "value": "27 Apr 1915 Hall Morgan, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "George Maynard",
+        "field": "death_description",
+        "value": "2 May 1932 Minot, Ward, North Dakota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Margaret Rose Sansom",
+        "field": "death_description",
+        "value": "28 dec 1928 rosehill, Covington, alabama, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Fred Ernest Hillman",
+        "field": "death_description",
+        "value": ")",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Agnes Maria Platt",
+        "field": "death_description",
+        "value": "23 February 1946 Ramsey County, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "August Friedrich Hedtke",
+        "field": "death_description",
+        "value": "1847 Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Amelia Carolina Luedtke",
+        "field": "death_description",
+        "value": "24 April 1925, Henderson, Sibley County, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Josef Kiehlbauch",
+        "field": "death_description",
+        "value": "14 Sep 1908 Chicago, Cook, Inninois, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Barbara Beck",
+        "field": "death_description",
+        "value": "all, Bon Homme, South Dakota",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Patrick Henry Shapley",
+        "field": "death_description",
+        "value": "date at this time",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Rice",
+        "field": "death_description",
+        "value": "No death date at this time",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Mark Stafford",
+        "field": "death_description",
+        "value": "12 May 1914 Gardena, Bottineau, North Dakota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Alice Waite",
+        "field": "death_description",
+        "value": "4 Jul 1914 Gardena, Bottineau, North Dakota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Johannsen",
+        "field": "death_description",
+        "value": "1951 Shawano County, Wisconsin, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Elena M Johannsen",
+        "field": "death_description",
+        "value": "3 Jun 1920",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John Sloan",
+        "field": "death_description",
+        "value": "1 Aug 1900 Washington Township, Cambria County, Pennsylvania, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Margaret Scott",
+        "field": "death_description",
+        "value": "1 April 1968 Butler, Butler Co., Pennsylvania, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Johann Jacob Friedrich Huber",
+        "field": "death_description",
+        "value": "7 May 1877 Attlisberg, Waldshut, Balden Wurttemberg, Germany)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Frederika Regkukel",
+        "field": "death_description",
+        "value": "erika)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Rebecca Grannis",
+        "field": "death_description",
+        "value": "31 Oct 1905 Near Slippery Rock, Butler County, Pennsylvania",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Thorpe",
+        "field": "death_description",
+        "value": "About 1893 Pennsylvania",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Jane Sumner",
+        "field": "death_description",
+        "value": "Not indicated",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Smith",
+        "field": "death_description",
+        "value": "1857-04-25 Tuscarawas County, Ohio",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Lucy Ann Kreidler",
+        "field": "death_description",
+        "value": "1890 Mattoon, Coles, Illinois, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Thomas Cleophas Hamilton",
+        "field": "death_description",
+        "value": "23 Feb 1872 Gnadenhutten, Tuscarawas County, Ohio, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Sarah Elizabeth Marlow",
+        "field": "death_description",
+        "value": "07 Sep 1838 Gnadenhutten, Tuscarawas, Ohio, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "James Prickett",
+        "field": "death_description",
+        "value": "14 Nov 1843 Kendall, Illinois USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Rebecca Wisham",
+        "field": "death_description",
+        "value": "07 Sep 1844 Newark, Kendall County, Illinois, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Jacob Holderman Sr",
+        "field": "death_description",
+        "value": "1864",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mercy Caroline Loveland",
+        "field": "death_description",
+        "value": "19 May 1886 Cottage Grove, Lane, Oregon, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "George W Bowman Jr",
+        "field": "death_description",
+        "value": "5 Aug 1874 Morgan County, Indiana USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Catherine Eisenhower",
+        "field": "death_description",
+        "value": "1 sep 1865 morgan county, Indiana usa",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Thomas J Shoemake",
+        "field": "death_description",
+        "value": "20 April 1846 Eminence, Morgan, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Jemima Blunk",
+        "field": "death_description",
+        "value": "1882 Adams, Morgan County, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Henry Ira Lambert",
+        "field": "death_description",
+        "value": "1868 Hendricks County, Indiana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Sarah \u0027Sally\u0027 M Craven",
+        "field": "death_description",
+        "value": "iana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "John W Brown",
+        "field": "death_description",
+        "value": "iana, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Nancy Jan Wilhite",
+        "field": "death_description",
+        "value": "11 April 1890 morgan, Indiana, usa",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "William Maynard",
+        "field": "death_description",
+        "value": "25 March 1908 Pierce County, Washington, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Sarah Parsons",
+        "field": "death_description",
+        "value": "14 Mar 1891 Bertha, Todd County, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Riley Sansom",
+        "field": "death_description",
+        "value": "6 April 1905 Riverside, Snohomish, Washington",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Sarah Sally Kline",
+        "field": "death_description",
+        "value": "6 September 1928 Snohomish, Snohomish, Washington USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Mary Marinda Shelly",
+        "field": "death_description",
+        "value": "olph, Dakota County, MN",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "David C Platt",
+        "field": "death_description",
+        "value": "avid)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Miranda McLane",
+        "field": "death_description",
+        "value": "a)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Johann E Hedtke",
+        "field": "death_description",
+        "value": "28 Aug 1894 Chaska, Carver, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Florentine Henriette Florence Hedtke",
+        "field": "death_description",
+        "value": "18 Feb 1901 Chaska Carver, Minnesota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Joseph Sr Kiehlbauch",
+        "field": "death_description",
+        "value": "29 May 1902 Tyndall, Bon Homme, South Dakota, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Johanna Knoepfle",
+        "field": "death_description",
+        "value": "21 April 1910 medina, Stutsman co. north Dakota",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Constantin Beck",
+        "field": "death_description",
+        "value": "04 Aug 1857 Luftsdorf, Odessa",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Barbara Maier/Beck",
+        "field": "death_description",
+        "value": "11 Hyb 1756 Odessa, Oddessa, Kherson, Russia",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Clarissa Gridley",
+        "field": "death_description",
+        "value": "Death is unknown or not recorded here",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Kezia Bair",
+        "field": "death_description",
+        "value": "20 Apr 1856 Riverton, Fremont, Iowa",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Joseph W Stafford",
+        "field": "death_description",
+        "value": "Death is not recorded",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Hulda Sylvah",
+        "field": "death_description",
+        "value": "a)",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Barton J Waite",
+        "field": "death_description",
+        "value": "1862 or 187- Calamus, Dodge, Wisconsin, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Susannah Clark Bacon",
+        "field": "death_description",
+        "value": "Dec 1870 Lorain, Lorain, Ohio, USA",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Lorenz Hinrichsen",
+        "field": "death_description",
+        "value": "18 jun 1854",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
+      },
+      {
+        "display_name": "Sophia Margaretha Hinrichsen",
+        "field": "death_description",
+        "value": "17 Jul 1866",
+        "confidence": 0.55,
+        "source_url": "E:\\changes18z.txt",
+        "source_title": "User-provided family information",
+        "status": "active",
+        "permanent": 0
       }
     ],
     "relationships": [
@@ -8413,7 +9883,7 @@
       },
       {
         "child": "Jeremiah O\u0027Neal",
-        "parent": "Natalie O\u0027Neal",
+        "parent": "mom",
         "relation": "parent",
         "confidence": 1.0,
         "permanent": 1
@@ -8433,14 +9903,14 @@
         "permanent": 1
       },
       {
-        "child": "Natalie O\u0027Neal",
+        "child": "mom",
         "parent": "grandpa",
         "relation": "parent",
         "confidence": 1.0,
         "permanent": 1
       },
       {
-        "child": "Natalie O\u0027Neal",
+        "child": "mom",
         "parent": "grandma",
         "relation": "parent",
         "confidence": 1.0,
@@ -9301,65 +10771,194 @@
         "permanent": 0
       }
     ],
+    "record_overrides": [],
+    "duplicate_records": [],
+    "spouse_relationships": [
+      {
+        "person1": "mom",
+        "person2": "Dudley McCabe",
+        "relation": "spouse",
+        "permanent": 1
+      },
+      {
+        "person1": "Amelia Carolina Luedtke",
+        "person2": "August Friedrich Hedtke",
+        "relation": "spouse",
+        "permanent": 1
+      }
+    ],
+    "duplicate_reviews": [
+      {
+        "code": "TG204761",
+        "display_name": "Leonard Marlow Sr",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG204221",
+        "display_name": "Samuel Marlow Jr",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG202755",
+        "display_name": "Raymon Vester Bowman",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG207145",
+        "display_name": "Beulah Berniece Bowman Kirk",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG200793",
+        "display_name": "James Thomas \u0022Tuffy\u0022 Bowman Sr",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG202762",
+        "display_name": "Jane Ellen Prickett",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG202675",
+        "display_name": "F. Howard Hillman",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG209679",
+        "display_name": "Clare Levi Hillman",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG209417",
+        "display_name": "Joseph Kiehlbauch",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG204672",
+        "display_name": "Johanna Kiehlbauch",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG206921",
+        "display_name": "Johanna Kiehlbauch Setzer",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG200915",
+        "display_name": "Louisa Kiehlbauch",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG209691",
+        "display_name": "John Rossow",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      },
+      {
+        "code": "TG204295",
+        "display_name": "Louise Rossow Deutscher",
+        "duplicate": false,
+        "checked": true,
+        "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+      }
+    ],
     "captured_people": [
       {
         "display_name": "Jeremiah O\u0027Neal",
         "tg_number": "",
-        "born": "01/01/1985",
+        "born": "1980",
         "died": "See original notes",
         "parents": [
           "Dudley McCabe",
-          "Natalie O\u0027Neal"
+          "mom"
         ],
         "spouse": [],
         "other_parents": [],
         "children": [],
         "details": "B:01 Jan 1985 San Diego, CA",
+        "duplicate": false,
+        "original_name": "Jeremiah O\u0027Neal",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9865266Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8386405Z"
       },
       {
         "display_name": "Dudley McCabe",
         "tg_number": "TG943760",
-        "born": "See original notes",
+        "born": "1946",
         "died": "See original notes",
         "parents": [
           "Lester McCabe",
           "Noma Vade Smith"
         ],
-        "spouse": [],
+        "spouse": [
+          "mom"
+        ],
         "other_parents": [
-          "Natalie O\u0027Neal"
+          "mom"
         ],
         "children": [
           "Jeremiah O\u0027Neal"
         ],
         "details": "1946\u20132019 San Diego, San Diego, California, USA",
+        "duplicate": false,
+        "original_name": "Dudley McCabe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9872134Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8388145Z"
       },
       {
-        "display_name": "Natalie O\u0027Neal",
+        "display_name": "mom",
         "tg_number": "TG264819",
-        "born": "01/01/1955",
+        "born": "1955",
         "died": "See original notes",
         "parents": [
           "grandpa",
           "grandma"
         ],
-        "spouse": [],
+        "spouse": [
+          "Dudley McCabe"
+        ],
         "other_parents": [
           "Dudley McCabe"
         ],
         "children": [
           "Jeremiah O\u0027Neal"
         ],
-        "details": "B:01 Jan 1955 Alamedia, CA",
+        "details": "B:01 Jan 1955 Alamedia, CA D:ed | Other parent(s): Dudley McCabe (not proof of marriage) this can be changed to Spouse: Dudley McCabe - in fact this format can apply to everyone unless i make a note stating otherwise.",
+        "duplicate": false,
+        "original_name": "mom",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9876701Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8389755Z"
       },
       {
         "display_name": "Lester McCabe",
@@ -9378,14 +10977,17 @@
           "Dudley McCabe"
         ],
         "details": "6 May 1926 Butler, Pennsylvania, USA 26 May 1985 Kittanning, Armstrong, Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "Lester McCabe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9880284Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8391465Z"
       },
       {
         "display_name": "Noma Vade Smith",
         "tg_number": "TG315902",
-        "born": "See original notes",
+        "born": "1927",
         "died": "See original notes",
         "parents": [
           "Archie T Smith",
@@ -9399,9 +11001,12 @@
           "Dudley McCabe"
         ],
         "details": "B:19 Mar 1927 San Diego, California D:20 Dec 1991 San Diego County, California, USA",
+        "duplicate": false,
+        "original_name": "Noma Vade Smith",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9883643Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8393546Z"
       },
       {
         "display_name": "grandpa",
@@ -9417,17 +11022,20 @@
           "grandma"
         ],
         "children": [
-          "Natalie O\u0027Neal"
+          "mom"
         ],
-        "details": "D:2015 San Diego, CA",
+        "details": "B:1925 D:pa)",
+        "duplicate": false,
+        "original_name": "grandpa",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9887834Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8395792Z"
       },
       {
         "display_name": "grandma",
         "tg_number": "TG150984",
-        "born": "See original notes",
+        "born": "1925",
         "died": "See original notes",
         "parents": [
           "Percy W Shapley",
@@ -9438,17 +11046,20 @@
           "grandpa"
         ],
         "children": [
-          "Natalie O\u0027Neal"
+          "mom"
         ],
-        "details": "D:2016 San Diego, CA",
+        "details": "D:ma)",
+        "duplicate": false,
+        "original_name": "grandma",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9897038Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8397684Z"
       },
       {
         "display_name": "John McCabe",
         "tg_number": "TG628417",
-        "born": "See original notes",
+        "born": "1896",
         "died": "See original notes",
         "parents": [
           "Edward Mccabe",
@@ -9462,14 +11073,17 @@
           "Lester McCabe"
         ],
         "details": "B:9 Feb 1896 Allegheny County Pittsburgh PA D:Aug 1982 Chestnut Ridge Cemetery, Eldersville, Washington, Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "John McCabe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9904669Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8399898Z"
       },
       {
         "display_name": "Alice S Elliott",
         "tg_number": "TG492705",
-        "born": "See original notes",
+        "born": "1906",
         "died": "See original notes",
         "parents": [
           "James N Elliott",
@@ -9482,10 +11096,13 @@
         "children": [
           "Lester McCabe"
         ],
-        "details": "B:12 June 1906 Butler, Pennsylvania D:24 Dec 1951 New Castle, Pennsylvania",
+        "details": "B:12 June 1906 Butler, Pennsylvania D:24 Dec 1951 New Castle, Pennsylvania.",
+        "duplicate": false,
+        "original_name": "Alice S Elliott",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9911532Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8401633Z"
       },
       {
         "display_name": "Archie T Smith",
@@ -9503,15 +11120,18 @@
         "children": [
           "Noma Vade Smith"
         ],
-        "details": "B:21 Sept., 1894 Greeley, Weld Co. Colorado, USA D:8 May, 1973 San Diego, San Diego Co., California, USA",
+        "details": "B:21 Sept., 1894 Greeley, Weld Co. Colorado, USA D:8 May 1973 San Diego, San Diego Co. California, USA",
+        "duplicate": false,
+        "original_name": "Archie T Smith",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9917292Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8402707Z"
       },
       {
         "display_name": "Polly Myrtle Bowman",
         "tg_number": "TG856134",
-        "born": "See original notes",
+        "born": "1887",
         "died": "See original notes",
         "parents": [
           "Thomas S Bowman",
@@ -9524,10 +11144,13 @@
         "children": [
           "Noma Vade Smith"
         ],
-        "details": "B:18 May 1887 Morgan County, Indiana, USA D:24 Jun 1955 San Diego, San Diego, California, United States",
+        "details": "B:18 May 1887 Morgan County, Indiana, USA D:24 June 1955 San Diego, San Diego, California USA",
+        "duplicate": false,
+        "original_name": "Polly Myrtle Bowman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9921851Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8403747Z"
       },
       {
         "display_name": "Burke C Maynard",
@@ -9546,9 +11169,12 @@
           "grandpa"
         ],
         "details": "B:11 Jun 1904 North Dakota D:05 Dec 1986 Morro Bay, San Luis Obispo, California, USA",
+        "duplicate": false,
+        "original_name": "Burke C Maynard",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9925689Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8404797Z"
       },
       {
         "display_name": "Amelia B Hetdke",
@@ -9567,14 +11193,17 @@
           "grandpa"
         ],
         "details": "B:28 Dec 1904 North Dakota D:15 May 1979 Morro Bay, San Luis Obispo, California, USA",
+        "duplicate": false,
+        "original_name": "Amelia B Hetdke",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9930506Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8405689Z"
       },
       {
         "display_name": "Percy W Shapley",
         "tg_number": "TG739123",
-        "born": "See original notes",
+        "born": "1901",
         "died": "See original notes",
         "parents": [
           "William Shapley",
@@ -9587,15 +11216,18 @@
         "children": [
           "grandma"
         ],
-        "details": "B:6 May 1901 Floyd, Floyd, Iowa, USA D:11 Sep 1946 Pasco, Franklin, Washington",
+        "details": "B:6 May 1901 Floyd, Floyd, Iowa, USA D:11 Sep 1946 Pasco, Franklin, Washington)",
+        "duplicate": false,
+        "original_name": "Percy W Shapley",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9934122Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8406564Z"
       },
       {
         "display_name": "Minnie Schlorff",
         "tg_number": "TG742018",
-        "born": "See original notes",
+        "born": "1905",
         "died": "See original notes",
         "parents": [
           "William John Ludwig Sclorf",
@@ -9608,15 +11240,18 @@
         "children": [
           "grandma"
         ],
-        "details": "B:1 Mar 1905 10920 Mackinaw Avenue, Chicago, Illinois D:12 Apr 1946 Minneapolis, Hennepin, Minnesota, United States",
+        "details": "B:1 Mar 1905 10920 Mackinaw Avenue, Chicago, Illinois D:12 Apr 1946 Minneapolis, Hennepin, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Minnie Schlorff",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9938597Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8407552Z"
       },
       {
         "display_name": "Edward Mccabe",
         "tg_number": "TG307645",
-        "born": "See original notes",
+        "born": "1861",
         "died": "See original notes",
         "parents": [
           "James McCabe",
@@ -9629,10 +11264,13 @@
         "children": [
           "John McCabe"
         ],
-        "details": "B:Mar1861 Scotland D:1900 Pennsylvania",
+        "details": "B:Mar1861 Scotland D:ward)",
+        "duplicate": false,
+        "original_name": "Edward Mccabe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9941827Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8408702Z"
       },
       {
         "display_name": "Sarah McAvoy",
@@ -9651,14 +11289,17 @@
           "John McCabe"
         ],
         "details": "B:13 Apr 1862 Derwent Street, Cockermouth, Cumberland, England D:1934 Pennsylvania",
+        "duplicate": false,
+        "original_name": "Sarah McAvoy",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:24.9945022Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8409830Z"
       },
       {
         "display_name": "James N Elliott",
         "tg_number": "TG654890",
-        "born": "See original notes",
+        "born": "1855",
         "died": "See original notes",
         "parents": [
           "James Elliott",
@@ -9672,14 +11313,17 @@
           "Alice S Elliott"
         ],
         "details": "B:12 Oct 1855 Center Twp Butler County, Pennsylvania D:1 Nov 1926 Center, Butler, Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "James N Elliott",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:24.9948140Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8410809Z"
       },
       {
         "display_name": "Elizabeth McQuiston",
         "tg_number": "TG270541",
-        "born": "See original notes",
+        "born": "1887",
         "died": "See original notes",
         "parents": [
           "Charles McQuiston",
@@ -9692,15 +11336,18 @@
         "children": [
           "Alice S Elliott"
         ],
-        "details": "B:7 Jan 1887 Pennsylvania D:27 Aug 1940 New Castle, Lawrence, Pennsylvania",
+        "details": "B:7 Jan 1887 Pennsylvania D:27 Aug 1940 New Castle, Lawrence, Pensylvania",
+        "duplicate": false,
+        "original_name": "Elizabeth McQuiston",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9951328Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8412534Z"
       },
       {
         "display_name": "Albert Franklin Smith",
         "tg_number": "TG839162",
-        "born": "See original notes",
+        "born": "1862",
         "died": "See original notes",
         "parents": [
           "John Isaac Smith",
@@ -9713,15 +11360,18 @@
         "children": [
           "Archie T Smith"
         ],
-        "details": "B:15 Mar., 1862 Mattoon, Coles Co., Illinois, USA D:20 Dec., 1946 Fairlawn Burial Park , Hutchinson, Reno Co., Kansas, USA",
+        "details": "B:15 Mar., 1862 Mattoon, Coles Co., Illinois, USA D:20 dec 1946 Fairlawn Burial Park Hutchinson Reno Colorado Kansas USA",
+        "duplicate": false,
+        "original_name": "Albert Franklin Smith",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9954405Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8413251Z"
       },
       {
         "display_name": "Rose Ann Prickett",
         "tg_number": "TG501784",
-        "born": "See original notes",
+        "born": "1869",
         "died": "See original notes",
         "parents": [
           "Charles Prickett",
@@ -9734,10 +11384,13 @@
         "children": [
           "Archie T Smith"
         ],
-        "details": "B:30 Jul 1869 Braceville, Grundy County, Illinois, USA D:28 Oct 1952 Yuma, Yuma County, Colorado, USA",
+        "details": "B:30 Jul 1869 Braceville, Grundy County, Illinois, USA D:28 Oct 1952 Yuma, Yuma County, COlorado, USA",
+        "duplicate": false,
+        "original_name": "Rose Ann Prickett",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9957547Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8413878Z"
       },
       {
         "display_name": "Thomas S Bowman",
@@ -9756,10 +11409,13 @@
           "Polly Myrtle Bowman",
           "Raymon Vester Bowman"
         ],
-        "details": "B:Feb 1863 Eminence, Morgan, Indiana, USA D:1904 Eminence, Morgan, Indiana, USA",
+        "details": "B:Feb 1863 Eminence, Morgan, Indiana, USA D:1904 Emience, Morgan, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Thomas S Bowman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9962438Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8414563Z"
       },
       {
         "display_name": "Nancy Jane Lambert",
@@ -9778,10 +11434,13 @@
           "Polly Myrtle Bowman",
           "Raymon Vester Bowman"
         ],
-        "details": "B:8 Jun 1864 Morgan County, Indiana, USA D:5 Nov 1946 Jefferson County, Indiana, USA",
+        "details": "B:8 Jun 1864 Morgan County, Indiana, USA D:5 Nov 946 Jefferson County, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Nancy Jane Lambert",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9967707Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8415224Z"
       },
       {
         "display_name": "William R Maynard",
@@ -9800,9 +11459,12 @@
           "Burke C Maynard"
         ],
         "details": "B:13 Dec 1878 Dassel, Meeker Co., Minnesota D:24 Nov 1958 Brooksville, Hernando County, Florida",
+        "duplicate": false,
+        "original_name": "William R Maynard",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9970828Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8415710Z"
       },
       {
         "display_name": "Gail Agnes Hillman",
@@ -9821,9 +11483,12 @@
           "Burke C Maynard"
         ],
         "details": "B:21 Sep 1884 Cannon Falls, Goodhue, Minnesota D:12 Apr 1982 Saint Paul, Ramsey, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Gail Agnes Hillman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9974561Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8416329Z"
       },
       {
         "display_name": "Robert R Hedtke",
@@ -9841,10 +11506,13 @@
         "children": [
           "Amelia B Hetdke"
         ],
-        "details": "B:18 Jan 1876 Sibley, Minnesota D:13 FEB 1954 Fresno, California, USA",
+        "details": "B:18 Jan 1876 Sibley, Minnesota D:13 Feb 1954 Fresno, California, USA",
+        "duplicate": false,
+        "original_name": "Robert R Hedtke",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9978281Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8416947Z"
       },
       {
         "display_name": "Amelia Kiehlbauch",
@@ -9862,15 +11530,18 @@
         "children": [
           "Amelia B Hetdke"
         ],
-        "details": "B:12 Jan 1880 Tyndall, Bon Homme, South Dakota, United States D:29 Aug 1969 , Fresno, California, USA",
+        "details": "B:12 Jan 1880 Tyndall, Bon Homme, South Dakota, United States D:15 May 1979 Morro Bay , San Luis Obispo, California, USA",
+        "duplicate": false,
+        "original_name": "Amelia Kiehlbauch",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9981069Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8417584Z"
       },
       {
         "display_name": "William Shapley",
         "tg_number": "TG618235",
-        "born": "See original notes",
+        "born": "1798",
         "died": "See original notes",
         "parents": [
           "Patrick Henry Shapley",
@@ -9885,15 +11556,18 @@
           "Percy W Shapley",
           "Patrick Henry Shapley"
         ],
-        "details": "B:ABT 1798/9 Granville, Washington, New York D:BET 1861 AND 1864 Iowa",
+        "details": "B:ABT 1798/9 Granville, Washington, New York D:Between 1925 to 1928",
+        "duplicate": false,
+        "original_name": "William Shapley",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9983985Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8418258Z"
       },
       {
         "display_name": "Olive G Stafford",
         "tg_number": "TG759401",
-        "born": "See original notes",
+        "born": "1876",
         "died": "See original notes",
         "parents": [
           "William Mark Stafford",
@@ -9906,15 +11580,18 @@
         "children": [
           "Percy W Shapley"
         ],
-        "details": "B:30 Apr 1876 Calamus, Wisconsin D:22 May 1946 Charles City, Floyd, Iowa, USA",
+        "details": "B:30 Apr 1876 Calamus, Wisconsin D:, Iowa, USA",
+        "duplicate": false,
+        "original_name": "Olive G Stafford",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9986952Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8418946Z"
       },
       {
         "display_name": "William John Ludwig Sclorf",
         "tg_number": "TG916000",
-        "born": "See original notes",
+        "born": "1867",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -9925,9 +11602,12 @@
           "Minnie Schlorff"
         ],
         "details": "B:21JUL1867 Pomerania, Prussia D:1937 Wisconsin, USA",
+        "duplicate": false,
+        "original_name": "William John Ludwig Sclorf",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9990009Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8419572Z"
       },
       {
         "display_name": "Mary Johannsen",
@@ -9945,10 +11625,13 @@
         "children": [
           "Minnie Schlorff"
         ],
-        "details": "B:28 Nov 1868 Tondern, Schleswig-Holstein, Deutschland D:1951 Shawano County, Wisconsin, United States",
+        "details": "B:28 Nov 1868 Tondern, Schleswig-Holstein, Deutschland D:1951 Shawano County, Wisconsin, USA",
+        "duplicate": false,
+        "original_name": "Mary Johannsen",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9992640Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8420189Z"
       },
       {
         "display_name": "James McCabe",
@@ -9963,10 +11646,13 @@
         "children": [
           "Edward Mccabe"
         ],
-        "details": "B:About 1840 Ireland",
+        "details": "B:About 1840 Ireland D:1951 Shawano County, Wisconsin, USA",
+        "duplicate": false,
+        "original_name": "James McCabe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9995284Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8420779Z"
       },
       {
         "display_name": "Mary",
@@ -9981,10 +11667,13 @@
         "children": [
           "Edward Mccabe"
         ],
-        "details": "B:Abt 1844 Ireland",
+        "details": "B:Abt 1844 Ireland D:None at this time",
+        "duplicate": false,
+        "original_name": "Mary",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:24.9998067Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8421349Z"
       },
       {
         "display_name": "James McAvoy",
@@ -10002,10 +11691,13 @@
         "children": [
           "Sarah McAvoy"
         ],
-        "details": "B:17 Mar 1833 Ireland D:24 Oct 1906 Scott, Allegheny, Pennsylvania, USA",
+        "details": "B:17 Mar 1833 Ireland D:None at this time",
+        "duplicate": false,
+        "original_name": "James McAvoy",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0000541Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8422071Z"
       },
       {
         "display_name": "Rosamund Sloan",
@@ -10023,15 +11715,18 @@
         "children": [
           "Sarah McAvoy"
         ],
-        "details": "B:1838 Ireland D:10 Nov 1912 Scott, Allegheny, Pennsylvania, USA",
+        "details": "B:1838 Ireland D:)",
+        "duplicate": false,
+        "original_name": "Rosamund Sloan",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0003119Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8422728Z"
       },
       {
         "display_name": "James Elliott",
         "tg_number": "TG673245",
-        "born": "See original notes",
+        "born": "1817",
         "died": "See original notes",
         "parents": [
           "John Elliott",
@@ -10045,9 +11740,12 @@
           "James N Elliott"
         ],
         "details": "B:Apr 1817 Somerset County, Pennsylvania, USA D:1906 Butler County, Pennsylvania",
+        "duplicate": false,
+        "original_name": "James Elliott",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0005668Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8423347Z"
       },
       {
         "display_name": "John Elliott",
@@ -10062,10 +11760,13 @@
         "children": [
           "James Elliott"
         ],
-        "details": "",
+        "details": "D:in the ledgen say that i need to investigate this person cause the person is in the family tree but i cannot figure out where - AI might be able to investigate this person (if you can can you fix the record)",
+        "duplicate": false,
+        "original_name": "John Elliott",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0008315Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8423932Z"
       },
       {
         "display_name": "Margaret Jane Boudin",
@@ -10083,15 +11784,18 @@
         "children": [
           "James N Elliott"
         ],
-        "details": "B:Oct 1824 Venango Co, PA D:19 Nov 1903 Somerset, Pennsylvania, United States",
+        "details": "B:Oct 1824 Venango Co, PA D:moving forward *** next to the TG and first name indicate to put the name in purple. Also I investigated further and now I know, *** is a person in the tree but has no connectivity record therefore for *** keep the connections as they are but dont list them in chronological consistency summary.",
+        "duplicate": false,
+        "original_name": "Margaret Jane Boudin",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0010872Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8424545Z"
       },
       {
         "display_name": "Charles McQuiston",
         "tg_number": "TG804631",
-        "born": "See original notes",
+        "born": "1858",
         "died": "See original notes",
         "parents": [
           "Marshall McQuiston",
@@ -10104,10 +11808,13 @@
         "children": [
           "Elizabeth McQuiston"
         ],
-        "details": "B:25MAR1850 Butler County, Pennsylvania D:31 Jul 1917 Butler, Butler, Pennsylvania, USA",
+        "details": "B:25MAR1850 Butler County, Pennsylvania D:31 Jul 1917 Butler, Butler Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "Charles McQuiston",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0013504Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8425142Z"
       },
       {
         "display_name": "Mary Thorpe",
@@ -10126,14 +11833,17 @@
           "Elizabeth McQuiston"
         ],
         "details": "B:27 January 1863 Pennsylvania D:30 May 1944 New Castle, Lawrence, Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "Mary Thorpe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0016020Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8425738Z"
       },
       {
         "display_name": "John Isaac Smith",
         "tg_number": "TG917384",
-        "born": "18 Feb 1821",
+        "born": "1821",
         "died": "7 Dec 1916 (aged 95)",
         "parents": [
           "William Smith",
@@ -10146,15 +11856,18 @@
         "children": [
           "Albert Franklin Smith"
         ],
-        "details": "B:18 Feb 1821 Pittsburgh, Allegheny, Pennsylvania D:7 Dec 1916 Wray, Yuma County, Colorado",
+        "details": "B:18 Feb 1821 Pittsburgh, Allegheny, Pennsylvania D:7 Dec 1916 Wray, Yuma, County, Colorado",
+        "duplicate": false,
+        "original_name": "John Isaac Smith",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0018321Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8426265Z"
       },
       {
         "display_name": "Ruanna Hamilton",
         "tg_number": "TG463829",
-        "born": "See original notes",
+        "born": "1827",
         "died": "See original notes",
         "parents": [
           "Thomas Cleophas Hamilton",
@@ -10167,15 +11880,18 @@
         "children": [
           "Albert Franklin Smith"
         ],
-        "details": "B:27 Jul 1827 Gnadenhutten, Tuscarawas, Ohio, USA D:19 Feb 1908 Monegaw Springs, St Clair County, Missouri, USA",
+        "details": "B:27 Jul 1827 Gnadenhutten, Tuscarawas, Ohio, USA D:19 Feb 1908 Monegaw Springs, St. Clair County, Missouri, USA",
+        "duplicate": false,
+        "original_name": "Ruanna Hamilton",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0021421Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8426851Z"
       },
       {
         "display_name": "Charles Prickett",
         "tg_number": "TG728195",
-        "born": "See original notes",
+        "born": "1829",
         "died": "See original notes",
         "parents": [
           "James Prickett",
@@ -10189,9 +11905,12 @@
           "Rose Ann Prickett"
         ],
         "details": "B:16 Oct 1829 Apakesha Grove, Champaign, Ohio, USA D:10 Jul 1903 Vernon, Yuma, Colorado, USA",
+        "duplicate": false,
+        "original_name": "Charles Prickett",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0024013Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8427432Z"
       },
       {
         "display_name": "Adaline A Holderman",
@@ -10209,15 +11928,18 @@
         "children": [
           "Rose Ann Prickett"
         ],
-        "details": "B:24 Apr 1835 Marion County, Ohio, USA D:28 Sep 1918 Yuma County, Colorado, USA",
+        "details": "B:24 Apr 1835 Marion County, Ohio, USA D:aline)",
+        "duplicate": false,
+        "original_name": "Adaline A Holderman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0026653Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8428724Z"
       },
       {
         "display_name": "Abel Bowman",
         "tg_number": "TG940672",
-        "born": "See original notes",
+        "born": "1830",
         "died": "See original notes",
         "parents": [
           "George W Bowman Jr",
@@ -10231,14 +11953,17 @@
           "Thomas S Bowman"
         ],
         "details": "B:25 Dec 1830 Lincoln County, North Carolina, USA D:4 Nov 1905 Ashland, Morgan County, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Abel Bowman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0029752Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8429381Z"
       },
       {
         "display_name": "Mary Martha Shumaker",
         "tg_number": "TG215839",
-        "born": "See original notes",
+        "born": "1837",
         "died": "See original notes",
         "parents": [
           "Thomas J Shoemake",
@@ -10251,10 +11976,13 @@
         "children": [
           "Thomas S Bowman"
         ],
-        "details": "B:2 Apr 1837 Eminence, Morgan County, Indiana, USA D:Abt. 1923 Morgan County, Illinois, USA",
+        "details": "B:2 Apr 1837 Eminence, Morgan County, Indiana, USA D:About 1923 Morgan County, Illinois, USA",
+        "duplicate": false,
+        "original_name": "Mary Martha Shumaker",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0032099Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8430785Z"
       },
       {
         "display_name": "Aaron Lorenzo Lambert",
@@ -10272,10 +12000,13 @@
         "children": [
           "Nancy Jane Lambert"
         ],
-        "details": "B:13 Oct 1830 ,Randolph, North Carolina, United States D:19 Jan 1910 ,Morgan, Indiana, United States",
+        "details": "B:13 Oct 1830 ,Randolph, North Carolina, United States D:27 April 1915 Hall, Morgan, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Aaron Lorenzo Lambert",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0034459Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8431586Z"
       },
       {
         "display_name": "Tabitha Ann Brown",
@@ -10293,10 +12024,13 @@
         "children": [
           "Nancy Jane Lambert"
         ],
-        "details": "B:10 Aug 1838 Hall, Morgan, Indiana, United States D:27 Apr 1915 Hall, Morgan, Indiana, USA",
+        "details": "B:10 Aug 1838 Hall, Morgan, Indiana, United States D:27 Apr 1915 Hall Morgan, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Tabitha Ann Brown",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0037189Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8432216Z"
       },
       {
         "display_name": "George Maynard",
@@ -10315,9 +12049,12 @@
           "William R Maynard"
         ],
         "details": "B:27 Aug 1852 Prestonsburg, Floyd Co, Kentucky, USA D:2 May 1932 Minot, Ward, North Dakota, USA",
+        "duplicate": false,
+        "original_name": "George Maynard",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0048708Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8432840Z"
       },
       {
         "display_name": "Margaret Rose Sansom",
@@ -10335,10 +12072,13 @@
         "children": [
           "William R Maynard"
         ],
-        "details": "B:11 FEB 1859 Logan Co, KY (Wynne Co, West Virginia) D:28 Dec 1928 Rosehill, Covington, Alabama, United States",
+        "details": "B:11 FEB 1859 Logan Co, KY (Wynne Co, West Virginia) D:28 dec 1928 rosehill, Covington, alabama, USA",
+        "duplicate": false,
+        "original_name": "Margaret Rose Sansom",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0050985Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8433454Z"
       },
       {
         "display_name": "Fred Ernest Hillman",
@@ -10358,15 +12098,18 @@
           "F. Howard Hillman",
           "Clare Levi Hillman"
         ],
-        "details": "B:21 Aug 1857 Minnesota, USA D:4 Dec 1950 Bald Eagle Center, Cass County, Minnesota, USA",
+        "details": "B:21 Aug 1857 Minnesota, USA D:)",
+        "duplicate": false,
+        "original_name": "Fred Ernest Hillman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0053271Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8434060Z"
       },
       {
         "display_name": "Agnes Maria Platt",
         "tg_number": "TG148675",
-        "born": "See original notes",
+        "born": "1857",
         "died": "See original notes",
         "parents": [
           "David C Platt",
@@ -10379,10 +12122,13 @@
         "children": [
           "Gail Agnes Hillman"
         ],
-        "details": "Born: 27 April 1857 \u2013 Palmyra, Jefferson County, Wisconsin, United States)(Died: 23 February 1946 \u2013 Ramsey County, Minnesota, United States",
+        "details": "Born: 27 April 1857 \u2013 Palmyra, Jefferson County, Wisconsin, United States)(Died: 23 February 1946 \u2013 Ramsey County, Minnesota, United States D:23 February 1946 Ramsey County, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Agnes Maria Platt",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0055508Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8434643Z"
       },
       {
         "display_name": "August Friedrich Hedtke",
@@ -10393,17 +12139,22 @@
           "Johann E Hedtke",
           "Florentine Henriette Florence Hedtke"
         ],
-        "spouse": [],
+        "spouse": [
+          "Amelia Carolina Luedtke"
+        ],
         "other_parents": [
           "Amelia Carolina Luedtke"
         ],
         "children": [
           "Robert R Hedtke"
         ],
-        "details": "Born: 23 August 1847 \u2013 Alt Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia) (Died: 31 January 1918 \u2013 Henderson, Sibley County, Minnesota, United States",
+        "details": "Born: 23 August 1847 \u2013 Alt Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia) (Died: 31 January 1918 \u2013 Henderson, Sibley County, Minnesota, United States D:1847 Paleschken, Kreis Berent, Regierungsbezirk Danzig, West Prussia",
+        "duplicate": false,
+        "original_name": "August Friedrich Hedtke",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0057703Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8435273Z"
       },
       {
         "display_name": "Amelia Carolina Luedtke",
@@ -10411,17 +12162,22 @@
         "born": "See original notes",
         "died": "See original notes",
         "parents": [],
-        "spouse": [],
+        "spouse": [
+          "August Friedrich Hedtke"
+        ],
         "other_parents": [
           "August Friedrich Hedtke"
         ],
         "children": [
           "Robert R Hedtke"
         ],
-        "details": "Born: February 1850 \u2013 Pomerania, Prussia)(Died: 24 April 1925 \u2013 Henderson, Sibley County, Minnesota, United States",
+        "details": "Born: February 1850 \u2013 Pomerania, Prussia)(Died: 24 April 1925 \u2013 Henderson, Sibley County, Minnesota, United States D:24 April 1925, Henderson, Sibley County, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Amelia Carolina Luedtke",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0059808Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8447296Z"
       },
       {
         "display_name": "Josef Kiehlbauch",
@@ -10439,15 +12195,18 @@
         "children": [
           "Amelia Kiehlbauch"
         ],
-        "details": "B:1 Jan 1850 Neuberg, Russia D:14 Sep 1908 Chicago, Cook, Illinois, USA",
+        "details": "B:1 Jan 1850 Neuberg, Russia D:14 Sep 1908 Chicago, Cook, Inninois, USA",
+        "duplicate": false,
+        "original_name": "Josef Kiehlbauch",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0062191Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8448107Z"
       },
       {
         "display_name": "Barbara Beck",
         "tg_number": "TG835097",
-        "born": "See original notes",
+        "born": "1850",
         "died": "See original notes",
         "parents": [
           "Constantin Beck",
@@ -10460,15 +12219,18 @@
         "children": [
           "Amelia Kiehlbauch"
         ],
-        "details": "B:22 Jan 1850 Lustdorf, Russia D:15 July 1923 Tyndall, Bon Homme, South Dakota",
+        "details": "B:22 Jan 1850 Lustdorf, Russia D:all, Bon Homme, South Dakota",
+        "duplicate": false,
+        "original_name": "Barbara Beck",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0064319Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8448705Z"
       },
       {
         "display_name": "Patrick Henry Shapley",
         "tg_number": "TG491628",
-        "born": "See original notes",
+        "born": "1846",
         "died": "See original notes",
         "parents": [
           "William Shapley",
@@ -10481,15 +12243,18 @@
         "children": [
           "William Shapley"
         ],
-        "details": "B:10 APR 1846 Emmett, Calhoun, Michigan",
+        "details": "B:10 APR 1846 Emmett, Calhoun, Michigan D:date at this time",
+        "duplicate": false,
+        "original_name": "Patrick Henry Shapley",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0066463Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8449774Z"
       },
       {
         "display_name": "Mary Rice",
         "tg_number": "TG762503",
-        "born": "See original notes",
+        "born": "1849",
         "died": "See original notes",
         "parents": [
           "Ica Foster Rice",
@@ -10502,15 +12267,18 @@
         "children": [
           "William Shapley"
         ],
-        "details": "B:Feb 1849 Wisconsin, USA",
+        "details": "B:Feb 1849 Wisconsin, USA D:No death date at this time",
+        "duplicate": false,
+        "original_name": "Mary Rice",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0068740Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8450421Z"
       },
       {
         "display_name": "William Mark Stafford",
         "tg_number": "TG318940",
-        "born": "See original notes",
+        "born": "1838",
         "died": "See original notes",
         "parents": [
           "Joseph W Stafford",
@@ -10523,15 +12291,18 @@
         "children": [
           "Olive G Stafford"
         ],
-        "details": "",
+        "details": "D:12 May 1914 Gardena, Bottineau, North Dakota, USA",
+        "duplicate": false,
+        "original_name": "William Mark Stafford",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0070821Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8451001Z"
       },
       {
         "display_name": "Alice Waite",
         "tg_number": "TG907216",
-        "born": "See original notes",
+        "born": "1840",
         "died": "See original notes",
         "parents": [
           "Barton J Waite",
@@ -10544,10 +12315,13 @@
         "children": [
           "Olive G Stafford"
         ],
-        "details": "B:27 November 1840 Lorain, Lorain, Ohio D:4 July 1914 Gardena, Bottineau, North Dakota, USA",
+        "details": "B:27 November 1840 Lorain, Lorain, Ohio D:4 Jul 1914 Gardena, Bottineau, North Dakota, USA",
+        "duplicate": false,
+        "original_name": "Alice Waite",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0072784Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8451575Z"
       },
       {
         "display_name": "Johannsen",
@@ -10562,10 +12336,13 @@
         "children": [
           "Mary Johannsen"
         ],
-        "details": "B:25 September 1833 D:26 March 1919",
+        "details": "B:25 September 1833 D:1951 Shawano County, Wisconsin, USA",
+        "duplicate": false,
+        "original_name": "Johannsen",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0074710Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8452174Z"
       },
       {
         "display_name": "Elena M Johannsen",
@@ -10583,10 +12360,13 @@
         "children": [
           "Mary Johannsen"
         ],
-        "details": "B:24 June 1836 D:3 June 1920",
+        "details": "B:24 June 1836 D:3 Jun 1920",
+        "duplicate": false,
+        "original_name": "Elena M Johannsen",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0076838Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8452787Z"
       },
       {
         "display_name": "Patrick McAvoy",
@@ -10602,9 +12382,12 @@
           "James McAvoy"
         ],
         "details": "B:abt 1797 Ireland",
+        "duplicate": false,
+        "original_name": "Patrick McAvoy",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0078757Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8453395Z"
       },
       {
         "display_name": "Mary Evett",
@@ -10620,9 +12403,12 @@
           "James McAvoy"
         ],
         "details": "B:abt 1797 Newry, Ireland",
+        "duplicate": false,
+        "original_name": "Mary Evett",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0080644Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8454661Z"
       },
       {
         "display_name": "John Sloan",
@@ -10637,10 +12423,13 @@
         "children": [
           "Rosamund Sloan"
         ],
-        "details": "B:May 1820 County Down, Ireland D:1 August 1900 Washington Township, Cambria County, Pennsylvania, USA",
+        "details": "B:May 1820 County Down, Ireland D:1 Aug 1900 Washington Township, Cambria County, Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "John Sloan",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0082490Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8455286Z"
       },
       {
         "display_name": "Ann McGowan",
@@ -10656,9 +12445,12 @@
           "Rosamund Sloan"
         ],
         "details": "B:Abt. 1822 County Down, Ireland D:Bef. 1900",
+        "duplicate": false,
+        "original_name": "Ann McGowan",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0084364Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8455875Z"
       },
       {
         "display_name": "Margaret Scott",
@@ -10673,10 +12465,13 @@
         "children": [
           "James Elliott"
         ],
-        "details": "B:10 Feb 1793 Mercer, Franklin Co., Pennsylvania, United States D:1 Apr 1868 Butler, Butler Co., Pennsylvania, United States",
+        "details": "B:10 Feb 1793 Mercer, Franklin Co., Pennsylvania, United States D:1 April 1968 Butler, Butler Co., Pennsylvania, USA",
+        "duplicate": false,
+        "original_name": "Margaret Scott",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0086242Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8456460Z"
       },
       {
         "display_name": "Johann Jacob Friedrich Huber",
@@ -10691,10 +12486,13 @@
         "children": [
           "Margaret Jane Boudin"
         ],
-        "details": "B:11 Jan 1804 Attlisberg, Waldshut, Baden-W\u00FCrttemberg, Germany D:7 May 1877 Attlisberg, Waldshut, Baden-W\u00FCrttemberg, Germany",
+        "details": "B:11 Jan 1804 Attlisberg, Waldshut, Baden-W\u00FCrttemberg, Germany D:7 May 1877 Attlisberg, Waldshut, Balden Wurttemberg, Germany)",
+        "duplicate": false,
+        "original_name": "Johann Jacob Friedrich Huber",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0088161Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8457039Z"
       },
       {
         "display_name": "Frederika Regkukel",
@@ -10709,15 +12507,18 @@
         "children": [
           "Margaret Jane Boudin"
         ],
-        "details": "B:1800 Attlisberg, Waldshut, Baden-Wuerttemberg, Germany D:1830 Attlisberg, Waldshut, Baden-Wuerttemberg, Germany",
+        "details": "B:1800 Attlisberg, Waldshut, Baden-Wuerttemberg, Germany D:erika)",
+        "duplicate": false,
+        "original_name": "Frederika Regkukel",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0089997Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8457655Z"
       },
       {
         "display_name": "Marshall McQuiston",
         "tg_number": "TG972783",
-        "born": "See original notes",
+        "born": "1813",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -10728,14 +12529,17 @@
           "Charles McQuiston"
         ],
         "details": "B:23 Nov 1813 Butler, Pennsylvania, United States D:22 Dec 1872 Butler County, Pennsylvania, United States",
+        "duplicate": false,
+        "original_name": "Marshall McQuiston",
+        "record_override": null,
         "notes": "",
         "verify": "11/11/2026",
-        "captured_at_utc": "2026-11-10T20:14:25.0091834Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8459230Z"
       },
       {
         "display_name": "Rebecca Grannis",
         "tg_number": "TG168177",
-        "born": "See original notes",
+        "born": "1819",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -10745,10 +12549,13 @@
         "children": [
           "Charles McQuiston"
         ],
-        "details": "B:26 Mar 1819 Massachusetts D:31 Oct 1905 Near Slippery Rock, Butler County, Pennsylvania, USA",
+        "details": "B:26 Mar 1819 Massachusetts D:31 Oct 1905 Near Slippery Rock, Butler County, Pennsylvania",
+        "duplicate": false,
+        "original_name": "Rebecca Grannis",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0093827Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8459816Z"
       },
       {
         "display_name": "William Thorpe",
@@ -10763,10 +12570,13 @@
         "children": [
           "Mary Thorpe"
         ],
-        "details": "B:abt 1826 New Jersey D:Abt 1893 Pennsylvania",
+        "details": "B:abt 1826 New Jersey D:About 1893 Pennsylvania",
+        "duplicate": false,
+        "original_name": "William Thorpe",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0095698Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8460398Z"
       },
       {
         "display_name": "Mary Jane Sumner",
@@ -10781,10 +12591,13 @@
         "children": [
           "Mary Thorpe"
         ],
-        "details": "B:1839 Pennsylvania D:before 1880 Pennsylvania",
+        "details": "B:1839 Pennsylvania D:Not indicated",
+        "duplicate": false,
+        "original_name": "Mary Jane Sumner",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0097568Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8460975Z"
       },
       {
         "display_name": "William Smith",
@@ -10800,9 +12613,12 @@
           "John Isaac Smith"
         ],
         "details": "B:1790-12-11 Metal Township, Franklin County, Pennsylvania D:1857-04-25 Tuscarawas County, Ohio",
+        "duplicate": false,
+        "original_name": "William Smith",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0099427Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8461549Z"
       },
       {
         "display_name": "Lucy Ann Kreidler",
@@ -10817,15 +12633,18 @@
         "children": [
           "John Isaac Smith"
         ],
-        "details": "B:15 Feb 1795 Maryland, United States D:1890 Mattoon, Coles, Illinois, United States",
+        "details": "B:15 Feb 1795 Maryland, United States D:1890 Mattoon, Coles, Illinois, USA",
+        "duplicate": false,
+        "original_name": "Lucy Ann Kreidler",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0101416Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8463850Z"
       },
       {
         "display_name": "Thomas Cleophas Hamilton",
         "tg_number": "TG407091",
-        "born": "See original notes",
+        "born": "1784",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -10836,9 +12655,12 @@
           "Ruanna Hamilton"
         ],
         "details": "B:1 Feb 1784 Lincoln County, North Carolina, USA D:23 Feb 1872 Gnadenhutten, Tuscarawas County, Ohio, USA",
+        "duplicate": false,
+        "original_name": "Thomas Cleophas Hamilton",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0103310Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8465006Z"
       },
       {
         "display_name": "Sarah Elizabeth Marlow",
@@ -10854,9 +12676,12 @@
           "Ruanna Hamilton"
         ],
         "details": "B:Feb 1799 , Prince George\u0027s, Maryland, USA D:07 Sep 1838 Gnadenhutten, Tuscarawas, Ohio, USA",
+        "duplicate": false,
+        "original_name": "Sarah Elizabeth Marlow",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0105147Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8466140Z"
       },
       {
         "display_name": "James Prickett",
@@ -10872,10 +12697,13 @@
           "Charles Prickett",
           "Jane Ellen Prickett"
         ],
-        "details": "B:ABT 1795 Champaign County, Illinois D:14 NOV 1843 Kendall, Illinois, USA",
+        "details": "B:ABT 1795 Champaign County, Illinois D:14 Nov 1843 Kendall, Illinois USA",
+        "duplicate": false,
+        "original_name": "James Prickett",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0107193Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8467393Z"
       },
       {
         "display_name": "Rebecca Wisham",
@@ -10891,10 +12719,13 @@
           "Charles Prickett",
           "Jane Ellen Prickett"
         ],
-        "details": "B:25 Aug 1799 Gloucester County, New Jersey, USA D:07 Sep 1844 Newark, Kendall County, Illinois,USA",
+        "details": "B:25 Aug 1799 Gloucester County, New Jersey, USA D:07 Sep 1844 Newark, Kendall County, Illinois, USA",
+        "duplicate": false,
+        "original_name": "Rebecca Wisham",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0109375Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8468522Z"
       },
       {
         "display_name": "Jacob Holderman Sr",
@@ -10909,10 +12740,13 @@
         "children": [
           "Adaline A Holderman"
         ],
-        "details": "1808-1864",
+        "details": "1808-1864 D:1864",
+        "duplicate": false,
+        "original_name": "Jacob Holderman Sr",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0111254Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8469306Z"
       },
       {
         "display_name": "Mercy Caroline Loveland",
@@ -10927,15 +12761,18 @@
         "children": [
           "Adaline A Holderman"
         ],
-        "details": "B:08 Oct 1811 Delaware, Ohio, United States D:19 May 1886 Cottage Grove, Lane, Oregon, United States",
+        "details": "B:08 Oct 1811 Delaware, Ohio, United States D:19 May 1886 Cottage Grove, Lane, Oregon, USA",
+        "duplicate": false,
+        "original_name": "Mercy Caroline Loveland",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0113109Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8470276Z"
       },
       {
         "display_name": "George W Bowman Jr",
         "tg_number": "TG587699",
-        "born": "See original notes",
+        "born": "1787",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -10945,10 +12782,13 @@
         "children": [
           "Abel Bowman"
         ],
-        "details": "B:Oct 1787 Lincoln County, North Carolina, United States of America D:5 Aug 1874 Morgan County, Indiana, USA",
+        "details": "B:Oct 1787 Lincoln County, North Carolina, United States of America D:5 Aug 1874 Morgan County, Indiana USA",
+        "duplicate": false,
+        "original_name": "George W Bowman Jr",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0114972Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8471316Z"
       },
       {
         "display_name": "Mary Catherine Eisenhower",
@@ -10963,15 +12803,18 @@
         "children": [
           "Abel Bowman"
         ],
-        "details": "B:13 Feb 1798 Lincoln, North Carolina, United States D:1 Sep 1865 Morgan County, Indiana, USA",
+        "details": "B:13 Feb 1798 Lincoln, North Carolina, United States D:1 sep 1865 morgan county, Indiana usa",
+        "duplicate": false,
+        "original_name": "Mary Catherine Eisenhower",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0116819Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8472266Z"
       },
       {
         "display_name": "Thomas J Shoemake",
         "tg_number": "TG413298",
-        "born": "See original notes",
+        "born": "1797",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -10981,10 +12824,13 @@
         "children": [
           "Mary Martha Shumaker"
         ],
-        "details": "B:20 Apr 1797 Washington County, Kentucky, USA D:20 Apr 1846 Eminence, Morgan, Indiana, USA",
+        "details": "B:20 Apr 1797 Washington County, Kentucky, USA D:20 April 1846 Eminence, Morgan, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Thomas J Shoemake",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0118780Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8473216Z"
       },
       {
         "display_name": "Jemima Blunk",
@@ -11000,9 +12846,12 @@
           "Mary Martha Shumaker"
         ],
         "details": "B:Nov 1802 Harrison, Indiana, USA D:1882 Adams, Morgan County, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Jemima Blunk",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0120708Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8474198Z"
       },
       {
         "display_name": "Henry Ira Lambert",
@@ -11017,10 +12866,13 @@
         "children": [
           "Aaron Lorenzo Lambert"
         ],
-        "details": "B:24 MAY 1796 North Carolina, United States D:1868 Hendricks County, Indiana, United States",
+        "details": "B:24 MAY 1796 North Carolina, United States D:1868 Hendricks County, Indiana, USA",
+        "duplicate": false,
+        "original_name": "Henry Ira Lambert",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0122647Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8475176Z"
       },
       {
         "display_name": "Sarah \u0027Sally\u0027 M Craven",
@@ -11035,10 +12887,13 @@
         "children": [
           "Aaron Lorenzo Lambert"
         ],
-        "details": "B:1809 Randolph, North Carolina, United States D:27 JAN 1887 Center Valley, Indiana, United States",
+        "details": "B:1809 Randolph, North Carolina, United States D:iana, USA",
+        "duplicate": false,
+        "original_name": "Sarah \u0027Sally\u0027 M Craven",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0124474Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8476309Z"
       },
       {
         "display_name": "John W Brown",
@@ -11053,10 +12908,13 @@
         "children": [
           "Tabitha Ann Brown"
         ],
-        "details": "B:15 Oct 1817 Kentucky, USA D:27 Feb 1903 Morgan, Indiana, USA",
+        "details": "B:15 Oct 1817 Kentucky, USA D:iana, USA",
+        "duplicate": false,
+        "original_name": "John W Brown",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0126443Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8477851Z"
       },
       {
         "display_name": "Nancy Jan Wilhite",
@@ -11071,10 +12929,13 @@
         "children": [
           "Tabitha Ann Brown"
         ],
-        "details": "B:Abt. 1819 Kentucky, USA D:11 Apr 1890 Morgan, Indiana, USA",
+        "details": "B:Abt. 1819 Kentucky, USA D:11 April 1890 morgan, Indiana, usa",
+        "duplicate": false,
+        "original_name": "Nancy Jan Wilhite",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0128461Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8478862Z"
       },
       {
         "display_name": "William Maynard",
@@ -11089,10 +12950,13 @@
         "children": [
           "George Maynard"
         ],
-        "details": "B:18 May 1830 Pike County, Kentucky, United States of America D:25 March 1908 Pierce County, Washington, United States of America",
+        "details": "B:18 May 1830 Pike County, Kentucky, United States of America D:25 March 1908 Pierce County, Washington, USA",
+        "duplicate": false,
+        "original_name": "William Maynard",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0130312Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8480065Z"
       },
       {
         "display_name": "Sarah Parsons",
@@ -11107,10 +12971,13 @@
         "children": [
           "George Maynard"
         ],
-        "details": "B:9 Aug 1821 Kentucky D:14 Mar 1891 Bertha, Todd County, Minnesota, United States of America",
+        "details": "B:9 Aug 1821 Kentucky D:14 Mar 1891 Bertha, Todd County, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Sarah Parsons",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0132098Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8481546Z"
       },
       {
         "display_name": "Riley Sansom",
@@ -11125,10 +12992,13 @@
         "children": [
           "Margaret Rose Sansom"
         ],
-        "details": "B:10 Feb 1831 pike county kentucky D:6 Apr 1905 Riverside, Snohomish, Washington, USA",
+        "details": "B:10 Feb 1831 pike county kentucky D:6 April 1905 Riverside, Snohomish, Washington",
+        "duplicate": false,
+        "original_name": "Riley Sansom",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0137626Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8482543Z"
       },
       {
         "display_name": "Sarah Sally Kline",
@@ -11143,10 +13013,13 @@
         "children": [
           "Margaret Rose Sansom"
         ],
-        "details": "B:20 Jul 1836 Glen Alum , Logan, Virginia/West Virginia D:6 September 1928 Snohomish, Snohomish, Washington, United States",
+        "details": "B:20 Jul 1836 Glen Alum , Logan, Virginia/West Virginia D:6 September 1928 Snohomish, Snohomish, Washington USA",
+        "duplicate": false,
+        "original_name": "Sarah Sally Kline",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0139625Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8483850Z"
       },
       {
         "display_name": "Levi Colburn Hillman",
@@ -11162,9 +13035,12 @@
           "Fred Ernest Hillman"
         ],
         "details": "B:25 Jan 1822 Conway, Franklin, Massachusetts, USA D:11 Mar 1861 Randolph, Dakota, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Levi Colburn Hillman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0141462Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8484809Z"
       },
       {
         "display_name": "Mary Marinda Shelly",
@@ -11179,10 +13055,13 @@
         "children": [
           "Fred Ernest Hillman"
         ],
-        "details": "B:1830 Connecticut D:11 Mar 1897 Randolph, Dakota County, MN",
+        "details": "B:1830 Connecticut D:olph, Dakota County, MN",
+        "duplicate": false,
+        "original_name": "Mary Marinda Shelly",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0143271Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8485761Z"
       },
       {
         "display_name": "David C Platt",
@@ -11197,15 +13076,18 @@
         "children": [
           "Agnes Maria Platt"
         ],
-        "details": "B:16 May 1823 Berne, Clinton, New York, United States D:23 Oct 1904 Cannon Falls, Goodhue, Minnesota, United States",
+        "details": "B:16 May 1823 Berne, Clinton, New York, United States D:avid)",
+        "duplicate": false,
+        "original_name": "David C Platt",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0145308Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8486738Z"
       },
       {
         "display_name": "Miranda McLane",
         "tg_number": "TG112471",
-        "born": "See original notes",
+        "born": "1817",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11215,10 +13097,13 @@
         "children": [
           "Agnes Maria Platt"
         ],
-        "details": "B:12 Mar 1817 Alburgh, Grand Isle, Vermont, United States D:24 Jul 1861 Werner, Janeau, Wisconsin, United States",
+        "details": "B:12 Mar 1817 Alburgh, Grand Isle, Vermont, United States D:a)",
+        "duplicate": false,
+        "original_name": "Miranda McLane",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0147150Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8487728Z"
       },
       {
         "display_name": "Johann E Hedtke",
@@ -11233,10 +13118,13 @@
         "children": [
           "August Friedrich Hedtke"
         ],
-        "details": "B:5 Dec 1819 West Prussia D:28 Aug 1894 Chaska, Carver, Minnesota, United States",
+        "details": "B:5 Dec 1819 West Prussia D:28 Aug 1894 Chaska, Carver, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Johann E Hedtke",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0149075Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8488759Z"
       },
       {
         "display_name": "Florentine Henriette Florence Hedtke",
@@ -11251,10 +13139,13 @@
         "children": [
           "August Friedrich Hedtke"
         ],
-        "details": "B:31 Jul 1828 Neu or Alt Paleschken, Berent, Danzig, West Prussia D:18 Feb 1901 Chaska, Carver, Minnesota, USA",
+        "details": "B:31 Jul 1828 Neu or Alt Paleschken, Berent, Danzig, West Prussia D:18 Feb 1901 Chaska Carver, Minnesota, USA",
+        "duplicate": false,
+        "original_name": "Florentine Henriette Florence Hedtke",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0150873Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8489824Z"
       },
       {
         "display_name": "Joseph Sr Kiehlbauch",
@@ -11270,9 +13161,12 @@
           "Josef Kiehlbauch"
         ],
         "details": "B:22 Jan 1826 Neuberg, Cherson Prov, New Odessa, Russia D:29 May 1902 Tyndall, Bon Homme, South Dakota, USA",
+        "duplicate": false,
+        "original_name": "Joseph Sr Kiehlbauch",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0152673Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8490919Z"
       },
       {
         "display_name": "Johanna Knoepfle",
@@ -11287,10 +13181,13 @@
         "children": [
           "Josef Kiehlbauch"
         ],
-        "details": "B:25 Jul 1824 Alexanderhilf, Grossliebental District, Odessa, Russia D:21 Apr 1910 Medina, Stutsman Co., North Dakota",
+        "details": "B:25 Jul 1824 Alexanderhilf, Grossliebental District, Odessa, Russia D:21 April 1910 medina, Stutsman co. north Dakota",
+        "duplicate": false,
+        "original_name": "Johanna Knoepfle",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0154514Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8491967Z"
       },
       {
         "display_name": "Constantin Beck",
@@ -11306,14 +13203,17 @@
           "Barbara Beck"
         ],
         "details": "B:16 May 1812 Wuerttemberg, Germany D:04 Aug 1857 Luftsdorf, Odessa",
+        "duplicate": false,
+        "original_name": "Constantin Beck",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0156328Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8492973Z"
       },
       {
         "display_name": "Barbara Maier/Beck",
         "tg_number": "TG513452",
-        "born": "See original notes",
+        "born": "1811",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11323,15 +13223,18 @@
         "children": [
           "Barbara Beck"
         ],
-        "details": "B:18 May 1811 D:11 Jun 1856 Odessa, Odessa, Odessa, Kherson, Russia",
+        "details": "B:18 May 1811 D:11 Hyb 1756 Odessa, Oddessa, Kherson, Russia",
+        "duplicate": false,
+        "original_name": "Barbara Maier/Beck",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0158130Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8493963Z"
       },
       {
         "display_name": "Clarissa Gridley",
         "tg_number": "TG193860",
-        "born": "See original notes",
+        "born": "1804",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11341,15 +13244,18 @@
         "children": [
           "Patrick Henry Shapley"
         ],
-        "details": "B:ABT 1804 New York",
+        "details": "B:ABT 1804 New York D:Death is unknown or not recorded here",
+        "duplicate": false,
+        "original_name": "Clarissa Gridley",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0159906Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8494950Z"
       },
       {
         "display_name": "Ica Foster Rice",
         "tg_number": "TG893959",
-        "born": "See original notes",
+        "born": "1805",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11360,14 +13266,17 @@
           "Mary Rice"
         ],
         "details": "B:1805 Charlotteville Twp, Norfolk co., Canada D:01 Jan 1859 McLoughlin Canyon, Tonasket, Okanogan, Washington",
+        "duplicate": false,
+        "original_name": "Ica Foster Rice",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0161770Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8495944Z"
       },
       {
         "display_name": "Kezia Bair",
         "tg_number": "TG275416",
-        "born": "See original notes",
+        "born": "1810",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11378,9 +13287,12 @@
           "Mary Rice"
         ],
         "details": "B:1810 Pennsylvania D:20 Apr 1856 Riverton, Fremont, Iowa",
+        "duplicate": false,
+        "original_name": "Kezia Bair",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0163721Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8496963Z"
       },
       {
         "display_name": "Joseph W Stafford",
@@ -11395,10 +13307,13 @@
         "children": [
           "William Mark Stafford"
         ],
-        "details": "B:1804 New York",
+        "details": "B:1804 New York D:Death is not recorded",
+        "duplicate": false,
+        "original_name": "Joseph W Stafford",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0165756Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8497980Z"
       },
       {
         "display_name": "Hulda Sylvah",
@@ -11413,15 +13328,18 @@
         "children": [
           "William Mark Stafford"
         ],
-        "details": "B:1811 Pennsylvania, United States D:1862 Wisconsin",
+        "details": "B:1811 Pennsylvania, United States D:a)",
+        "duplicate": false,
+        "original_name": "Hulda Sylvah",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0167599Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8499636Z"
       },
       {
         "display_name": "Barton J Waite",
         "tg_number": "TG740772",
-        "born": "See original notes",
+        "born": "1792",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11431,15 +13349,18 @@
         "children": [
           "Alice Waite"
         ],
-        "details": "B:1792 New York, United States D:1862/1870 Calamus, Dodge, Wisconsin, United States",
+        "details": "B:1792 New York, United States D:1862 or 187- Calamus, Dodge, Wisconsin, USA",
+        "duplicate": false,
+        "original_name": "Barton J Waite",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0169442Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8500643Z"
       },
       {
         "display_name": "Susannah Clark Bacon",
         "tg_number": "TG733873",
-        "born": "See original notes",
+        "born": "1790",
         "died": "See original notes",
         "parents": [],
         "spouse": [],
@@ -11449,10 +13370,13 @@
         "children": [
           "Alice Waite"
         ],
-        "details": "B:20 August 1790 Randolph, Orange, Vermont, USA D:December 1870 Lorain, Lorain, Ohio, USA",
+        "details": "B:20 August 1790 Randolph, Orange, Vermont, USA D:Dec 1870 Lorain, Lorain, Ohio, USA",
+        "duplicate": false,
+        "original_name": "Susannah Clark Bacon",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0171216Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8501571Z"
       },
       {
         "display_name": "Lorenz Hinrichsen",
@@ -11467,10 +13391,13 @@
         "children": [
           "Elena M Johannsen"
         ],
-        "details": "B:29 July 1804 D:18 June 1854",
+        "details": "B:29 July 1804 D:18 jun 1854",
+        "duplicate": false,
+        "original_name": "Lorenz Hinrichsen",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0173224Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8502611Z"
       },
       {
         "display_name": "Sophia Margaretha Hinrichsen",
@@ -11485,10 +13412,13 @@
         "children": [
           "Elena M Johannsen"
         ],
-        "details": "B:25 December 1809 D:17 July 1866",
+        "details": "B:25 December 1809 D:17 Jul 1866",
+        "duplicate": false,
+        "original_name": "Sophia Margaretha Hinrichsen",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0174985Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8503629Z"
       },
       {
         "display_name": "Mary Richards Marlow",
@@ -11503,9 +13433,12 @@
           "Samuel Marlow Jr"
         ],
         "details": "",
+        "duplicate": false,
+        "original_name": "Mary Richards Marlow",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0176769Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8504602Z"
       },
       {
         "display_name": "Leonard Marlow Sr",
@@ -11519,9 +13452,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Leonard Marlow Sr",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0178514Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8505649Z"
       },
       {
         "display_name": "Samuel Marlow Jr",
@@ -11535,9 +13471,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Samuel Marlow Jr",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0180123Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8506655Z"
       },
       {
         "display_name": "Raymon Vester Bowman",
@@ -11555,9 +13494,12 @@
           "James Thomas \u0022Tuffy\u0022 Bowman Sr"
         ],
         "details": "",
+        "duplicate": false,
+        "original_name": "Raymon Vester Bowman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0181901Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8507624Z"
       },
       {
         "display_name": "Beulah Berniece Bowman Kirk",
@@ -11571,9 +13513,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Beulah Berniece Bowman Kirk",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0184070Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8508610Z"
       },
       {
         "display_name": "James Thomas \u0022Tuffy\u0022 Bowman Sr",
@@ -11587,9 +13532,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "James Thomas \u0022Tuffy\u0022 Bowman Sr",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0186175Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8509630Z"
       },
       {
         "display_name": "Jane Ellen Prickett",
@@ -11604,9 +13552,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Jane Ellen Prickett",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0194750Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8510469Z"
       },
       {
         "display_name": "F. Howard Hillman",
@@ -11620,9 +13571,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "F. Howard Hillman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0196565Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8511586Z"
       },
       {
         "display_name": "Clare Levi Hillman",
@@ -11636,14 +13590,17 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Clare Levi Hillman",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0198242Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8512577Z"
       },
       {
         "display_name": "Joseph Kiehlbauch",
         "tg_number": "TG209417",
-        "born": "1 Jan 1850",
+        "born": "1850",
         "died": "14 Sep 1908 (aged 58)",
         "parents": [
           "Johanna Kiehlbauch"
@@ -11655,9 +13612,12 @@
           "Louisa Kiehlbauch"
         ],
         "details": "",
+        "duplicate": false,
+        "original_name": "Joseph Kiehlbauch",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0200190Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8513737Z"
       },
       {
         "display_name": "Johanna Kiehlbauch",
@@ -11671,9 +13631,12 @@
           "Joseph Kiehlbauch"
         ],
         "details": "",
+        "duplicate": false,
+        "original_name": "Johanna Kiehlbauch",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0202049Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8514868Z"
       },
       {
         "display_name": "Johanna Kiehlbauch Setzer",
@@ -11687,9 +13650,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Johanna Kiehlbauch Setzer",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0203711Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8581242Z"
       },
       {
         "display_name": "Louisa Kiehlbauch",
@@ -11703,9 +13669,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Louisa Kiehlbauch",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0205478Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8581871Z"
       },
       {
         "display_name": "John Rossow",
@@ -11721,9 +13690,12 @@
           "Minnie Sophia Rossow Schroeder"
         ],
         "details": "",
+        "duplicate": false,
+        "original_name": "John Rossow",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0207517Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8582516Z"
       },
       {
         "display_name": "Louise Rossow Deutscher",
@@ -11737,9 +13709,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Louise Rossow Deutscher",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0209088Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8583054Z"
       },
       {
         "display_name": "Charles Rossow",
@@ -11753,9 +13728,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Charles Rossow",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0210781Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8583594Z"
       },
       {
         "display_name": "Minnie Sophia Rossow Schroeder",
@@ -11769,9 +13747,12 @@
         "other_parents": [],
         "children": [],
         "details": "",
+        "duplicate": false,
+        "original_name": "Minnie Sophia Rossow Schroeder",
+        "record_override": null,
         "notes": "",
         "verify": "",
-        "captured_at_utc": "2026-11-10T20:14:25.0212393Z"
+        "captured_at_utc": "2026-11-19T00:30:37.8584118Z"
       }
     ]
   },

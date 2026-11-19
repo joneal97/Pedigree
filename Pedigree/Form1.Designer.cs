@@ -207,9 +207,6 @@ namespace Pedigree
             // 
             tabControl.Controls.Add(mainTabPage);
             tabControl.Controls.Add(experimentalTabPage);
-            tabControl.Controls.Add(treeTabPage);
-            tabControl.Controls.Add(updateTabPage);
-            tabControl.Controls.Add(friendsTabPage);
             tabControl.Dock = DockStyle.Fill;
             tabControl.Location = new Point(0, 0);
             tabControl.Name = "tabControl";

@@ -1,0 +1,6 @@
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Pedigree.Form1.get_MatchRecords() in C:\Users\161119\source\repos\Pedigree\Pedigree\Form1.cs:line 178
+   at Pedigree.Form1.IsFamilyMatchComplete(String name) in C:\Users\161119\source\repos\Pedigree\Pedigree\Form1.cs:line 223
+   at Pedigree.Form1.familyListBox_DrawItem(Object sender, DrawItemEventArgs e) in C:\Users\161119\source\repos\Pedigree\Pedigree\Form1.cs:line 239
+   at System.Windows.Forms.ListBox.WmReflectDrawItem(Message& m)
+   at System.Windows.Forms.NativeWindow.Callback(HWND hWnd, UInt32 msg, WPARAM wparam, LPARAM lparam)

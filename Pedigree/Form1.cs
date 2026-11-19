@@ -47,9 +47,18 @@ namespace Pedigree
         private Label? _chronologicalSummaryLabel;
         private DataGridView? _chronologicalGrid;
         private DataGridView? _geographyGrid;
+        private ListBox? _editPeopleListBox;
+        private TextBox? _editSearchTextBox;
+        private Label? _updateWorkspaceStatusLabel;
+        private TextBox? _researchReviewSummaryTextBox;
+        private DataGridView? _researchReviewGrid;
+        private readonly HashSet<string> _orangeCodes = new(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> _blueCodes = new(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> _purpleCodes = new(StringComparer.OrdinalIgnoreCase);
+        private readonly HashSet<string> _excludedChronologicalNames = new(StringComparer.OrdinalIgnoreCase);
         private sealed record GeographyRow(string Name, string Location, string LocationBasis,
             string TimePeriod, string RecommendedSources, int Difficulty, string DifficultyReason);
-        private sealed record PersonRow(string Name, string Tg, string Details, string Verify)
+        private sealed record PersonRow(string Name, string Tg, string Details, string Verify, string OriginalName)
         {
             public override string ToString() => string.IsNullOrWhiteSpace(Tg) ? Name : $"{Name} ({Tg})";
         }
@@ -58,16 +67,12 @@ namespace Pedigree
         {
             _isExperimental = false;
             InitializeComponent();
-            InitializeChronologicalConsistencyTab();
-            InitializeGeographyTab();
         }
 
         private Form1(bool experimental)
         {
             _isExperimental = experimental;
             InitializeComponent();
-            InitializeChronologicalConsistencyTab();
-            InitializeGeographyTab();
             if (experimental) ConfigureExperimentalMatching();
         }
 
@@ -75,6 +80,8 @@ namespace Pedigree
         {
             InitializeView();
             CreateExperimentalView();
+            tabControl.TabPages.Remove(mainTabPage);
+            tabControl.SelectedTab = experimentalTabPage;
         }
 
         private void InitializeView()
@@ -85,6 +92,9 @@ namespace Pedigree
             memberPanel.BackColor = detailsPanel.BackColor = exportsPanel.BackColor = Color.White;
             titleLabel.ForeColor = Color.FromArgb(41, 74, 122);
             subtitleLabel.ForeColor = Color.FromArgb(71, 94, 128);
+            familyListBox.DrawMode = DrawMode.OwnerDrawFixed;
+            familyListBox.DrawItem -= familyListBox_DrawItem;
+            familyListBox.DrawItem += familyListBox_DrawItem;
             foreach (var button in new[] { addPersonButton, connectButton, importButton, exportPdfButton, exportJsonButton, aboutButton })
             {
                 button.BackColor = Color.FromArgb(225, 236, 252);
@@ -131,6 +141,487 @@ namespace Pedigree
             mainTabPage.Controls.Remove(mainTableLayout);
             mainTableLayout.Dock = DockStyle.Fill;
             return mainTableLayout;
+        }
+
+        private void InitializeEditTab()
+        {
+            var tab = new TabPage("Edit") { BackColor = Color.White };
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(18),
+                ColumnCount = 1,
+                RowCount = 3
+            };
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 58F));
+            var header = new Label
+            {
+                Dock = DockStyle.Fill,
+                Text = "Edit family records. Original built-in records remain preserved; changes are saved as overrides.",
+                TextAlign = ContentAlignment.MiddleLeft,
+                Font = new Font("Segoe UI", 10F)
+            };
+            var body = new TableLayoutPanel { Dock = DockStyle.Fill, ColumnCount = 1, RowCount = 2 };
+            body.RowStyles.Add(new RowStyle(SizeType.Absolute, 38F));
+            body.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _editSearchTextBox = new TextBox { Dock = DockStyle.Fill, PlaceholderText = "Search name or TG" };
+            _editSearchTextBox.TextChanged += (_, __) => RefreshEditPeople();
+            _editPeopleListBox = new ListBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 11F) };
+            _editPeopleListBox.DoubleClick += (_, __) => EditSelectedPerson();
+            body.Controls.Add(_editSearchTextBox, 0, 0);
+            body.Controls.Add(_editPeopleListBox, 0, 1);
+            var actions = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.RightToLeft };
+            var editButton = new Button { Text = "Edit Selected Record", Width = 180, Height = 40 };
+            editButton.Click += (_, __) => EditSelectedPerson();
+            actions.Controls.Add(editButton);
+            layout.Controls.Add(header, 0, 0);
+            layout.Controls.Add(body, 0, 1);
+            layout.Controls.Add(actions, 0, 2);
+            tab.Controls.Add(layout);
+            tabControl.TabPages.Add(tab);
+        }
+
+        private void InitializeUpdateWorkspaceTab()
+        {
+            var tab = new TabPage("Update Files") { BackColor = Color.White };
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(24),
+                ColumnCount = 1,
+                RowCount = 5
+            };
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 90F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            var description = new Label
+            {
+                Dock = DockStyle.Fill,
+                Text = "Create a portable full-tree update workspace, then import a completed new.json. " +
+                    "The import replaces the in-memory tree only after validating that it contains the complete existing family.",
+                TextAlign = ContentAlignment.MiddleLeft,
+                Font = new Font("Segoe UI", 11F)
+            };
+            var createButton = new Button
+            {
+                Text = "Create Update Files",
+                Dock = DockStyle.Left,
+                Width = 220,
+                Height = 48,
+                BackColor = Color.FromArgb(225, 236, 252)
+            };
+            createButton.Click += (_, __) => CreateUpdateWorkspace();
+            var importButton = new Button
+            {
+                Text = "Import new.json",
+                Dock = DockStyle.Left,
+                Width = 220,
+                Height = 48,
+                BackColor = Color.FromArgb(225, 236, 252)
+            };
+            importButton.Click += (_, __) => ImportUpdatedTree();
+            var exportButton = new Button
+            {
+                Text = "Export Current Tree As...",
+                Dock = DockStyle.Left,
+                Width = 220,
+                Height = 48,
+                BackColor = Color.FromArgb(225, 236, 252)
+            };
+            exportButton.Click += (_, __) => ExportCurrentTreeToFile();
+            _updateWorkspaceStatusLabel = new Label
+            {
+                Dock = DockStyle.Fill,
+                TextAlign = ContentAlignment.TopLeft,
+                Font = new Font("Segoe UI", 10F),
+                Text = "The package destination is E:\\11-18-2026. A separate Linux import location is documented in readme.txt."
+            };
+            layout.Controls.Add(description, 0, 0);
+            layout.Controls.Add(createButton, 0, 1);
+            layout.Controls.Add(importButton, 0, 2);
+            layout.Controls.Add(exportButton, 0, 3);
+            layout.Controls.Add(_updateWorkspaceStatusLabel, 0, 4);
+            tab.Controls.Add(layout);
+            tabControl.TabPages.Add(tab);
+        }
+
+        private void InitializeResearchReviewTab()
+        {
+            var tab = new TabPage("Research Review") { BackColor = Color.White };
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(18),
+                ColumnCount = 1,
+                RowCount = 2
+            };
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            _researchReviewSummaryTextBox = new TextBox
+            {
+                Dock = DockStyle.Fill,
+                Multiline = true,
+                ReadOnly = true,
+                ScrollBars = ScrollBars.Vertical,
+                WordWrap = true,
+                Font = new Font("Segoe UI", 10F),
+                BackColor = Color.White
+            };
+            _researchReviewGrid = new DataGridView
+            {
+                AllowUserToAddRows = false,
+                AllowUserToDeleteRows = false,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
+                BackgroundColor = Color.White,
+                Dock = DockStyle.Fill,
+                ReadOnly = true,
+                RowHeadersVisible = false,
+                SelectionMode = DataGridViewSelectionMode.FullRowSelect,
+                AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
+            };
+            _researchReviewGrid.Columns.Add("Code", "TG / Code");
+            _researchReviewGrid.Columns.Add("Person", "Person");
+            _researchReviewGrid.Columns.Add("Review", "Research review (UNVERIFIED; not a canonical fact)");
+            _researchReviewGrid.Columns[0].FillWeight = 12;
+            _researchReviewGrid.Columns[1].FillWeight = 20;
+            _researchReviewGrid.Columns[2].FillWeight = 68;
+            _researchReviewGrid.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
+            layout.Controls.Add(_researchReviewSummaryTextBox, 0, 0);
+            layout.Controls.Add(_researchReviewGrid, 0, 1);
+            tab.Controls.Add(layout);
+            tabControl.TabPages.Add(tab);
+        }
+
+        private void RefreshResearchReviewTab()
+        {
+            if (_researchReviewGrid == null || _researchReviewSummaryTextBox == null) return;
+            _researchReviewGrid.Rows.Clear();
+            if (_document?["record_overrides"] is JsonArray overrides)
+            {
+                foreach (JsonNode? item in overrides.Where(item =>
+                    Value(item, "field") == "research_review_2026_11_18"))
+                {
+                    string summary = "UNVERIFIED RESEARCH LEAD - " + Value(item, "status") + Environment.NewLine +
+                        Value(item, "value");
+                    string source = Value(item, "source");
+                    string reason = Value(item, "reason");
+                    if (!string.IsNullOrWhiteSpace(source)) summary += Environment.NewLine + "Source: " + source;
+                    if (!string.IsNullOrWhiteSpace(reason)) summary += Environment.NewLine + "Review note: " + reason;
+                    _researchReviewGrid.Rows.Add(Value(item, "code"), Value(item, "display_name"), summary);
+                }
+            }
+
+            JsonNode? followup = _document?["update_workflow"]?["followup_research_2026_11_18"];
+            if (followup == null)
+            {
+                _researchReviewSummaryTextBox.Text = "No 18 Nov 2026 follow-up research review is present in this tree.\r\n" +
+                    "Research notes in this tab are display-only leads; they do not establish facts or relationships.";
+                return;
+            }
+
+            var summaryLines = new List<string>
+            {
+                "FOLLOW-UP RESEARCH REVIEW - UNVERIFIED; NO CANDIDATE RELATIONSHIPS ARE AUTOMATICALLY PROMOTED",
+                "Status: " + Value(followup, "review_status"),
+                "Review date: " + Value(followup, "reviewed_at"),
+                $"Reviewed TG records: {((followup["target_codes"] as JsonArray)?.Count.ToString() ?? "not specified")}"
+            };
+            foreach (JsonNode? discrepancy in followup["code_discrepancies"] as JsonArray ?? new JsonArray())
+                summaryLines.Add($"Identifier warning: {Value(discrepancy, "name")}: supplied {Value(discrepancy, "supplied")}; existing {Value(discrepancy, "existing")}. {Value(discrepancy, "action")}");
+            foreach (JsonNode? issue in followup["chronological_flags"] as JsonArray ?? new JsonArray())
+                summaryLines.Add($"Chronology/identity warning {Value(issue, "code")}: {Value(issue, "issue")}");
+            if (followup["request_to_copilot"] is JsonValue request && request.TryGetValue<string>(out string? requestText) && !string.IsNullOrWhiteSpace(requestText))
+                summaryLines.Add("Review instructions: " + requestText);
+            _researchReviewSummaryTextBox.Text = string.Join(Environment.NewLine, summaryLines);
+        }
+
+        private void EditSelectedPerson()
+        {
+            if (_editPeopleListBox?.SelectedItem is not PersonRow person)
+            {
+                MessageBox.Show(this, "Choose a record to edit.", "Edit family record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            EditPerson(person, this);
+        }
+
+        private void RefreshEditPeople(string? selectName = null)
+        {
+            if (_editPeopleListBox == null) return;
+            string search = _editSearchTextBox?.Text ?? "";
+            _editPeopleListBox.BeginUpdate();
+            _editPeopleListBox.Items.Clear();
+            foreach (PersonRow person in _people
+                .Where(person => string.IsNullOrWhiteSpace(search) ||
+                    person.Name.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+                    person.Tg.Contains(search, StringComparison.OrdinalIgnoreCase))
+                .OrderBy(person => person.Name, StringComparer.OrdinalIgnoreCase))
+                _editPeopleListBox.Items.Add(person);
+            if (_editPeopleListBox.Items.Count > 0)
+            {
+                int selected = 0;
+                if (!string.IsNullOrWhiteSpace(selectName))
+                    for (int i = 0; i < _editPeopleListBox.Items.Count; i++)
+                        if (((PersonRow)_editPeopleListBox.Items[i]).Name.Equals(selectName, StringComparison.OrdinalIgnoreCase))
+                        {
+                            selected = i;
+                            break;
+                        }
+                _editPeopleListBox.SelectedIndex = selected;
+            }
+            _editPeopleListBox.EndUpdate();
+        }
+
+        private static string UpdateWorkspaceWindowsPath() => @"E:\11-18-2026";
+
+        private void CreateUpdateWorkspace()
+        {
+            if (_document == null)
+            {
+                MessageBox.Show(this, "The family tree has not loaded, so update files cannot be created.",
+                    "Update files unavailable", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            string sourceChanges = @"E:\changes18z.txt";
+            if (!File.Exists(sourceChanges))
+            {
+                MessageBox.Show(this, $"The required change instructions were not found:\n{sourceChanges}",
+                    "Update files unavailable", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                string folder = UpdateWorkspaceWindowsPath();
+                Directory.CreateDirectory(folder);
+                CaptureAllPeople();
+                JsonObject original = _document.DeepClone() as JsonObject
+                    ?? throw new InvalidDataException("Could not clone the family tree JSON.");
+                JsonObject starter = original.DeepClone() as JsonObject
+                    ?? throw new InvalidDataException("Could not create the new.json starter.");
+                starter["update_workflow"] = new JsonObject
+                {
+                    ["status"] = "starter - apply changes18z.txt before importing",
+                    ["source_file"] = "changes18z.txt",
+                    ["instructions"] = "Apply every applicable instruction from changes18z.txt to this complete tree. Preserve every person, identifier, relationship, and unknown metadata. Do not mark uncertain facts as verified."
+                };
+
+                var options = new JsonSerializerOptions { WriteIndented = true };
+                File.WriteAllText(Path.Combine(folder, "old.json"), original.ToJsonString(options), new UTF8Encoding(false));
+                File.WriteAllText(Path.Combine(folder, "new.json"), starter.ToJsonString(options), new UTF8Encoding(false));
+                File.WriteAllText(Path.Combine(folder, "structure.txt"), UpdateWorkspaceStructure(), new UTF8Encoding(false));
+                File.WriteAllText(Path.Combine(folder, "readme.txt"), UpdateWorkspaceReadme(), new UTF8Encoding(false));
+                File.Copy(sourceChanges, Path.Combine(folder, "changes18z.txt"), true);
+
+                string message = $"Created old.json, new.json (starter copy), structure.txt, readme.txt, and changes18z.txt in {folder}. " +
+                    "Have ChatGPT apply the changes before importing new.json.";
+                UpdateStatus(message);
+                if (_updateWorkspaceStatusLabel != null) _updateWorkspaceStatusLabel.Text = message;
+                MessageBox.Show(this, message, "Update files created", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                if (_updateWorkspaceStatusLabel != null) _updateWorkspaceStatusLabel.Text = "Could not create update files: " + ex.Message;
+                MessageBox.Show(this, ex.Message, "Could not create update files", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private static string UpdateWorkspaceStructure() =>
+            "Pedigree full-tree update package structure\r\n" +
+            "=============================================\r\n\r\n" +
+            "old.json and new.json are complete JSON documents. new.json begins as a copy of old.json and is only a starter until changes18z.txt has been applied.\r\n\r\n" +
+            "Top-level fields:\r\n" +
+            "- people: array of original and added person objects. Existing objects retain their fields, including person_no, display_name, details, verify, and other source metadata.\r\n" +
+            "- identifiers: array mapping display_name to code and kind (including TG and AKA_TE identifiers). Do not change existing identifiers.\r\n" +
+            "- relationships: array of parent-child links, typically child, parent, relation, confidence, and permanent.\r\n" +
+            "- spouse_relationships: array of spouse links, person1, person2, relation, and source/permanence metadata.\r\n" +
+            "- provisional_facts: array of sourced or user-provided facts. Preserve status, confidence, source, and permanence fields.\r\n" +
+            "- person_notes, project_references, record_overrides, duplicate_records, duplicate_reviews, and other top-level arrays: optional application data; preserve them even when not editing them.\r\n" +
+            "- update_workflow: package-generation notes; it is not a family fact.\r\n\r\n" +
+            "The app imports new.json as a complete tree, not as a partial update package. Required arrays are people, identifiers, and relationships. The import is rejected unless all current original people and identifier codes are retained.\r\n";
+
+        private static string UpdateWorkspaceReadme() =>
+            "Pedigree family tree update workspace\r\n" +
+            "======================================\r\n\r\n" +
+            "Windows app location: E:\\11-18-2026\\\r\n" +
+            "The application writes old.json, new.json (an unapplied starter copy), structure.txt, readme.txt, and a copy of changes18z.txt there. The E: location is specific to the Windows development machine.\r\n\r\n" +
+            "Deployment/container location: /opt/11-18-2026/ (not E:\\). When working in the Linux deployment/container, stage the package files under /opt/11-18-2026/; do not assume the Windows E: drive exists there.\r\n\r\n" +
+            "Files:\r\n" +
+            "- old.json: complete baseline tree exported from the running program. Keep an untouched copy.\r\n" +
+            "- changes18z.txt: user-provided update instructions and genealogical information.\r\n" +
+            "- structure.txt: JSON schema overview and import requirements.\r\n" +
+            "- new.json: starter copy only. It is not updated merely by creating this workspace.\r\n" +
+            "- readme.txt: this workflow guide.\r\n\r\n" +
+            "Instructions for ChatGPT: read old.json, changes18z.txt, and structure.txt. Apply the requested changes to a full copy of old.json, preserving all family members, original identifiers, all relationship and supplemental arrays, and unknown metadata. Do not invent missing facts or present uncertain dates as verified. Keep original records and express user edits using the existing record_overrides pattern where appropriate. Retain duplicate records and mark them for export rather than silently deleting them. Save the finished complete tree as /home/we6jbo/11-19-2026/new.json. Do not overwrite old.json. The file produced by this app at E:\\11-18-2026\\new.json is only a starter.\r\n\r\n" +
+            "Instructions for ChatGPT to create the handoff note: write /home/we6jbo/11-19-2026/share-to-github-copilot.txt. Explain that the user should attach or paste old.json, the completed new.json, changes18z.txt, structure.txt, and this readme.txt in a Copilot conversation, and explicitly ask Copilot to review/import the new full tree and implement any required program changes. The user must actually attach the files; Copilot cannot read files merely because they exist on the user's computer. If the ChatGPT environment cannot write to /home/we6jbo/11-19-2026/, provide share-to-github-copilot.txt as downloadable text for the user to save there.\r\n\r\n" +
+            "To import: copy the completed new.json to the Windows machine or otherwise make it accessible, then use the app's Update Files tab > Import new.json and select it. Import validates required arrays and checks that existing family members and identifier codes have not been omitted. A successful import replaces the program's in-memory tree; use Export JSON afterward to save a program copy.\r\n";
+
+        private void ExportCurrentTreeToFile()
+        {
+            if (_document == null)
+            {
+                MessageBox.Show(this, "The family tree has not loaded, so it cannot be exported.",
+                    "Export unavailable", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            using var dialog = new SaveFileDialog
+            {
+                Title = "Export the complete current family tree",
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                InitialDirectory = Directory.Exists(UpdateWorkspaceWindowsPath()) ? UpdateWorkspaceWindowsPath() : "",
+                FileName = "new-research-review-imported.json",
+                OverwritePrompt = true
+            };
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
+            try
+            {
+                CaptureAllPeople();
+                File.WriteAllText(dialog.FileName,
+                    _document.ToJsonString(new JsonSerializerOptions { WriteIndented = true }), new UTF8Encoding(false));
+                string message = $"Exported complete current tree with research review metadata to {dialog.FileName}.";
+                UpdateStatus(message);
+                if (_updateWorkspaceStatusLabel != null) _updateWorkspaceStatusLabel.Text = message;
+                MessageBox.Show(this, message, "Tree exported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                if (_updateWorkspaceStatusLabel != null) _updateWorkspaceStatusLabel.Text = "Export failed: " + ex.Message;
+                MessageBox.Show(this, ex.Message, "Could not export tree", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ImportUpdatedTree()
+        {
+            using var dialog = new OpenFileDialog
+            {
+                Title = "Select the completed full-tree JSON or research-review candidate",
+                Filter = "JSON files (*.json)|*.json|All files (*.*)|*.*",
+                InitialDirectory = Directory.Exists(UpdateWorkspaceWindowsPath()) ? UpdateWorkspaceWindowsPath() : ""
+            };
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
+
+            try
+            {
+                if (_document == null)
+                    throw new InvalidOperationException("The current family tree is not loaded.");
+                JsonObject incoming = JsonNode.Parse(File.ReadAllText(dialog.FileName)) as JsonObject
+                    ?? throw new InvalidDataException("new.json must contain a JSON object.");
+                foreach (string key in new[] { "people", "identifiers", "relationships" })
+                    EnsureArray(incoming, key);
+                foreach (string key in new[] { "record_overrides", "duplicate_records", "duplicate_reviews" })
+                    if (incoming[key] is not JsonArray) incoming[key] = new JsonArray();
+
+                JsonArray people = EnsureArray(incoming, "people");
+                JsonArray identifiers = EnsureArray(incoming, "identifiers");
+                if (people.Count == 0)
+                    throw new InvalidDataException("new.json contains no people.");
+                if (people.Any(person => string.IsNullOrWhiteSpace(Value(person, "display_name"))))
+                    throw new InvalidDataException("Every person in new.json must have a display_name.");
+                if (identifiers.Any(identifier => string.IsNullOrWhiteSpace(Value(identifier, "code")) ||
+                    string.IsNullOrWhiteSpace(Value(identifier, "display_name"))))
+                    throw new InvalidDataException("Every identifier must have both code and display_name.");
+
+                foreach (JsonNode? originalPerson in PeopleArray)
+                {
+                    string originalName = Value(originalPerson, "display_name");
+                    JsonNode? candidatePerson = people.FirstOrDefault(person =>
+                        Value(person, "display_name").Equals(originalName, StringComparison.OrdinalIgnoreCase));
+                    if (candidatePerson == null)
+                        throw new InvalidDataException($"new.json is missing original family member '{originalName}'. Keep every original person record in people.");
+                    string originalNumber = Value(originalPerson, "person_no");
+                    if (!string.IsNullOrWhiteSpace(originalNumber) && Value(candidatePerson, "person_no") != originalNumber)
+                        throw new InvalidDataException($"Original person_no for '{originalName}' changed. Preserve original person_no values.");
+                    string candidateDetails = Value(candidatePerson, "details");
+                    if (candidateDetails != Value(originalPerson, "details") &&
+                        (candidateDetails.Contains("â", StringComparison.Ordinal) || candidateDetails.Contains("Ã", StringComparison.Ordinal) || candidateDetails.Contains('\uFFFD')))
+                        throw new InvalidDataException($"Details for '{originalName}' appear to have text-encoding corruption. Restore the original text from old.json before importing.");
+                }
+                foreach (JsonNode? originalIdentifier in IdentifierArray)
+                {
+                    string originalCode = Value(originalIdentifier, "code");
+                    if (string.IsNullOrWhiteSpace(originalCode)) continue;
+                    JsonNode? importedIdentifier = identifiers.FirstOrDefault(identifier =>
+                        Value(identifier, "code").Equals(originalCode, StringComparison.OrdinalIgnoreCase));
+                    if (importedIdentifier == null)
+                        throw new InvalidDataException($"new.json is missing original identifier '{originalCode}'. Existing identifiers must be preserved.");
+                    if (!Value(importedIdentifier, "display_name").Equals(Value(originalIdentifier, "display_name"), StringComparison.OrdinalIgnoreCase))
+                        throw new InvalidDataException($"Original identifier '{originalCode}' was reassigned. Existing identifier ownership must be preserved.");
+                }
+
+                JsonArray relationships = EnsureArray(incoming, "relationships");
+                foreach (JsonNode? relationship in relationships)
+                {
+                    string parent = Value(relationship, "parent"), child = Value(relationship, "child");
+                    if (string.IsNullOrWhiteSpace(parent) || string.IsNullOrWhiteSpace(child))
+                        throw new InvalidDataException("Every relationship must specify child and parent.");
+                }
+
+                static string RelationshipKey(JsonNode? relationship) =>
+                    string.Join("\u001f", Value(relationship, "child"), Value(relationship, "parent"), Value(relationship, "relation"));
+                var baselineRelationshipKeys = RelationshipArray.Select(RelationshipKey).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                var candidateRelationshipKeys = relationships.Select(RelationshipKey).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                foreach (JsonNode? baselineRelationship in RelationshipArray)
+                {
+                    string baselineLink = RelationshipKey(baselineRelationship);
+                    JsonNode? candidateLink = relationships.FirstOrDefault(relationship =>
+                        RelationshipKey(relationship).Equals(baselineLink, StringComparison.OrdinalIgnoreCase));
+                    if (candidateLink == null)
+                        throw new InvalidDataException("new.json omits an existing parent-child link. Original relationships must be retained.");
+                    if (!JsonNode.DeepEquals(baselineRelationship, candidateLink))
+                        throw new InvalidDataException($"An existing parent-child link was modified: {Value(baselineRelationship, "parent")} -> {Value(baselineRelationship, "child")}. Preserve the original relationship row and review candidates separately.");
+                }
+
+                bool isResearchReviewCandidate = incoming["update_workflow"]?["followup_research_2026_11_18"] != null;
+                if (isResearchReviewCandidate && candidateRelationshipKeys.Except(baselineRelationshipKeys, StringComparer.OrdinalIgnoreCase).Any())
+                    throw new InvalidDataException("This research-review candidate adds parent-child links. The review requires that candidate relationships remain unpromoted; review and confirm links separately before importing.");
+
+                JsonArray baselineSpouses = _document?["spouse_relationships"] as JsonArray ?? new JsonArray();
+                JsonArray candidateSpouses = incoming["spouse_relationships"] as JsonArray ?? new JsonArray();
+                static string SpouseKey(JsonNode? spouse) =>
+                    string.Join("\u001f", Value(spouse, "person1"), Value(spouse, "person2"));
+                var candidateSpouseKeys = candidateSpouses.Select(SpouseKey).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                foreach (JsonNode? baselineSpouse in baselineSpouses)
+                {
+                    string baselineSpouseKey = SpouseKey(baselineSpouse);
+                    JsonNode? candidateSpouse = candidateSpouses.FirstOrDefault(spouse =>
+                        SpouseKey(spouse).Equals(baselineSpouseKey, StringComparison.OrdinalIgnoreCase));
+                    if (candidateSpouse == null)
+                        throw new InvalidDataException("new.json omits an existing spouse link. Original spouse relationships must be retained.");
+                    if (!JsonNode.DeepEquals(baselineSpouse, candidateSpouse))
+                        throw new InvalidDataException("An existing spouse relationship row was modified. Preserve its original values during research review.");
+                }
+                if (isResearchReviewCandidate)
+                {
+                    var baselineSpouseKeys = baselineSpouses.Select(SpouseKey).ToHashSet(StringComparer.OrdinalIgnoreCase);
+                    if (candidateSpouseKeys.Except(baselineSpouseKeys, StringComparer.OrdinalIgnoreCase).Any())
+                        throw new InvalidDataException("This research-review candidate adds spouse links. Research leads must not be automatically promoted to relationships.");
+                    foreach (JsonNode? review in EnsureArray(incoming, "record_overrides")
+                        .Where(item => Value(item, "field") == "research_review_2026_11_18"))
+                    {
+                        if (review?["verified"] is not JsonValue verifiedValue ||
+                            !verifiedValue.TryGetValue<bool>(out bool verified) || verified)
+                            throw new InvalidDataException("Research review entries must remain explicitly unverified.");
+                    }
+                }
+
+                _document = incoming;
+                RefreshPeople();
+                SynchronizeExperimentalView();
+                string message = $"Imported complete updated tree from {dialog.FileName}. The program now has {_people.Count} visible family members.";
+                UpdateStatus(message);
+                if (_updateWorkspaceStatusLabel != null) _updateWorkspaceStatusLabel.Text = message;
+                MessageBox.Show(this, message, "Updated tree imported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                if (_updateWorkspaceStatusLabel != null) _updateWorkspaceStatusLabel.Text = "Import failed; current family data was not replaced: " + ex.Message;
+                MessageBox.Show(this, ex.Message, "Could not import updated tree", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private static string ExperimentalSettingsPath()
@@ -212,17 +703,22 @@ namespace Pedigree
             familyListBox.Invalidate();
         }
 
-        private bool IsFamilyMatchComplete(string name) =>
-            MatchRecords.FirstOrDefault(record => Value(record, "display_name") == name) is JsonNode record &&
-            Flag(record, "matched");
+        private bool IsFamilyMatchComplete(string name)
+        {
+            if (!_isExperimental || _matchSettings?["matches"] is not JsonArray records)
+                return false;
+
+            JsonNode? record = records.FirstOrDefault(item =>
+                Value(item, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+            return Flag(record, "matched");
+        }
 
         private void familyListBox_DrawItem(object? sender, DrawItemEventArgs e)
         {
             if (e.Index < 0 || e.Index >= familyListBox.Items.Count) return;
             e.DrawBackground();
             var person = (PersonRow)familyListBox.Items[e.Index];
-            Color color = IsFamilyMatchComplete(person.Name) ? Color.ForestGreen : e.ForeColor;
-            using var brush = new SolidBrush(color);
+            using var brush = new SolidBrush(e.ForeColor);
             e.Graphics.DrawString(person.ToString(), e.Font, brush, e.Bounds);
             e.DrawFocusRectangle();
         }
@@ -234,9 +730,179 @@ namespace Pedigree
         }
         private static string Value(JsonNode? node, string key) => node?[key]?.ToString() ?? "";
         private static bool Flag(JsonNode? node, string key) => node?[key]?.GetValue<bool>() ?? false;
+        private static string NormalizeCode(string code) => code.StartsWith("TH", StringComparison.OrdinalIgnoreCase)
+            ? "TG" + code[2..]
+            : code;
         private JsonArray PeopleArray => EnsureArray(_document!, "people");
         private JsonArray IdentifierArray => EnsureArray(_document!, "identifiers");
         private JsonArray RelationshipArray => EnsureArray(_document!, "relationships");
+
+        private JsonArray RecordOverrides => _document?["record_overrides"] is JsonArray array
+            ? array
+            : (_document!["record_overrides"] = new JsonArray()) as JsonArray ?? new JsonArray();
+
+        private JsonArray DuplicateRecords => _document?["duplicate_records"] is JsonArray array
+            ? array
+            : (_document!["duplicate_records"] = new JsonArray()) as JsonArray ?? new JsonArray();
+
+        private JsonNode? OverrideFor(string originalName)
+        {
+            if (_document == null) return null;
+            return RecordOverrides.FirstOrDefault(record =>
+                Value(record, "original_name").Equals(originalName, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private static string ReplaceDeathInDetails(string details, string death)
+        {
+            Match deathMatch = Regex.Match(details, @"\bD:\s*", RegexOptions.IgnoreCase);
+            if (deathMatch.Success)
+            {
+                string prefix = details[..deathMatch.Index].Trim();
+                return $"{prefix} D:{death}".Trim();
+            }
+            return string.IsNullOrWhiteSpace(details) ? $"D:{death}" : $"{details.Trim()} D:{death}";
+        }
+
+        private void ApplyChangeRequestStatus(JsonObject document)
+        {
+            _orangeCodes.Clear(); _blueCodes.Clear(); _purpleCodes.Clear(); _excludedChronologicalNames.Clear();
+            foreach (JsonNode? duplicate in DuplicateRecords) { /* populated below */ }
+
+            string[] purpleNames = { "John Elliott", "Margaret Scott", "Patrick Henry Shapley", "Mary Evett", "Marshall" };
+            foreach (string name in purpleNames) _excludedChronologicalNames.Add(name);
+
+            string path = @"E:\changes18z.txt";
+            if (!File.Exists(path)) return;
+            string text = File.ReadAllText(path);
+            var codeLines = Regex.Matches(text, @"(?im)^((?:TG|TH)[A-Z0-9]*\d+[A-Z0-9]*)[^\r\n]*");
+            for (int i = 0; i < codeLines.Count; i++)
+            {
+                Match codeLine = codeLines[i];
+                string code = NormalizeCode(codeLine.Groups[1].Value);
+                int end = i + 1 < codeLines.Count ? codeLines[i + 1].Index : text.Length;
+                string block = text.Substring(codeLine.Index, end - codeLine.Index);
+                _orangeCodes.Add(code);
+
+                if (block.Contains("***", StringComparison.Ordinal) || code is "TG749502" or "TG182976" or "TG151970" or "TG932996")
+                {
+                    _purpleCodes.Add(code);
+                    Match nameLine = Regex.Match(codeLine.Value, @"(?:TG|TH)\d+\s*(?:\(([^)]+)\)|\s*\(([^)]+)\)|\s*\*+)?", RegexOptions.IgnoreCase);
+                    if (nameLine.Success)
+                    {
+                        string purpleName = nameLine.Groups[1].Success ? nameLine.Groups[1].Value : nameLine.Groups[2].Value;
+                        if (!string.IsNullOrWhiteSpace(purpleName)) _excludedChronologicalNames.Add(purpleName);
+                    }
+                }
+
+                Match death = Regex.Match(block, @"(?im)(?:Died|Death|D):?\s*(.+)", RegexOptions.None);
+                if (!death.Success)
+                    death = Regex.Match(block, @"(?im)^\s*([0-9]{1,2}\s+[A-Za-z]+\s+[0-9]{4}[^\r\n]*)");
+                if (!death.Success) continue;
+                string deathText = death.Groups[1].Value.Trim().TrimEnd('*');
+                if (string.IsNullOrWhiteSpace(deathText) || deathText.Equals("***", StringComparison.Ordinal)) continue;
+
+                if (Regex.IsMatch(deathText, @"(?i)unknown|none|not indicated|not recorded|before|about|between| or |\*\*\*|\b187-\b"))
+                    _blueCodes.Add(code);
+
+                JsonNode? identifier = IdentifierArray.FirstOrDefault(id =>
+                    NormalizeCode(Value(id, "code")).Equals(code, StringComparison.OrdinalIgnoreCase));
+                if (identifier == null) continue;
+                string name = Value(identifier, "display_name");
+                if (string.IsNullOrWhiteSpace(name)) continue;
+
+                JsonNode? person = PeopleArray.FirstOrDefault(p =>
+                    Value(p, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                if (person != null)
+                    person!["details"] = ReplaceDeathInDetails(Value(person, "details"), deathText);
+
+                if (document["provisional_facts"] is not JsonArray facts)
+                    document["provisional_facts"] = facts = new JsonArray();
+                bool already = facts.Any(f => Value(f, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase) &&
+                    Value(f, "field") == "death_description" && Value(f, "value") == deathText);
+                if (!already)
+                    facts.Add(new JsonObject
+                    {
+                        ["display_name"] = name,
+                        ["field"] = "death_description",
+                        ["value"] = deathText,
+                        ["confidence"] = 0.55,
+                        ["source_url"] = "E:\\changes18z.txt",
+                        ["source_title"] = "User-provided family information",
+                        ["status"] = "active",
+                        ["permanent"] = 0
+                    });
+            }
+
+            var duplicateNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            foreach (var group in PeopleArray
+                .Where(person => !string.IsNullOrWhiteSpace(Value(person, "display_name")))
+                .GroupBy(person => Value(person, "display_name") + "\u001f" + Value(person, "details"), StringComparer.OrdinalIgnoreCase)
+                .Where(group => group.Count() > 1))
+                foreach (JsonNode? person in group)
+                    duplicateNames.Add(Value(person, "display_name"));
+            foreach (var group in IdentifierArray
+                .Where(identifier => Value(identifier, "kind") == "TG" && !string.IsNullOrWhiteSpace(Value(identifier, "code")))
+                .GroupBy(identifier => NormalizeCode(Value(identifier, "code")), StringComparer.OrdinalIgnoreCase)
+                .Where(group => group.Select(identifier => Value(identifier, "display_name")).Distinct(StringComparer.OrdinalIgnoreCase).Count() > 1))
+                foreach (JsonNode? identifier in group)
+                    duplicateNames.Add(Value(identifier, "display_name"));
+            if (PeopleArray.Any(p => Value(p, "display_name").Equals("mom", StringComparison.OrdinalIgnoreCase)) &&
+                PeopleArray.Any(p => Value(p, "display_name").Equals("Dudley McCabe", StringComparison.OrdinalIgnoreCase)))
+            {
+                JsonArray spouses = document["spouse_relationships"] is JsonArray existingSpouses
+                    ? existingSpouses : (document["spouse_relationships"] = new JsonArray()) as JsonArray;
+                if (!spouses.Any(r => (Value(r, "person1") == "mom" && Value(r, "person2") == "Dudley McCabe") ||
+                                      (Value(r, "person1") == "Dudley McCabe" && Value(r, "person2") == "mom")))
+                    spouses.Add(new JsonObject { ["person1"] = "mom", ["person2"] = "Dudley McCabe", ["relation"] = "spouse", ["permanent"] = 1 });
+            }
+
+            JsonNode? amelia = PeopleArray.FirstOrDefault(p => Value(p, "display_name").Equals("Amelia Carolina Luedtke", StringComparison.OrdinalIgnoreCase));
+            if (amelia != null)
+            {
+                JsonArray spouses = document["spouse_relationships"] is JsonArray existingSpouses
+                    ? existingSpouses : (document["spouse_relationships"] = new JsonArray()) as JsonArray;
+                if (!spouses.Any(r => (Value(r, "person1") == "Amelia Carolina Luedtke" && Value(r, "person2") == "August Friedrich Hedtke") ||
+                                      (Value(r, "person1") == "August Friedrich Hedtke" && Value(r, "person2") == "Amelia Carolina Luedtke")))
+                    spouses.Add(new JsonObject { ["person1"] = "Amelia Carolina Luedtke", ["person2"] = "August Friedrich Hedtke", ["relation"] = "spouse", ["permanent"] = 1 });
+                if (PeopleArray.Any(p => Value(p, "display_name").Equals("Robert R Hedtke", StringComparison.OrdinalIgnoreCase)) &&
+                    !RelationshipArray.Any(r => Value(r, "child") == "Robert R Hedtke" && Value(r, "parent") == "Amelia Carolina Luedtke"))
+                    RelationshipArray.Add(new JsonObject { ["child"] = "Robert R Hedtke", ["parent"] = "Amelia Carolina Luedtke", ["relation"] = "parent", ["confidence"] = 1.0, ["permanent"] = 1 });
+            }
+
+            string[] reviewCodes =
+            {
+                "TG204761", "TG204221", "TG202755", "TG207145", "TG200793", "TG202762", "TG202675",
+                "TG209679", "TG209417", "TG204672", "TG206921", "TG200915", "TG209691", "TG204295"
+            };
+            JsonArray duplicateReviews = document["duplicate_reviews"] is JsonArray existingReviews
+                ? existingReviews
+                : (document["duplicate_reviews"] = new JsonArray()) as JsonArray ?? new JsonArray();
+            foreach (string code in reviewCodes)
+            {
+                var matchingIdentifiers = IdentifierArray.Where(id =>
+                    NormalizeCode(Value(id, "code")).Equals(code, StringComparison.OrdinalIgnoreCase) && Value(id, "kind") == "TG").ToList();
+                string name = matchingIdentifiers.Count == 1 ? Value(matchingIdentifiers[0], "display_name") : "";
+                bool duplicate = matchingIdentifiers.Count != 1 || duplicateNames.Contains(name);
+                if (duplicate && !string.IsNullOrWhiteSpace(name)) duplicateNames.Add(name);
+                if (!duplicateReviews.Any(review => Value(review, "code").Equals(code, StringComparison.OrdinalIgnoreCase)))
+                    duplicateReviews.Add(new JsonObject
+                    {
+                        ["code"] = code,
+                        ["display_name"] = name,
+                        ["duplicate"] = duplicate,
+                        ["checked"] = true,
+                        ["check_basis"] = "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
+                    });
+            }
+
+            foreach (string name in duplicateNames)
+            {
+                if (!DuplicateRecords.Any(r => Value(r, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase)))
+                    DuplicateRecords.Add(new JsonObject { ["display_name"] = name, ["reason"] = "Duplicate record detected; retained in exports only", ["duplicate"] = true });
+                foreach (JsonNode? person in PeopleArray.Where(p => Value(p, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase)))
+                    person!["duplicate"] = true;
+            }
+        }
 
         private void ReadBuiltInDocument()
         {
@@ -245,11 +911,18 @@ namespace Pedigree
             // Each run recreates a fresh in-memory copy without touching the C# source.
             JsonObject loaded = BuiltInFamilyData.Create();
             BuiltInFamilyData.ApplyVerifiedBirthYearCorrections(loaded);
-            foreach (string name in new[] { "people", "identifiers", "relationships" })
-                EnsureArray(loaded, name);
+            foreach (string name in new[] { "people", "identifiers", "relationships", "record_overrides", "duplicate_records" })
+            {
+                if (name is "record_overrides" or "duplicate_records")
+                {
+                    if (loaded[name] is not JsonArray) loaded[name] = new JsonArray();
+                }
+                else EnsureArray(loaded, name);
+            }
+            _document = loaded;
+            ApplyChangeRequestStatus(loaded);
             if (EnsureArray(loaded, "people").Count != 129)
                 throw new InvalidDataException("Built-in tree must contain 129 original people.");
-            _document = loaded;
             _currentPath = null;
             RefreshPeople();
             if (!_isExperimental) GenerateRecheckFiles();
@@ -490,12 +1163,22 @@ namespace Pedigree
             {
                 foreach (JsonNode? p in PeopleArray)
                 {
-                    string name = Value(p, "display_name");
-                    if (string.IsNullOrWhiteSpace(name)) continue;
+                    string originalName = Value(p, "display_name");
+                    if (string.IsNullOrWhiteSpace(originalName)) continue;
+                    JsonNode? duplicate = DuplicateRecords.FirstOrDefault(r =>
+                        Value(r, "display_name").Equals(originalName, StringComparison.OrdinalIgnoreCase));
+                    if (Flag(duplicate, "duplicate")) continue;
+
+                    string name = Value(OverrideFor(originalName), "display_name");
+                    if (string.IsNullOrWhiteSpace(name)) name = originalName;
                     string tg = IdentifierArray
-                        .Where(id => Value(id, "display_name") == name && Value(id, "kind") == "TG")
+                        .Where(id => Value(id, "display_name") == originalName && Value(id, "kind") == "TG")
                         .Select(id => Value(id, "code")).FirstOrDefault() ?? "";
-                    _people.Add(new PersonRow(name, tg, Value(p, "details"), Value(p, "verify")));
+                    string overrideTg = Value(OverrideFor(originalName), "tg");
+                    if (!string.IsNullOrWhiteSpace(overrideTg)) tg = overrideTg;
+                    string details = Value(OverrideFor(originalName), "details");
+                    if (string.IsNullOrWhiteSpace(details)) details = Value(p, "details");
+                    _people.Add(new PersonRow(name, tg, details, Value(p, "verify"), originalName));
                 }
             }
             familyListBox.BeginUpdate();
@@ -504,6 +1187,7 @@ namespace Pedigree
                 p.Name.Contains(searchTextBox.Text, StringComparison.OrdinalIgnoreCase) ||
                 p.Tg.Contains(searchTextBox.Text, StringComparison.OrdinalIgnoreCase))) familyListBox.Items.Add(p);
             familyListBox.EndUpdate();
+            RefreshEditPeople(selectName);
             if (familyListBox.Items.Count > 0)
             {
                 int idx = 0;
@@ -516,6 +1200,7 @@ namespace Pedigree
             BuildRelationshipTree();
             RefreshChronologicalConsistencySummary();
             RefreshGeographyReport();
+            RefreshResearchReviewTab();
             if (_isExperimental) RefreshMatchState();
         }
 
@@ -1179,6 +1864,7 @@ namespace Pedigree
                 .Where(relationship => Value(relationship, "relation") == "parent")
                 .Select(relationship => (Parent: Value(relationship, "parent"), Child: Value(relationship, "child")))
                 .Where(link => !string.IsNullOrWhiteSpace(link.Parent) && !string.IsNullOrWhiteSpace(link.Child))
+                .Where(link => !_excludedChronologicalNames.Contains(link.Parent) && !_excludedChronologicalNames.Contains(link.Child))
                 .Distinct()
                 .OrderBy(link => link.Parent, StringComparer.OrdinalIgnoreCase)
                 .ThenBy(link => link.Child, StringComparer.OrdinalIgnoreCase)
@@ -1245,15 +1931,32 @@ namespace Pedigree
                         continue;
                     }
                 }
-                _chronologicalGrid.Rows.Add(link.Parent, link.Child,
+                int rowIndex = _chronologicalGrid.Rows.Add(link.Parent, link.Child,
                     parentYear?.ToString() ?? "Not recorded", childYear?.ToString() ?? "Not recorded",
                     ageText, assessment);
+                foreach (DataGridViewCell cell in _chronologicalGrid.Rows[rowIndex].Cells)
+                {
+                    string name = cell.OwningColumn.HeaderText is "Parent" or "Child"
+                        ? cell.Value?.ToString() ?? ""
+                        : "";
+                    JsonNode? person = PeopleArray.FirstOrDefault(p =>
+                        Value(p, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                    string code = person == null ? "" : IdentifierArray.Where(id =>
+                        Value(id, "display_name") == name).Select(id => Value(id, "code")).FirstOrDefault() ?? "";
+                    if (!string.IsNullOrEmpty(code) && _orangeCodes.Contains(NormalizeCode(code)))
+                        cell.Style.ForeColor = Color.FromArgb(255, 140, 0);
+                    else if (_purpleCodes.Contains(NormalizeCode(code)) || _excludedChronologicalNames.Contains(name))
+                        cell.Style.ForeColor = Color.Purple;
+                    else if (_blueCodes.Contains(NormalizeCode(code)))
+                        cell.Style.ForeColor = Color.RoyalBlue;
+                }
             }
 
             int consistentPeople = linkedPeople.Count(person =>
                 !peopleMissingDates.Contains(person) && !peopleNeedingYoungParentReview.Contains(person));
             int peopleWithoutParentChildLinks = _people.Count - linkedPeople.Count;
             _chronologicalSummaryLabel.Text =
+                $"Legend: orange = listed for verification/update; blue = date uncertainty; purple = disconnected/investigation record. Orange takes precedence.\n" +
                 $"Total people: {_people.Count}\n" +
                 $"Chronologically consistent: {consistentPeople} (among people with parent-child links, complete birth-year evidence, and no parent age under 15)\n" +
                 $"People whose child birth year precedes a listed parent: {peopleWithReversedBirthOrder.Count}    " +
@@ -1348,6 +2051,26 @@ namespace Pedigree
             return string.Join(Environment.NewLine, notes.Where(n => Value(n, "display_name") == name)
                 .Select(n => Value(n, "note")));
         }
+
+        private string ResearchReviewText(PersonRow person)
+        {
+            if (_document?["record_overrides"] is not JsonArray overrides) return "";
+            string[] codes = IdentifierArray.Where(identifier =>
+                    Value(identifier, "display_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase))
+                .Select(identifier => Value(identifier, "code"))
+                .Append(person.Tg)
+                .Where(code => !string.IsNullOrWhiteSpace(code))
+                .ToArray();
+            var matching = overrides.Where(item => Value(item, "field") == "research_review_2026_11_18" &&
+                (Value(item, "display_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase) ||
+                 Value(item, "display_name").Equals(person.Name, StringComparison.OrdinalIgnoreCase) ||
+                 codes.Contains(Value(item, "code"), StringComparer.OrdinalIgnoreCase))).ToList();
+            return string.Join(Environment.NewLine + Environment.NewLine, matching.Select(item =>
+                "UNVERIFIED RESEARCH LEAD (not a confirmed fact or relationship)" + Environment.NewLine +
+                Value(item, "value") +
+                (string.IsNullOrWhiteSpace(Value(item, "source")) ? "" : Environment.NewLine + "Source: " + Value(item, "source")) +
+                (string.IsNullOrWhiteSpace(Value(item, "reason")) ? "" : Environment.NewLine + "Review note: " + Value(item, "reason"))));
+        }
         private static JsonArray ToJsonArray(IEnumerable<string> values)
         {
             var array = new JsonArray();
@@ -1361,12 +2084,15 @@ namespace Pedigree
                 ["display_name"] = person.Name,
                 ["tg_number"] = person.Tg,
                 ["born"] = Provisional(person.Name, "birth_date") ?? "See original notes",
-                ["died"] = Provisional(person.Name, "death_date") ?? "See original notes",
+                ["died"] = DeathInfoOf(person.Name).Value ?? "See original notes",
                 ["parents"] = ToJsonArray(ParentsOf(person.Name)),
                 ["spouse"] = ToJsonArray(SpousesOf(person.Name)),
                 ["other_parents"] = ToJsonArray(CoparentsOf(person.Name)),
                 ["children"] = ToJsonArray(ChildrenOf(person.Name)),
                 ["details"] = person.Details,
+                ["duplicate"] = DuplicateRecords.Any(r => Value(r, "display_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase)),
+                ["original_name"] = person.OriginalName,
+                ["record_override"] = OverrideFor(person.OriginalName)?.DeepClone(),
                 ["notes"] = NotesOf(person.Name),
                 ["verify"] = person.Verify,
                 ["captured_at_utc"] = DateTime.UtcNow.ToString("O")
@@ -1412,6 +2138,43 @@ namespace Pedigree
             if (_document?["provisional_facts"] is not JsonArray facts) return null;
             return facts.Where(f => Value(f, "display_name") == name && Value(f, "field") == field && Value(f, "status") == "active")
                 .Select(f => Value(f, "value")).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
+        }
+
+        private (string? Value, string Status) DeathInfoOf(string name)
+        {
+            string? provisionalDeath = Provisional(name, "death_date");
+            if (!string.IsNullOrWhiteSpace(provisionalDeath)) return (provisionalDeath, "unverified");
+
+            PersonRow? person = _people.FirstOrDefault(candidate =>
+                candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            string originalName = person?.OriginalName ?? name;
+            var codes = IdentifierArray.Where(identifier =>
+                    Value(identifier, "display_name").Equals(originalName, StringComparison.OrdinalIgnoreCase))
+                .Select(identifier => Value(identifier, "code"))
+                .Append(person?.Tg ?? "")
+                .Where(code => !string.IsNullOrWhiteSpace(code))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            JsonNode? deathOverride = RecordOverrides.FirstOrDefault(item =>
+                Value(item, "field") == "died" &&
+                (Value(item, "display_name").Equals(originalName, StringComparison.OrdinalIgnoreCase) ||
+                 codes.Contains(Value(item, "code"))));
+            string overrideValue = Value(deathOverride, "value").Trim();
+            if (!string.IsNullOrWhiteSpace(overrideValue) &&
+                !overrideValue.Equals("still verifying", StringComparison.OrdinalIgnoreCase) &&
+                !overrideValue.Equals("See original notes", StringComparison.OrdinalIgnoreCase))
+                return (overrideValue, Flag(deathOverride, "verified") ? "verified" : "unverified");
+
+            string? provisionalDescription = Provisional(name, "death_description");
+            if (!string.IsNullOrWhiteSpace(provisionalDescription)) return (provisionalDescription, "unverified");
+
+            string details = person?.Details ?? "";
+            Match died = Regex.Match(details, @"\bDied:\s*(.*?)(?=\s+D:|[)]|$)", RegexOptions.IgnoreCase);
+            if (died.Success && !string.IsNullOrWhiteSpace(died.Groups[1].Value))
+                return (died.Groups[1].Value.Trim().TrimEnd(' ', '.', ';'), "from original notes");
+            Match death = Regex.Match(details, @"\bD:\s*(.*)$", RegexOptions.IgnoreCase);
+            if (death.Success && !string.IsNullOrWhiteSpace(death.Groups[1].Value))
+                return (death.Groups[1].Value.Trim().TrimEnd(' ', '.', ';'), "from original notes");
+            return (null, "");
         }
 
         private string? BirthDateOf(string name)
@@ -1475,16 +2238,25 @@ namespace Pedigree
             nameValueLabel.Text = person.Name;
             tgValueLabel.Text = string.IsNullOrEmpty(person.Tg) ? "Unassigned" : person.Tg;
             birthValueLabel.Text = BirthDateOf(person.Name) is string bd ? bd + " (recorded)" : "See original notes";
-            deathValueLabel.Text = Provisional(person.Name, "death_date") is string dd ? dd + " (unverified)" : "See original notes";
+            var deathInfo = DeathInfoOf(person.Name);
+            string? death = deathInfo.Value;
+            string deathStatus = deathInfo.Status;
+            deathValueLabel.Text = death is not null ? $"{death} ({deathStatus})" : "See original notes";
             parentsValueLabel.Text = ListOrUnknown(ParentsOf(person.Name));
             spouseValueLabel.Text = ListOrUnknown(SpousesOf(person.Name));
             if (CoparentsOf(person.Name).Any())
-                spouseValueLabel.Text += "  |  Other parent(s): " + ListOrUnknown(CoparentsOf(person.Name)) + " (not proof of marriage)";
+            {
+                if (SpousesOf(person.Name).Any())
+                    spouseValueLabel.Text += "  |  ";
+                spouseValueLabel.Text += "Spouse: " + ListOrUnknown(CoparentsOf(person.Name));
+            }
             childrenValueLabel.Text = ListOrUnknown(ChildrenOf(person.Name));
             string notes = NotesOf(person.Name);
+            string researchReview = ResearchReviewText(person);
             funFactTextBox.Text = string.Join(Environment.NewLine, new[] {
                 person.Details,
                 notes,
+                researchReview,
                 string.IsNullOrWhiteSpace(person.Verify) ? "" : "Verify: " + person.Verify
             }
                 .Where(x => !string.IsNullOrWhiteSpace(x)));
@@ -2097,6 +2869,20 @@ namespace Pedigree
             AddSection("Identifiers", IdentifierArray.Where(x => Value(x, "display_name") == name));
             AddSection("Family relationships", RelationshipArray.Where(x =>
                 Value(x, "child") == name || Value(x, "parent") == name));
+            string reviewText = ResearchReviewText(p);
+            if (!string.IsNullOrWhiteSpace(reviewText)) sections.Add("\r\nUNVERIFIED RESEARCH REVIEW\r\n" + reviewText);
+            if (_document["record_overrides"] is JsonArray reviewOverrides)
+            {
+                var personCodes = IdentifierArray.Where(identifier =>
+                        Value(identifier, "display_name").Equals(p.OriginalName, StringComparison.OrdinalIgnoreCase))
+                    .Select(identifier => Value(identifier, "code"))
+                    .Append(p.Tg)
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                AddSection("Research review leads (UNVERIFIED; not canonical facts)", reviewOverrides.Where(item =>
+                    Value(item, "field") == "research_review_2026_11_18" &&
+                    (Value(item, "display_name").Equals(p.OriginalName, StringComparison.OrdinalIgnoreCase) ||
+                     personCodes.Contains(Value(item, "code")))));
+            }
             if (_document["provisional_facts"] is JsonArray facts)
                 AddSection("Provisional research facts (UNVERIFIED)", facts.Where(x => Value(x, "display_name") == name));
             if (_document["project_references"] is JsonArray refs)
@@ -2123,6 +2909,87 @@ namespace Pedigree
             };
             dialog.Controls.Add(notes);
             dialog.ShowDialog(this);
+        }
+
+        private void EditPerson(PersonRow person, IWin32Window owner)
+        {
+            using var dialog = new Form
+            {
+                Text = "Edit Family Record", Width = 620, Height = 500,
+                StartPosition = FormStartPosition.CenterParent,
+                FormBorderStyle = FormBorderStyle.FixedDialog,
+                MaximizeBox = false, MinimizeBox = false
+            };
+            var nameBox = new TextBox { Left = 150, Top = 20, Width = 420, Text = person.Name };
+            var tgBox = new TextBox { Left = 150, Top = 55, Width = 420, Text = person.Tg };
+            var detailsBox = new TextBox { Left = 150, Top = 90, Width = 420, Height = 75, Multiline = true, ScrollBars = ScrollBars.Vertical, Text = person.Details };
+            var parentsBox = new TextBox { Left = 150, Top = 180, Width = 420, Text = string.Join(", ", ParentsOf(person.Name)) };
+            var spousesBox = new TextBox { Left = 150, Top = 215, Width = 420, Text = string.Join(", ", SpousesOf(person.Name).Concat(CoparentsOf(person.Name)).Distinct(StringComparer.OrdinalIgnoreCase)) };
+            var childrenBox = new TextBox { Left = 150, Top = 250, Width = 420, Text = string.Join(", ", ChildrenOf(person.Name)) };
+            string[] labels = { "Name:", "TG:", "Details:", "Parents:", "Spouse:", "Children:" };
+            int[] tops = { 23, 58, 93, 183, 218, 253 };
+            for (int i = 0; i < labels.Length; i++)
+                dialog.Controls.Add(new Label { Left = 20, Top = tops[i], Width = 125, Height = 22, Text = labels[i] });
+            var save = new Button { Text = "Save Changes", Left = 350, Top = 405, Width = 120, Height = 40, DialogResult = DialogResult.OK };
+            var cancel = new Button { Text = "Cancel", Left = 475, Top = 405, Width = 95, Height = 40, DialogResult = DialogResult.Cancel };
+            dialog.Controls.AddRange(new Control[] { nameBox, tgBox, detailsBox, parentsBox, spousesBox, childrenBox, save, cancel });
+            dialog.AcceptButton = save; dialog.CancelButton = cancel;
+            if (dialog.ShowDialog(owner) != DialogResult.OK) return;
+
+            string newName = nameBox.Text.Trim(), newTg = tgBox.Text.Trim();
+            if (string.IsNullOrWhiteSpace(newName)) { MessageBox.Show(owner, "A name is required."); return; }
+
+            JsonNode? existing = RecordOverrides.FirstOrDefault(r => Value(r, "original_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase));
+            JsonObject overrideRecord = existing as JsonObject ?? new JsonObject { ["original_name"] = person.OriginalName };
+            if (existing == null) RecordOverrides.Add(overrideRecord);
+            overrideRecord["display_name"] = newName;
+            overrideRecord["tg"] = newTg;
+            overrideRecord["details"] = detailsBox.Text.Trim();
+            overrideRecord["edited_parents"] = parentsBox.Text.Trim();
+            overrideRecord["edited_spouse"] = spousesBox.Text.Trim();
+            overrideRecord["edited_children"] = childrenBox.Text.Trim();
+
+            foreach (JsonNode? relationship in RelationshipArray)
+            {
+                if (Value(relationship, "child").Equals(person.Name, StringComparison.OrdinalIgnoreCase)) relationship!["child"] = newName;
+                if (Value(relationship, "parent").Equals(person.Name, StringComparison.OrdinalIgnoreCase)) relationship!["parent"] = newName;
+            }
+            foreach (JsonNode? relationship in SupplementalArray("spouse_relationships"))
+            {
+                if (Value(relationship, "person1").Equals(person.Name, StringComparison.OrdinalIgnoreCase)) relationship!["person1"] = newName;
+                if (Value(relationship, "person2").Equals(person.Name, StringComparison.OrdinalIgnoreCase)) relationship!["person2"] = newName;
+            }
+            JsonNode? identifier = IdentifierArray.FirstOrDefault(id =>
+                Value(id, "display_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase) && Value(id, "kind") == "TG");
+            if (identifier != null && !string.IsNullOrWhiteSpace(newTg)) identifier!["code"] = newTg;
+
+            for (int i = RelationshipArray.Count - 1; i >= 0; i--)
+            {
+                JsonNode? relationship = RelationshipArray[i];
+                if (Value(relationship, "relation") == "parent" &&
+                    (Value(relationship, "child").Equals(newName, StringComparison.OrdinalIgnoreCase) ||
+                     Value(relationship, "parent").Equals(newName, StringComparison.OrdinalIgnoreCase)))
+                    RelationshipArray.RemoveAt(i);
+            }
+            foreach (string parent in parentsBox.Text.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                RelationshipArray.Add(new JsonObject { ["child"] = newName, ["parent"] = parent, ["relation"] = "parent", ["confidence"] = 1.0, ["permanent"] = 0 });
+            foreach (string child in childrenBox.Text.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                RelationshipArray.Add(new JsonObject { ["child"] = child, ["parent"] = newName, ["relation"] = "parent", ["confidence"] = 1.0, ["permanent"] = 0 });
+
+            JsonArray spouses = SupplementalArray("spouse_relationships");
+            for (int i = spouses.Count - 1; i >= 0; i--)
+            {
+                JsonNode? relationship = spouses[i];
+                if (Value(relationship, "person1").Equals(newName, StringComparison.OrdinalIgnoreCase) ||
+                    Value(relationship, "person2").Equals(newName, StringComparison.OrdinalIgnoreCase))
+                    spouses.RemoveAt(i);
+            }
+            foreach (string spouse in spousesBox.Text.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries))
+                spouses.Add(new JsonObject { ["person1"] = newName, ["person2"] = spouse, ["relation"] = "spouse", ["permanent"] = 0 });
+
+            RefreshPeople(newName);
+            SynchronizeExperimentalView();
+            UpdateStatus($"Saved edited record for {newName}. The original built-in record is preserved in the export override.");
         }
 
         // About displays the entire resume from C# source code, never C:\tree\resume.txt.
@@ -2236,6 +3103,13 @@ namespace Pedigree
                 if (memberList.SelectedItem is PersonRow person)
                     AddPersonNote(person.Name);
                 else MessageBox.Show(window, "Choose a family member first.");
+            });
+            Action("Edit Person", () =>
+            {
+                if (memberList.SelectedItem is PersonRow person)
+                    EditPerson(person, window);
+                else MessageBox.Show(window, "Choose a family member first.");
+                RefreshAboutMembers(memberList.SelectedItem is PersonRow selected ? selected.Name : null);
             });
             Action("View All Details", () =>
             {
