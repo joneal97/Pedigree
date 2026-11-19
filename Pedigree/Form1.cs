@@ -67,6 +67,108 @@ namespace Pedigree
         {
             _isExperimental = false;
             InitializeComponent();
+            InitializeExportTab();
+        }
+
+        private void InitializeExportTab()
+        {
+            var tab = new TabPage("Export") { BackColor = Color.White };
+            var layout = new TableLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                Padding = new Padding(24),
+                ColumnCount = 1,
+                RowCount = 2
+            };
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 72F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
+            var description = new Label
+            {
+                Dock = DockStyle.Fill,
+                Font = new Font("Segoe UI", 11F),
+                Text = "Export the complete family tree to both C:\\Users\\161119\\source\\repos\\Pedigree\\xwtree.json and E:\\xwtree.json.",
+                TextAlign = ContentAlignment.MiddleLeft
+            };
+            var buttons = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.LeftToRight };
+            var exportButton = new Button
+            {
+                Text = "Export",
+                Width = 180,
+                Height = 48,
+                BackColor = Color.FromArgb(225, 236, 252)
+            };
+            exportButton.Click += (_, __) => ExportTreeToRequestedPaths();
+            var importButton = new Button
+            {
+                Text = "Import",
+                Width = 180,
+                Height = 48,
+                BackColor = Color.FromArgb(225, 236, 252)
+            };
+            importButton.Click += (_, __) => MessageBox.Show(this,
+                "Import is not configured yet. Provide the import instructions when you are ready.",
+                "Import instructions needed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            buttons.Controls.Add(exportButton);
+            buttons.Controls.Add(importButton);
+            layout.Controls.Add(description, 0, 0);
+            layout.Controls.Add(buttons, 0, 1);
+            tab.Controls.Add(layout);
+            tabControl.TabPages.Add(tab);
+        }
+
+        private void ExportTreeToRequestedPaths()
+        {
+            Form1 source = _experimentalView ?? this;
+            if (source._document == null)
+            {
+                MessageBox.Show(this, "The family tree has not loaded, so it cannot be exported.",
+                    "Export unavailable", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                source.CaptureAllPeople();
+                string json = source._document.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
+                var failures = new List<string>();
+                string[] destinations =
+                {
+                    @"C:\Users\161119\source\repos\Pedigree\xwtree.json",
+                    @"E:\xwtree.json"
+                };
+                foreach (string destination in destinations)
+                {
+                    try
+                    {
+                        string? folder = Path.GetDirectoryName(destination);
+                        if (!string.IsNullOrWhiteSpace(folder)) Directory.CreateDirectory(folder);
+                        File.WriteAllText(destination, json, new UTF8Encoding(false));
+                    }
+                    catch (Exception ex)
+                    {
+                        failures.Add($"{destination}: {ex.Message}");
+                    }
+                }
+
+                if (failures.Count == 0)
+                {
+                    UpdateStatus($"Exported the complete family tree ({source._people.Count} people) to both requested files.");
+                    MessageBox.Show(this,
+                        "The complete family tree was exported to:\r\n" + string.Join("\r\n", destinations),
+                        "Export complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    string message = "Export attempted for both destinations. Errors:\r\n" + string.Join("\r\n", failures);
+                    UpdateStatus(message);
+                    MessageBox.Show(this, message, "Export incomplete", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception ex)
+            {
+                UpdateStatus("Family tree export failed: " + ex.Message);
+                MessageBox.Show(this, ex.Message, "Export failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private Form1(bool experimental)
