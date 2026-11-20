@@ -63,6 +63,12 @@ namespace Pedigree
             public override string ToString() => string.IsNullOrWhiteSpace(Tg) ? Name : $"{Name} ({Tg})";
         }
 
+        private const string GhtreeUrl = "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json";
+        private static readonly System.Net.Http.HttpClient GhtreeHttpClient = new()
+        {
+            Timeout = TimeSpan.FromSeconds(30)
+        };
+
         public Form1()
         {
             _isExperimental = false;
@@ -80,13 +86,15 @@ namespace Pedigree
                 ColumnCount = 1,
                 RowCount = 2
             };
-            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 72F));
+            layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 142F));
             layout.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
             var description = new Label
             {
                 Dock = DockStyle.Fill,
                 Font = new Font("Segoe UI", 11F),
-                Text = "Export the complete family tree to both C:\\Users\\161119\\source\\repos\\Pedigree\\xwtree.json and E:\\xwtree.json.",
+                Text = "Export the complete family tree to C:\\Users\\161119\\source\\repos\\Pedigree\\xwtree.json and E:\\xwtree.json.\r\n" +
+                    "Import fetches the latest GitHub ghtree.json, previews the additive merge, and keeps imported relationships and captured research unverified.\r\n" +
+                    "Each GitHub version and available E:\\ghtree.txt sample is archived in C:\\Users\\161119\\source\\repos\\Pedigree\\ghtree-versions.",
                 TextAlign = ContentAlignment.MiddleLeft
             };
             var buttons = new FlowLayoutPanel { Dock = DockStyle.Fill, FlowDirection = FlowDirection.LeftToRight };
@@ -105,9 +113,7 @@ namespace Pedigree
                 Height = 48,
                 BackColor = Color.FromArgb(225, 236, 252)
             };
-            importButton.Click += (_, __) => MessageBox.Show(this,
-                "Import is not configured yet. Provide the import instructions when you are ready.",
-                "Import instructions needed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            importButton.Click += async (_, __) => await ImportGithubTreeAsync();
             buttons.Controls.Add(exportButton);
             buttons.Controls.Add(importButton);
             layout.Controls.Add(description, 0, 0);
@@ -169,6 +175,394 @@ namespace Pedigree
                 UpdateStatus("Family tree export failed: " + ex.Message);
                 MessageBox.Show(this, ex.Message, "Export failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private async Task ImportGithubTreeAsync()
+        {
+            Form1 target = _experimentalView ?? this;
+            if (target._document == null)
+            {
+                MessageBox.Show(this, "The family tree has not loaded, so GitHub data cannot be imported.",
+                    "Import unavailable", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                byte[]? localSampleBytes = null;
+                JsonObject? localSample = null;
+                string localSamplePath = @"E:\ghtree.txt";
+                if (File.Exists(localSamplePath))
+                {
+                    localSampleBytes = await File.ReadAllBytesAsync(localSamplePath);
+                    localSample = ParseGhtree(localSampleBytes, "E:\\ghtree.txt");
+                }
+
+                using var response = await GhtreeHttpClient.GetAsync(GhtreeUrl);
+                response.EnsureSuccessStatusCode();
+                byte[] remoteBytes = await response.Content.ReadAsByteArrayAsync();
+                JsonObject incoming = ParseGhtree(remoteBytes, GhtreeUrl);
+                JsonObject current = target._document;
+                string remoteHash = GhtreeSha256(remoteBytes);
+                string remoteArchive = ArchiveGhtreeVersion("github", remoteHash, remoteBytes);
+                string? sampleArchive = null;
+                string? sampleHash = null;
+                if (localSampleBytes != null)
+                {
+                    sampleHash = GhtreeSha256(localSampleBytes);
+                    sampleArchive = ArchiveGhtreeVersion("local-sample", sampleHash, localSampleBytes);
+                }
+
+                JsonArray imports = current["imports"] as JsonArray ?? new JsonArray();
+                bool alreadyImported = imports.Any(item =>
+                    Value(item, "source_url") == GhtreeUrl && Value(item, "sha256") == remoteHash);
+                if (alreadyImported)
+                {
+                    MessageBox.Show(this,
+                        $"This exact GitHub version was already imported. The version is archived at:\r\n{remoteArchive}",
+                        "Version already imported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                JsonArray incomingPeople = EnsureArray(incoming, "people");
+                JsonArray incomingIdentifiers = EnsureArray(incoming, "identifiers");
+                JsonArray incomingRelationships = EnsureArray(incoming, "relationships");
+                JsonArray incomingSnapshots = incoming["captured_people"] as JsonArray ?? new JsonArray();
+                var existingNames = EnsureArray(current, "people").Select(person => Value(person, "display_name"))
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                int newPeopleCount = incomingPeople.Count(person => !existingNames.Contains(Value(person, "display_name")));
+                int detailReviewCount = incomingPeople.Count(person =>
+                {
+                    string name = Value(person, "display_name");
+                    JsonNode? existing = EnsureArray(current, "people").FirstOrDefault(candidate =>
+                        Value(candidate, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                    return existing != null && !string.IsNullOrWhiteSpace(Value(person, "details")) &&
+                        Value(existing, "details") != Value(person, "details");
+                });
+                var knownCodes = EnsureArray(current, "identifiers").ToDictionary(
+                    identifier => Value(identifier, "code"), identifier => Value(identifier, "display_name"),
+                    StringComparer.OrdinalIgnoreCase);
+                int identifierConflictCount = incomingIdentifiers.Count(identifier =>
+                    knownCodes.TryGetValue(Value(identifier, "code"), out string? owner) &&
+                    !owner.Equals(Value(identifier, "display_name"), StringComparison.OrdinalIgnoreCase));
+                var existingLinks = EnsureArray(current, "relationships").Select(RelationshipKey)
+                    .ToHashSet(StringComparer.OrdinalIgnoreCase);
+                int newRelationships = incomingRelationships.Count(link => !existingLinks.Contains(RelationshipKey(link)));
+                int incomingDetailCount = incomingPeople.Count(person => !string.IsNullOrWhiteSpace(Value(person, "details")));
+                int snapshotCount = incomingSnapshots.Count(snapshot => !string.IsNullOrWhiteSpace(GhtreeSnapshotNote(snapshot)));
+                string sampleStatus = localSample == null
+                    ? "E:\\ghtree.txt was not available; the GitHub file will be imported."
+                    : JsonNode.DeepEquals(localSample, incoming)
+                        ? "The local E:\\ghtree.txt sample matches the GitHub data."
+                        : "The local sample differs from GitHub; both files have been archived, and the GitHub version will be imported.";
+                string preview =
+                    $"GitHub ghtree.json preview\r\n\r\n" +
+                    $"People in source: {incomingPeople.Count} ({newPeopleCount} new names)\r\n" +
+                    $"Source identifiers: {incomingIdentifiers.Count} ({identifierConflictCount} code ownership conflicts)\r\n" +
+                    $"Parent-child links: {incomingRelationships.Count} ({newRelationships} not already present; imported as unverified)\r\n" +
+                    $"People with source details: {incomingDetailCount} ({detailReviewCount} existing records have differing details to preserve as notes)\r\n" +
+                    $"Captured snapshots with dates/notes/links: {snapshotCount} (preserved as unverified notes)\r\n\r\n" +
+                    $"{sampleStatus}\r\n" +
+                    $"Version archive: {Path.GetDirectoryName(remoteArchive)}\r\n\r\n" +
+                    "Continue with additive import? Existing people, identifiers, and facts will not be overwritten. Conflicting identifiers will be retained as unverified review entries.";
+                if (MessageBox.Show(this, preview, "Review GitHub family-tree import",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
+                    return;
+
+                JsonObject merged = MergeGhtree(current, incoming, remoteHash, remoteArchive);
+                target._document = merged;
+                target.RefreshPeople();
+                target.SynchronizeExperimentalView();
+                JsonObject importedSummary = (merged["imports"] as JsonArray)?.LastOrDefault() as JsonObject
+                    ?? throw new InvalidDataException("Import metadata was not recorded after merging the GitHub tree.");
+                string importSummary = $"Added {Value(importedSummary, "people_added")} people and {Value(importedSummary, "identifiers_added")} identifiers; " +
+                    $"kept {Value(importedSummary, "identifier_conflicts")} identifier conflicts for review and added {Value(importedSummary, "relationships_added")} unverified links.";
+                UpdateStatus($"Imported GitHub ghtree version {remoteHash[..12]}. {importSummary}");
+                string archives = sampleArchive == null
+                    ? remoteArchive
+                    : remoteArchive + "\r\n" + sampleArchive;
+                MessageBox.Show(this,
+                    $"Imported GitHub ghtree.json. {importSummary} Captured snapshot details were retained as unverified notes.\r\n\r\n{archives}",
+                    "GitHub family tree imported", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                UpdateStatus("GitHub ghtree import failed: " + ex.Message);
+                MessageBox.Show(this, ex.Message, "GitHub import failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private static JsonObject ParseGhtree(byte[] bytes, string source)
+        {
+            JsonObject document = JsonNode.Parse(bytes) as JsonObject
+                ?? throw new InvalidDataException($"{source} must contain a JSON object.");
+            foreach (string key in new[] { "people", "identifiers", "relationships" })
+                if (document[key] is not JsonArray)
+                    throw new InvalidDataException($"{source} is missing the required '{key}' array.");
+            if (EnsureArray(document, "people").Any(person => string.IsNullOrWhiteSpace(Value(person, "display_name"))))
+                throw new InvalidDataException($"{source} contains a person without a display_name.");
+            JsonArray people = EnsureArray(document, "people");
+            var names = people.Select(person => Value(person, "display_name"))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            if (EnsureArray(document, "identifiers").Any(identifier =>
+                string.IsNullOrWhiteSpace(Value(identifier, "code")) ||
+                string.IsNullOrWhiteSpace(Value(identifier, "display_name")) ||
+                !names.Contains(Value(identifier, "display_name"))))
+                throw new InvalidDataException($"{source} contains an invalid identifier or an identifier for a person missing from people.");
+            foreach (JsonNode? relationship in EnsureArray(document, "relationships"))
+                if (!names.Contains(Value(relationship, "child")) || !names.Contains(Value(relationship, "parent")))
+                    throw new InvalidDataException($"{source} contains a relationship whose child or parent is missing from people.");
+            if (document["spouse_relationships"] is JsonArray spouses)
+                foreach (JsonNode? spouse in spouses)
+                    if (!names.Contains(Value(spouse, "person1")) || !names.Contains(Value(spouse, "person2")))
+                        throw new InvalidDataException($"{source} contains a spouse link whose person is missing from people.");
+            return document;
+        }
+
+        private static JsonArray GetOrCreateArray(JsonObject document, string key)
+        {
+            if (document[key] is JsonArray array) return array;
+            if (document[key] != null)
+                throw new InvalidDataException($"Expected '{key}' to be a JSON array.");
+            var created = new JsonArray();
+            document[key] = created;
+            return created;
+        }
+
+        private static string GhtreeSha256(byte[] bytes) => Convert.ToHexString(SHA256.HashData(bytes)).ToLowerInvariant();
+
+        private static string ArchiveGhtreeVersion(string source, string sha256, byte[] bytes)
+        {
+            string folder = Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                "source", "repos", "Pedigree", "ghtree-versions");
+            Directory.CreateDirectory(folder);
+            string path = Path.Combine(folder, $"ghtree-{source}-{sha256}.json");
+            if (File.Exists(path))
+            {
+                if (GhtreeSha256(File.ReadAllBytes(path)) != sha256)
+                    throw new IOException($"A different file already exists at the version archive path {path}.");
+                return path;
+            }
+            using var stream = new FileStream(path, FileMode.CreateNew, FileAccess.Write, FileShare.None);
+            stream.Write(bytes);
+            return path;
+        }
+
+        private static string RelationshipKey(JsonNode? relationship) =>
+            string.Join("\u001f", Value(relationship, "child"), Value(relationship, "parent"), Value(relationship, "relation"));
+
+        private static string GhtreeSnapshotNote(JsonNode? snapshot)
+        {
+            var parts = new List<string>();
+            void Add(string label, string value)
+            {
+                if (!string.IsNullOrWhiteSpace(value)) parts.Add(label + ": " + value.Trim());
+            }
+            Add("TG/code", Value(snapshot, "tg_number"));
+            Add("Born", Value(snapshot, "born"));
+            Add("Died", Value(snapshot, "died"));
+            Add("Parents", snapshot?["parents"] is JsonArray parents
+                ? string.Join(", ", parents.Select(parent => parent?.ToString()).Where(value => !string.IsNullOrWhiteSpace(value))) : "");
+            Add("Spouse", snapshot?["spouse"] is JsonArray spouses
+                ? string.Join(", ", spouses.Select(spouse => spouse?.ToString()).Where(value => !string.IsNullOrWhiteSpace(value)))
+                : Value(snapshot, "spouse"));
+            Add("Children", snapshot?["children"] is JsonArray children
+                ? string.Join(", ", children.Select(child => child?.ToString()).Where(value => !string.IsNullOrWhiteSpace(value))) : "");
+            Add("Details", Value(snapshot, "details"));
+            Add("Notes", Value(snapshot, "notes"));
+            if (snapshot?["record_override"] is JsonNode recordOverride)
+                Add("Record override", recordOverride.ToJsonString());
+            return string.Join("; ", parts);
+        }
+
+        private JsonObject MergeGhtree(JsonObject current, JsonObject incoming, string sha256, string archivePath)
+        {
+            JsonObject merged = current.DeepClone() as JsonObject
+                ?? throw new InvalidDataException("Could not clone the current family tree.");
+            JsonArray people = EnsureArray(merged, "people");
+            JsonArray identifiers = EnsureArray(merged, "identifiers");
+            JsonArray relationships = EnsureArray(merged, "relationships");
+            JsonArray overrides = GetOrCreateArray(merged, "record_overrides");
+            JsonArray notes = GetOrCreateArray(merged, "person_notes");
+            int nextPersonNumber = people.Select(person => int.TryParse(Value(person, "person_no"), out int number) ? number : 0)
+                .DefaultIfEmpty(0).Max() + 1;
+            int addedPeople = 0, addedIdentifiers = 0, identifierConflicts = 0, addedRelationships = 0, addedNotes = 0;
+            var newPeopleNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            var existingNames = people.Select(person => Value(person, "display_name"))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            var incomingIdentifiers = EnsureArray(incoming, "identifiers");
+            foreach (JsonNode? sourcePerson in EnsureArray(incoming, "people"))
+            {
+                string name = Value(sourcePerson, "display_name");
+                JsonNode? existing = people.FirstOrDefault(person =>
+                    Value(person, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                if (existing == null)
+                {
+                    JsonObject added = sourcePerson?.DeepClone() as JsonObject
+                        ?? throw new InvalidDataException($"Could not copy incoming person '{name}'.");
+                    added["person_no"] = nextPersonNumber++;
+                    added["import_source_url"] = GhtreeUrl;
+                    added["import_source_sha256"] = sha256;
+                    people.Add(added);
+                    existingNames.Add(name);
+                    newPeopleNames.Add(name);
+                    addedPeople++;
+                    continue;
+                }
+
+                string sourceDetails = Value(sourcePerson, "details");
+                if (string.IsNullOrWhiteSpace(sourceDetails) || sourceDetails == Value(existing, "details")) continue;
+                if (!notes.Any(note => Value(note, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase) &&
+                    Value(note, "source_sha256") == sha256 && Value(note, "note") == sourceDetails))
+                {
+                    notes.Add(new JsonObject
+                    {
+                        ["display_name"] = name,
+                        ["note"] = "Unverified details from GitHub ghtree.json: " + sourceDetails,
+                        ["source_url"] = GhtreeUrl,
+                        ["source_sha256"] = sha256,
+                        ["verified"] = false
+                    });
+                    addedNotes++;
+                }
+            }
+
+            if (incoming["captured_people"] is JsonArray snapshots)
+            {
+                foreach (JsonNode? snapshot in snapshots)
+                {
+                    string name = Value(snapshot, "display_name");
+                    string snapshotNote = GhtreeSnapshotNote(snapshot);
+                    if (string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(snapshotNote) || !existingNames.Contains(name))
+                        continue;
+                    if (notes.Any(note => Value(note, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase) &&
+                        Value(note, "source_sha256") == sha256 && Value(note, "note") == snapshotNote))
+                        continue;
+                    notes.Add(new JsonObject
+                    {
+                        ["display_name"] = name,
+                        ["note"] = "Unverified data from captured ghtree snapshot: " + snapshotNote,
+                        ["source_url"] = GhtreeUrl,
+                        ["source_sha256"] = sha256,
+                        ["verified"] = false
+                    });
+                    addedNotes++;
+                }
+            }
+
+            var existingCodes = identifiers.ToDictionary(
+                identifier => Value(identifier, "code"), identifier => Value(identifier, "display_name"),
+                StringComparer.OrdinalIgnoreCase);
+            foreach (JsonNode? sourceIdentifier in incomingIdentifiers)
+            {
+                string code = Value(sourceIdentifier, "code"), name = Value(sourceIdentifier, "display_name");
+                if (existingCodes.TryGetValue(code, out string? owner))
+                {
+                    if (owner.Equals(name, StringComparison.OrdinalIgnoreCase)) continue;
+                    overrides.Add(new JsonObject
+                    {
+                        ["display_name"] = name,
+                        ["code"] = code,
+                        ["field"] = "ghtree_identifier_conflict",
+                        ["original_value"] = owner,
+                        ["value"] = name,
+                        ["source"] = GhtreeUrl,
+                        ["source_sha256"] = sha256,
+                        ["reason"] = "Incoming identifier is already assigned to a different person; preserved for review and not reassigned.",
+                        ["verified"] = false
+                    });
+                    identifierConflicts++;
+                    continue;
+                }
+
+                JsonObject identifier = sourceIdentifier?.DeepClone() as JsonObject
+                    ?? throw new InvalidDataException($"Could not copy identifier '{code}'.");
+                identifiers.Add(identifier);
+                existingCodes.Add(code, name);
+                addedIdentifiers++;
+            }
+
+            var usedCodes = identifiers.Select(identifier => Value(identifier, "code"))
+                .Concat(people.Select(person => Value(person, "uf_number")))
+                .ToHashSet(StringComparer.OrdinalIgnoreCase);
+            int nextUf = 0;
+            foreach (string name in newPeopleNames)
+            {
+                if (identifiers.Any(identifier => Value(identifier, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase)))
+                    continue;
+                string code;
+                do code = $"UF{nextUf++:D6}"; while (usedCodes.Contains(code));
+                identifiers.Add(new JsonObject
+                {
+                    ["display_name"] = name, ["code"] = code, ["kind"] = "UF", ["permanent"] = 0,
+                    ["source_url"] = GhtreeUrl, ["source_sha256"] = sha256
+                });
+                usedCodes.Add(code);
+                addedIdentifiers++;
+            }
+
+            var linkKeys = relationships.Select(RelationshipKey).ToHashSet(StringComparer.OrdinalIgnoreCase);
+            foreach (JsonNode? sourceRelationship in EnsureArray(incoming, "relationships"))
+            {
+                if (string.IsNullOrWhiteSpace(Value(sourceRelationship, "child")) ||
+                    string.IsNullOrWhiteSpace(Value(sourceRelationship, "parent")))
+                    throw new InvalidDataException("An incoming relationship is missing a child or parent name.");
+                string key = RelationshipKey(sourceRelationship);
+                if (!linkKeys.Add(key)) continue;
+                JsonObject relationship = sourceRelationship?.DeepClone() as JsonObject
+                    ?? throw new InvalidDataException("Could not copy an incoming relationship.");
+                if (!double.TryParse(Value(relationship, "confidence"), System.Globalization.NumberStyles.Float,
+                    System.Globalization.CultureInfo.InvariantCulture, out double confidence)) confidence = 0.5;
+                relationship["confidence"] = Math.Clamp(confidence, 0, 0.5);
+                relationship["permanent"] = 0;
+                relationship["status"] = "unverified";
+                relationship["source_url"] = GhtreeUrl;
+                relationship["source_sha256"] = sha256;
+                relationships.Add(relationship);
+                addedRelationships++;
+            }
+
+            foreach (string key in new[] { "aliases", "provisional_facts", "duplicate_records", "duplicate_reviews" })
+            {
+                if (incoming[key] is not JsonArray sourceArray || sourceArray.Count == 0) continue;
+                JsonArray targetArray = GetOrCreateArray(merged, key);
+                foreach (JsonNode? item in sourceArray)
+                    if (!targetArray.Any(existing => JsonNode.DeepEquals(existing, item)))
+                        targetArray.Add(item?.DeepClone());
+            }
+
+            if (incoming["spouse_relationships"] is JsonArray incomingSpouses)
+            {
+                JsonArray spouses = GetOrCreateArray(merged, "spouse_relationships");
+                foreach (JsonNode? sourceSpouse in incomingSpouses)
+                    if (!spouses.Any(existing => JsonNode.DeepEquals(existing, sourceSpouse)))
+                    {
+                        JsonObject spouse = sourceSpouse?.DeepClone() as JsonObject
+                            ?? throw new InvalidDataException("Could not copy an incoming spouse relationship.");
+                        spouse["permanent"] = 0;
+                        spouse["status"] = "unverified";
+                        spouse["source_url"] = GhtreeUrl;
+                        spouse["source_sha256"] = sha256;
+                        spouses.Add(spouse);
+                    }
+            }
+
+            JsonArray imports = GetOrCreateArray(merged, "imports");
+            imports.Add(new JsonObject
+            {
+                ["source_url"] = GhtreeUrl,
+                ["sha256"] = sha256,
+                ["archive_path"] = archivePath,
+                ["imported_at_utc"] = DateTime.UtcNow.ToString("O"),
+                ["people_added"] = addedPeople,
+                ["identifiers_added"] = addedIdentifiers,
+                ["identifier_conflicts"] = identifierConflicts,
+                ["relationships_added"] = addedRelationships,
+                ["detail_notes_added"] = addedNotes,
+                ["verified"] = false
+            });
+            return merged;
         }
 
         private Form1(bool experimental)
