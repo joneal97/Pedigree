@@ -792,6 +792,804 @@
       "code": "TG208990",
       "kind": "TG",
       "permanent": 0
+    },
+    {
+      "display_name": "Abram Holderman",
+      "code": "UF000000",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Adeline Amanda Holderman Prickett",
+      "code": "UF000001",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Agnes Loretta Pendergast Hillman",
+      "code": "UF000002",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Agnes Maria Platt Hillman",
+      "code": "UF000003",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Alpha M. Bryant Bailey",
+      "code": "UF000004",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Anna Casey Cushman Emerson",
+      "code": "UF000005",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Anson Fredrick Perry",
+      "code": "UF000006",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Arno Erwin Schmelter",
+      "code": "UF000007",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Benjamin Hill Clawson",
+      "code": "UF000008",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Caroline A Morris Boyer",
+      "code": "UF000009",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Carson Shapley",
+      "code": "UF000010",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Charles Henry Holderman",
+      "code": "UF000011",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Charles McQuistion",
+      "code": "UF000012",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Charles Shapley",
+      "code": "UF000013",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Charlotte O\u0027Neal Holderman",
+      "code": "UF000014",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Clyde Prickett",
+      "code": "UF000015",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Dyson Miller",
+      "code": "UF000016",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Edith Mae Boyer Stocks",
+      "code": "UF000017",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Edith Marie Perry Gabel",
+      "code": "UF000018",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Eleanor Emerson Davis",
+      "code": "UF000019",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Eleanor Gail Nordstrom Kennington",
+      "code": "UF000020",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Elijah Prickett",
+      "code": "UF000021",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Elizabeth Heyhoe Coke King Holderman",
+      "code": "UF000022",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Ella Marie Grounds Bowman",
+      "code": "UF000023",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Emily Hensel Ryan",
+      "code": "UF000024",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Ernest Dennis Perry",
+      "code": "UF000025",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Ernest Robert Schlorff",
+      "code": "UF000026",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Ervin F Schmelter",
+      "code": "UF000027",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Ethel E. Maynard",
+      "code": "UF000028",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Everett Milton Bailey",
+      "code": "UF000029",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Frank A. Schlorff",
+      "code": "UF000030",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Frank A. Schlorff VVeteran",
+      "code": "UF000031",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Frank Earl \u201CTub\u201D Bailey",
+      "code": "UF000032",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Gael Agnes Hillman Welsh",
+      "code": "UF000033",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Gael Marguerite Maynard Biederman",
+      "code": "UF000034",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "George Clarence Bryant",
+      "code": "UF000035",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "George M Prickett",
+      "code": "UF000036",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "George T Bowman",
+      "code": "UF000037",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Gertrude E. \u201CGertie\u201D Bryant Bailey",
+      "code": "UF000038",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Gilderoy Holderman",
+      "code": "UF000039",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Hannah M. Schlorff Hensel",
+      "code": "UF000040",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Harriet Holderman Miller",
+      "code": "UF000041",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Henry Clark Shapley",
+      "code": "UF000042",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Henry Francis \u0022Francis\u0022 Bryant",
+      "code": "UF000043",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Hortense Hull Emerson",
+      "code": "UF000044",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Irene Sophie Schmelter Zaitz",
+      "code": "UF000045",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Isaac Newton Ross",
+      "code": "UF000046",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Jacine Beatrice Bryant Emerson",
+      "code": "UF000047",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Jacine Beatrice Bryant Emerson [Find a Grave 63103033]",
+      "code": "UF000048",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Jane Ellen Prickett Miller",
+      "code": "UF000049",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Jason Lorenza Bryant",
+      "code": "UF000050",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Jeanette Siebrandt Schlorff",
+      "code": "UF000051",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Joel R. Prickett",
+      "code": "UF000052",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "John Schlorff",
+      "code": "UF000053",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Leland Josiah Andrews",
+      "code": "UF000054",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Leland Vaughn Shapley",
+      "code": "UF000055",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Louise Schmelter Schlorff",
+      "code": "UF000056",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Lura Gladys Boyer Perry",
+      "code": "UF000057",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Marcia Jewell Emerson Gay",
+      "code": "UF000058",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mark Raymond Emerson",
+      "code": "UF000059",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Martha Gravenow Schmelter",
+      "code": "UF000060",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Martha H. Coke Holderman",
+      "code": "UF000061",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mary E. Holderman",
+      "code": "UF000062",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mary E. Turner Bryant",
+      "code": "UF000063",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mary Isabella Hillman Scofield",
+      "code": "UF000064",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mary Johansson Schlorff",
+      "code": "UF000065",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mary McCabe",
+      "code": "UF000066",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mary Rice Shapley",
+      "code": "UF000067",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mathia Lunde Shapley",
+      "code": "UF000068",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Mattie E. Boyer Ball",
+      "code": "UF000069",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Maude Belle Shapley Shankland",
+      "code": "UF000070",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Milton Rufus Bailey",
+      "code": "UF000071",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Minnie Schlorff Andrews",
+      "code": "UF000072",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Myra Scofield Poe",
+      "code": "UF000073",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Nettie Emmaline Kirkendoll Bryant",
+      "code": "UF000074",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Olive Gertrude Stafford Shapley Dawley",
+      "code": "UF000075",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Otis Commodore Bailey",
+      "code": "UF000076",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Otis Emerson",
+      "code": "UF000077",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Percy Wayne Shapley",
+      "code": "UF000078",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Phillip Hull Emerson",
+      "code": "UF000079",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Rachel Emma Lineberry Bailey",
+      "code": "UF000080",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Rev William Jasper Bowman",
+      "code": "UF000081",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Ronald Mayo Shapley",
+      "code": "UF000082",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Rosa Ann \u201CRosie\u201D Prickett Smith Washburn Clawson",
+      "code": "UF000083",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Samuel H. Holderman",
+      "code": "UF000084",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Stanley Cushman Emerson",
+      "code": "UF000085",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Sylvia Adelia Shapley Roberts",
+      "code": "UF000086",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Venza E. Bowman Rodgers",
+      "code": "UF000087",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Walter F \u0022Bud\u0022 Hensel",
+      "code": "UF000088",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Walter F. Hensel",
+      "code": "UF000089",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "William Ira \u201CWill\u201D Shapley",
+      "code": "UF000090",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "William Joseph Hillman",
+      "code": "UF000091",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "William Schlorff",
+      "code": "UF000092",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Elena Margaretha Johannsen",
+      "code": "UF000093",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "William (John Ludwig) Schlorf",
+      "code": "UF000094",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Abram1 Holderman",
+      "code": "UF000095",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Jacob Holderman",
+      "code": "UF000096",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Madalena Holderman",
+      "code": "UF000097",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Abram1 Holderman1",
+      "code": "UF000098",
+      "kind": "UF",
+      "permanent": 0,
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "display_name": "Fri20",
+      "code": "TG207225",
+      "kind": "TG",
+      "permanent": 0
     }
   ],
   "imports": [
@@ -1928,6 +2726,18 @@
       "people_count": 113,
       "tg_identifier_count": 112,
       "relationship_count": 112
+    },
+    {
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "archive_path": "C:\\Users\\161119\\source\\repos\\Pedigree\\ghtree-versions\\ghtree-github-a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff.json",
+      "imported_at_utc": "2026-11-20T16:21:48.2393195Z",
+      "people_added": 99,
+      "identifiers_added": 99,
+      "identifier_conflicts": 3,
+      "relationships_added": 6,
+      "detail_notes_added": 59,
+      "verified": false
     }
   ],
   "people": [
@@ -2712,6 +3522,804 @@
     {
       "person_no": 145,
       "display_name": "Minnie Sophia Rossow Schroeder",
+      "details": "",
+      "name_permanent": 0
+    },
+    {
+      "person_no": 146,
+      "display_name": "Abram Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 147,
+      "display_name": "Adeline Amanda Holderman Prickett",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 148,
+      "display_name": "Agnes Loretta Pendergast Hillman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 149,
+      "display_name": "Agnes Maria Platt Hillman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 150,
+      "display_name": "Alpha M. Bryant Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 151,
+      "display_name": "Anna Casey Cushman Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 152,
+      "display_name": "Anson Fredrick Perry",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 153,
+      "display_name": "Arno Erwin Schmelter",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 154,
+      "display_name": "Benjamin Hill Clawson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 155,
+      "display_name": "Caroline A Morris Boyer",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 156,
+      "display_name": "Carson Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 157,
+      "display_name": "Charles Henry Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 158,
+      "display_name": "Charles McQuistion",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 159,
+      "display_name": "Charles Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 160,
+      "display_name": "Charlotte O\u0027Neal Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 161,
+      "display_name": "Clyde Prickett",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 162,
+      "display_name": "Dyson Miller",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 163,
+      "display_name": "Edith Mae Boyer Stocks",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 164,
+      "display_name": "Edith Marie Perry Gabel",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 165,
+      "display_name": "Eleanor Emerson Davis",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 166,
+      "display_name": "Eleanor Gail Nordstrom Kennington",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 167,
+      "display_name": "Elijah Prickett",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 168,
+      "display_name": "Elizabeth Heyhoe Coke King Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 169,
+      "display_name": "Ella Marie Grounds Bowman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 170,
+      "display_name": "Emily Hensel Ryan",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 171,
+      "display_name": "Ernest Dennis Perry",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 172,
+      "display_name": "Ernest Robert Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 173,
+      "display_name": "Ervin F Schmelter",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 174,
+      "display_name": "Ethel E. Maynard",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 175,
+      "display_name": "Everett Milton Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 176,
+      "display_name": "Frank A. Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 177,
+      "display_name": "Frank A. Schlorff VVeteran",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 178,
+      "display_name": "Frank Earl \u201CTub\u201D Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 179,
+      "display_name": "Gael Agnes Hillman Welsh",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 180,
+      "display_name": "Gael Marguerite Maynard Biederman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 181,
+      "display_name": "George Clarence Bryant",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 182,
+      "display_name": "George M Prickett",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 183,
+      "display_name": "George T Bowman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 184,
+      "display_name": "Gertrude E. \u201CGertie\u201D Bryant Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 185,
+      "display_name": "Gilderoy Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 186,
+      "display_name": "Hannah M. Schlorff Hensel",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 187,
+      "display_name": "Harriet Holderman Miller",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 188,
+      "display_name": "Henry Clark Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 189,
+      "display_name": "Henry Francis \u0022Francis\u0022 Bryant",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 190,
+      "display_name": "Hortense Hull Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 191,
+      "display_name": "Irene Sophie Schmelter Zaitz",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 192,
+      "display_name": "Isaac Newton Ross",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 193,
+      "display_name": "Jacine Beatrice Bryant Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 194,
+      "display_name": "Jacine Beatrice Bryant Emerson [Find a Grave 63103033]",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 195,
+      "display_name": "Jane Ellen Prickett Miller",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 196,
+      "display_name": "Jason Lorenza Bryant",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 197,
+      "display_name": "Jeanette Siebrandt Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 198,
+      "display_name": "Joel R. Prickett",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 199,
+      "display_name": "John Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 200,
+      "display_name": "Leland Josiah Andrews",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 201,
+      "display_name": "Leland Vaughn Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 202,
+      "display_name": "Louise Schmelter Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 203,
+      "display_name": "Lura Gladys Boyer Perry",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 204,
+      "display_name": "Marcia Jewell Emerson Gay",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 205,
+      "display_name": "Mark Raymond Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 206,
+      "display_name": "Martha Gravenow Schmelter",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 207,
+      "display_name": "Martha H. Coke Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 208,
+      "display_name": "Mary E. Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 209,
+      "display_name": "Mary E. Turner Bryant",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 210,
+      "display_name": "Mary Isabella Hillman Scofield",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 211,
+      "display_name": "Mary Johansson Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 212,
+      "display_name": "Mary McCabe",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 213,
+      "display_name": "Mary Rice Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 214,
+      "display_name": "Mathia Lunde Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 215,
+      "display_name": "Mattie E. Boyer Ball",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 216,
+      "display_name": "Maude Belle Shapley Shankland",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 217,
+      "display_name": "Milton Rufus Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 218,
+      "display_name": "Minnie Schlorff Andrews",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 219,
+      "display_name": "Myra Scofield Poe",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 220,
+      "display_name": "Nettie Emmaline Kirkendoll Bryant",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 221,
+      "display_name": "Olive Gertrude Stafford Shapley Dawley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 222,
+      "display_name": "Otis Commodore Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 223,
+      "display_name": "Otis Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 224,
+      "display_name": "Percy Wayne Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 225,
+      "display_name": "Phillip Hull Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 226,
+      "display_name": "Rachel Emma Lineberry Bailey",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 227,
+      "display_name": "Rev William Jasper Bowman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 228,
+      "display_name": "Ronald Mayo Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 229,
+      "display_name": "Rosa Ann \u201CRosie\u201D Prickett Smith Washburn Clawson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 230,
+      "display_name": "Samuel H. Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 231,
+      "display_name": "Stanley Cushman Emerson",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 232,
+      "display_name": "Sylvia Adelia Shapley Roberts",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 233,
+      "display_name": "Venza E. Bowman Rodgers",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 234,
+      "display_name": "Walter F \u0022Bud\u0022 Hensel",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 235,
+      "display_name": "Walter F. Hensel",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 236,
+      "display_name": "William Ira \u201CWill\u201D Shapley",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 237,
+      "display_name": "William Joseph Hillman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 238,
+      "display_name": "William Schlorff",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 239,
+      "display_name": "Elena Margaretha Johannsen",
+      "details": "birth_date: 01/01/1836; birth_location: Germany; death_date: 01/01/1920; death_location: Germany",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 240,
+      "display_name": "William (John Ludwig) Schlorf",
+      "details": "birth_date: 21JUL1867; death_date: 01/01/1937; death_location: Wisconsin, USA",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 241,
+      "display_name": "Abram1 Holderman",
+      "details": "birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 242,
+      "display_name": "Jacob Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 243,
+      "display_name": "Madalena Holderman",
+      "details": "",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 244,
+      "display_name": "Abram1 Holderman1",
+      "details": "birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA1; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA1",
+      "name_permanent": 0,
+      "import_source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "import_source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "person_no": 245,
+      "display_name": "Fri20",
       "details": "",
       "name_permanent": 0
     }
@@ -10725,9 +12333,103 @@
       "relation": "parent",
       "confidence": 0.75,
       "permanent": 0
+    },
+    {
+      "child": "Mary Johannsen",
+      "parent": "Elena Margaretha Johannsen",
+      "relation": "parent",
+      "confidence": 0.5,
+      "permanent": 0,
+      "status": "unverified",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "child": "Percy Wayne Shapley",
+      "parent": "William Shapley",
+      "relation": "parent",
+      "confidence": 0.5,
+      "permanent": 0,
+      "status": "unverified",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "child": "Abram1 Holderman",
+      "parent": "Jacob Holderman",
+      "relation": "parent",
+      "confidence": 0.5,
+      "permanent": 0,
+      "status": "unverified",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "child": "Abram1 Holderman",
+      "parent": "Madalena Holderman",
+      "relation": "parent",
+      "confidence": 0.5,
+      "permanent": 0,
+      "status": "unverified",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "child": "Abram1 Holderman1",
+      "parent": "Jacob Holderman",
+      "relation": "parent",
+      "confidence": 0.5,
+      "permanent": 0,
+      "status": "unverified",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
+    },
+    {
+      "child": "Abram1 Holderman1",
+      "parent": "Madalena Holderman",
+      "relation": "parent",
+      "confidence": 0.5,
+      "permanent": 0,
+      "status": "unverified",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff"
     }
   ],
-  "record_overrides": [],
+  "record_overrides": [
+    {
+      "display_name": "Charles McQuistion",
+      "code": "TG972783",
+      "field": "ghtree_identifier_conflict",
+      "original_value": "Marshall McQuiston",
+      "value": "Charles McQuistion",
+      "source": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "reason": "Incoming identifier is already assigned to a different person; preserved for review and not reassigned.",
+      "verified": false
+    },
+    {
+      "display_name": "James Elliott",
+      "code": "TG749502",
+      "field": "ghtree_identifier_conflict",
+      "original_value": "John Elliott",
+      "value": "James Elliott",
+      "source": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "reason": "Incoming identifier is already assigned to a different person; preserved for review and not reassigned.",
+      "verified": false
+    },
+    {
+      "display_name": "Mary Rice Shapley",
+      "code": "TG762503",
+      "field": "ghtree_identifier_conflict",
+      "original_value": "Mary Rice",
+      "value": "Mary Rice Shapley",
+      "source": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "reason": "Incoming identifier is already assigned to a different person; preserved for review and not reassigned.",
+      "verified": false
+    }
+  ],
   "duplicate_records": [],
   "spouse_relationships": [
     {
@@ -10741,6 +12443,13 @@
       "person2": "August Friedrich Hedtke",
       "relation": "spouse",
       "permanent": 1
+    },
+    {
+      "person1": "Fri20",
+      "person2": "Jeremiah O\u0027Neal",
+      "relation": "spouse",
+      "source": "user-entered",
+      "permanent": 0
     }
   ],
   "duplicate_reviews": [
@@ -10843,6 +12552,421 @@
       "check_basis": "TG identifier uniqueness and exact duplicate-record check in the built-in tree"
     }
   ],
+  "person_notes": [
+    {
+      "display_name": "Mary Johannsen",
+      "note": "Unverified details from GitHub ghtree.json: birth_date: 28 Nov 1868; birth_location: Tondern, Schleswig-Holstein, Deutschland; death_date: 01/01/1951; death_location: Shawano County, Wisconsin, United States",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Johannsen",
+      "note": "Unverified details from GitHub ghtree.json: birth_date: 01/01/1833; birth_location: Germany; death_date: 26 March 1919; death_location: Germany",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Minnie Schlorff",
+      "note": "Unverified details from GitHub ghtree.json: birth_date: 1 Mar 1905; birth_location: 10920 Mackinaw Avenue, Chicago, Illinois; death_date: 12 Apr 1946; death_location: Minneapolis, Hennepin, Minnesota, United States",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Abram Holderman",
+      "note": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Parents: Jacob Holderman, Madalena Holderman",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Barton J Waite",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG740772; Born: 1792; Died: 1862/1870",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Carson Shapley",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1 Sep 1868; Died: 1950 (aged 81\u201382)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Charles McQuistion",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG972783; Born: 23 Nov 1813; Died: 22 Dec 1872",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Charles Rossow",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG201598",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Dyson Miller",
+      "note": "Unverified data from captured ghtree snapshot: Born: 23 Dec 1829; Died: 4 Jan 1917 (aged 87)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Eleanor Gail Nordstrom Kennington",
+      "note": "Unverified data from captured ghtree snapshot: Born: 28 May 1910; Died: 26 Feb 1996 (aged 85)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Ethel E. Maynard",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1912; Died: 2010 (aged 97\u0026ndash;98)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "F. Howard Hillman",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1881; Died: 1963 (aged 81\u201382)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Frank A. Schlorff",
+      "note": "Unverified data from captured ghtree snapshot: Born: 15 Sep 1908; Died: 11 May 2002 (aged 93)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Frank A. Schlorff VVeteran",
+      "note": "Unverified data from captured ghtree snapshot: Born: 15 Sep 1908; Died: 11 May 2002 (aged 93)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Frank Earl \u201CTub\u201D Bailey",
+      "note": "Unverified data from captured ghtree snapshot: Born: 19 Apr 1884; Died: 26 Mar 1961 (aged 76)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Gael Agnes Hillman Welsh",
+      "note": "Unverified data from captured ghtree snapshot: Born: 21 Sep 1884; Died: 12 Apr 1982 (aged 97)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "George Clarence Bryant",
+      "note": "Unverified data from captured ghtree snapshot: Born: 17 Apr 1880; Died: 29 Jan 1948 (aged 67)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "George W Bowman Jr",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG587699; Born: Oct 1787; Died: 5 Aug 1874",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Gertrude E. \u201CGertie\u201D Bryant Bailey",
+      "note": "Unverified data from captured ghtree snapshot: Born: 19 Nov 1882; Died: 23 Oct 1952 (aged 69)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Hannah M. Schlorff Hensel",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1903; Died: Aug 1984 (aged 80\u201381)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Ica Foster Rice",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG893959; Born: 1805; Died: 01 Jan 1859",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Isaac Newton Ross",
+      "note": "Unverified data from captured ghtree snapshot: Born: 4 Apr 1812; Died: 21 May 1889 (aged 77)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Jacine Beatrice Bryant Emerson",
+      "note": "Unverified data from captured ghtree snapshot: Born: 26 Mar 1909; Died: 3 Oct 1981 (aged 72)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Jacine Beatrice Bryant Emerson [Find a Grave 63103033]",
+      "note": "Unverified data from captured ghtree snapshot: Born: 26 Mar 1909; Died: 3 Oct 1981 (aged 72)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "James Elliott",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG673245; Born: Apr 1817; Died: 1906; Parents: John Elliott, Margaret Scott",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "James N Elliott",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG654890; Born: 12 Oct 1855; Died: 1 Nov 1926; Parents: James Elliott, Margaret Elliott",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Jane Ellen Prickett",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1835; Died: 1852 (aged 16\u0026ndash;17)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Jason Lorenza Bryant",
+      "note": "Unverified data from captured ghtree snapshot: Born: 15 Jul 1880; Died: 25 Dec 1947 (aged 67)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Johanna Kiehlbauch",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG204672",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Johanna Kiehlbauch Setzer",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG206921",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Leonard Marlow Sr",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG204761",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Louisa Kiehlbauch",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG200915",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Louise Rossow Deutscher",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG204295",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Louise Schmelter Schlorff",
+      "note": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1912; Died: 10 Jul 2011 (aged 99)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Lura Gladys Boyer Perry",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1888; Died: 7 Aug 1963 (aged 74\u0026ndash;75)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Mark Raymond Emerson",
+      "note": "Unverified data from captured ghtree snapshot: Born: 14 Jun 1905; Died: 25 Mar 1973 (aged 67)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Mary Rice Shapley",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG762503; Born: Feb 1849; Parents: Ica Foster Rice, Kezia Bair",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Minnie Schlorff Andrews",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1 Mar 1905; Died: 12 Apr 1946 (aged 41)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Minnie Sophia Rossow Schroeder",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG208990",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Patrick Henry Shapley",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG491628; Born: 10 APR 1846; Parents: William Shapley, Clarissa Gridley",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Percy Wayne Shapley",
+      "note": "Unverified data from captured ghtree snapshot: Born: 6 May 1901; Died: 11 Sep 1946 (aged 45)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Rosa Ann \u201CRosie\u201D Prickett Smith Washburn Clawson",
+      "note": "Unverified data from captured ghtree snapshot: Born: 30 Jul 1869; Died: 28 Oct 1952 (aged 83)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Samuel H. Holderman",
+      "note": "Unverified data from captured ghtree snapshot: Born: 9 Oct 1828; Died: 14 Dec 1886 (aged 58)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Samuel Marlow Jr",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG204221",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Susannah Clark Bacon",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG733873; Born: 20 August 1790; Died: December 1870",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Thomas Cleophas Hamilton",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG407091; Born: 1 Feb 1784; Died: 23 Feb 1872",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "William Ira \u201CWill\u201D Shapley",
+      "note": "Unverified data from captured ghtree snapshot: Born: 10 Oct 1871; Died: 1 Sep 1940 (aged 68)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "William Schlorff",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1867; Died: 1937 (aged 69\u201370)",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "William Shapley",
+      "note": "Unverified data from captured ghtree snapshot: TG/code: TG618235; Born: ABT 1798/9; Died: BET 1861 AND 1864; Parents: Patrick Henry Shapley, Mary Rice",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Mary Johannsen",
+      "note": "Unverified data from captured ghtree snapshot: Born: 28 Nov 1868; Died: 01/01/1951; Details: birth_date: 28 Nov 1868; birth_location: Tondern, Schleswig-Holstein, Deutschland; death_date: 01/01/1951; death_location: Shawano County, Wisconsin, United States",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Johannsen",
+      "note": "Unverified data from captured ghtree snapshot: Born: 01/01/1833; Died: 26 March 1919; Details: birth_date: 01/01/1833; birth_location: Germany; death_date: 26 March 1919; death_location: Germany",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Elena Margaretha Johannsen",
+      "note": "Unverified data from captured ghtree snapshot: Born: 01/01/1836; Died: 01/01/1920; Details: birth_date: 01/01/1836; birth_location: Germany; death_date: 01/01/1920; death_location: Germany",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "William (John Ludwig) Schlorf",
+      "note": "Unverified data from captured ghtree snapshot: Born: 21JUL1867; Died: 01/01/1937; Details: birth_date: 21JUL1867; death_date: 01/01/1937; death_location: Wisconsin, USA",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Minnie Schlorff",
+      "note": "Unverified data from captured ghtree snapshot: Born: 1 Mar 1905; Died: 12 Apr 1946; Details: birth_date: 1 Mar 1905; birth_location: 10920 Mackinaw Avenue, Chicago, Illinois; death_date: 12 Apr 1946; death_location: Minneapolis, Hennepin, Minnesota, United States",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Percy Wayne Shapley",
+      "note": "Unverified data from captured ghtree snapshot: Born: 6 May 1901; Died: 11 Sep 1946 (aged 45); Details: birth_date: 6 May 1901; birth_location: Floyd County, Iowa, USA; death_date: 11 Sep 1946 (aged 45); death_location: Pasco, Franklin County, Washington, USA",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "William Shapley",
+      "note": "Unverified data from captured ghtree snapshot: Born: 10 APR 1846; Died: 01/01/1800; Details: birth_date: 10 APR 1846; birth_location: Emmett, Calhoun, Michiga; death_date: 01/01/1800; death_location: United States",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Abram1 Holderman",
+      "note": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Details: birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Abram1 Holderman",
+      "note": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Details: birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA1; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA1",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    },
+    {
+      "display_name": "Abram1 Holderman1",
+      "note": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Details: birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA1; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA1",
+      "source_url": "https://raw.githubusercontent.com/we6jbo/AncesTaleextended/refs/heads/master/ghtree.json",
+      "source_sha256": "a06ee7b5d0003e31e8ec0b56bbad54e8cb9360cc28e45b2582069de99c8b68ff",
+      "verified": false
+    }
+  ],
   "captured_people": [
     {
       "display_name": "Jeremiah O\u0027Neal",
@@ -10853,7 +12977,9 @@
         "Dudley McCabe",
         "mom"
       ],
-      "spouse": [],
+      "spouse": [
+        "Fri20"
+      ],
       "other_parents": [],
       "children": [],
       "details": "B:01 Jan 1985 San Diego, CA",
@@ -10862,7 +12988,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1021934Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3591429Z"
     },
     {
       "display_name": "Dudley McCabe",
@@ -10888,7 +13014,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1026928Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3592710Z"
     },
     {
       "display_name": "mom",
@@ -10914,7 +13040,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1030585Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3593749Z"
     },
     {
       "display_name": "Lester McCabe",
@@ -10938,7 +13064,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1034444Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3594699Z"
     },
     {
       "display_name": "Noma Vade Smith",
@@ -10962,7 +13088,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1038923Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3595604Z"
     },
     {
       "display_name": "grandpa",
@@ -10986,7 +13112,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1043206Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3596669Z"
     },
     {
       "display_name": "grandma",
@@ -11010,7 +13136,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1046984Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3597616Z"
     },
     {
       "display_name": "John McCabe",
@@ -11034,7 +13160,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1050834Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3598720Z"
     },
     {
       "display_name": "Alice S Elliott",
@@ -11058,7 +13184,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1054463Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3599913Z"
     },
     {
       "display_name": "Archie T Smith",
@@ -11082,7 +13208,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1058436Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3600869Z"
     },
     {
       "display_name": "Polly Myrtle Bowman",
@@ -11106,7 +13232,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1062242Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3601833Z"
     },
     {
       "display_name": "Burke C Maynard",
@@ -11130,7 +13256,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1065957Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3602745Z"
     },
     {
       "display_name": "Amelia B Hetdke",
@@ -11154,7 +13280,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1069647Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3603698Z"
     },
     {
       "display_name": "Percy W Shapley",
@@ -11178,7 +13304,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1073351Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3604574Z"
     },
     {
       "display_name": "Minnie Schlorff",
@@ -11200,9 +13326,9 @@
       "duplicate": false,
       "original_name": "Minnie Schlorff",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified details from GitHub ghtree.json: birth_date: 1 Mar 1905; birth_location: 10920 Mackinaw Avenue, Chicago, Illinois; death_date: 12 Apr 1946; death_location: Minneapolis, Hennepin, Minnesota, United States\r\nUnverified data from captured ghtree snapshot: Born: 1 Mar 1905; Died: 12 Apr 1946; Details: birth_date: 1 Mar 1905; birth_location: 10920 Mackinaw Avenue, Chicago, Illinois; death_date: 12 Apr 1946; death_location: Minneapolis, Hennepin, Minnesota, United States",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1077196Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3605531Z"
     },
     {
       "display_name": "Edward Mccabe",
@@ -11226,7 +13352,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1080911Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3606385Z"
     },
     {
       "display_name": "Sarah McAvoy",
@@ -11250,7 +13376,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1084635Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3607264Z"
     },
     {
       "display_name": "James N Elliott",
@@ -11272,9 +13398,9 @@
       "duplicate": false,
       "original_name": "James N Elliott",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG654890; Born: 12 Oct 1855; Died: 1 Nov 1926; Parents: James Elliott, Margaret Elliott",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1088230Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3608219Z"
     },
     {
       "display_name": "Elizabeth McQuiston",
@@ -11298,7 +13424,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1091852Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3609106Z"
     },
     {
       "display_name": "Albert Franklin Smith",
@@ -11322,7 +13448,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1095390Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3610022Z"
     },
     {
       "display_name": "Rose Ann Prickett",
@@ -11346,7 +13472,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1099413Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3610892Z"
     },
     {
       "display_name": "Thomas S Bowman",
@@ -11371,7 +13497,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1103304Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3612391Z"
     },
     {
       "display_name": "Nancy Jane Lambert",
@@ -11396,7 +13522,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1107106Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3613558Z"
     },
     {
       "display_name": "William R Maynard",
@@ -11420,7 +13546,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1109150Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3614176Z"
     },
     {
       "display_name": "Gail Agnes Hillman",
@@ -11444,7 +13570,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1112723Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3615248Z"
     },
     {
       "display_name": "Robert R Hedtke",
@@ -11468,7 +13594,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1116441Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3616263Z"
     },
     {
       "display_name": "Amelia Kiehlbauch",
@@ -11492,7 +13618,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1137552Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3617243Z"
     },
     {
       "display_name": "William Shapley",
@@ -11510,15 +13636,16 @@
       ],
       "children": [
         "Percy W Shapley",
-        "Patrick Henry Shapley"
+        "Patrick Henry Shapley",
+        "Percy Wayne Shapley"
       ],
       "details": "B:ABT 1798/9 Granville, Washington, New York D:Between 1925 to 1928",
       "duplicate": false,
       "original_name": "William Shapley",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG618235; Born: ABT 1798/9; Died: BET 1861 AND 1864; Parents: Patrick Henry Shapley, Mary Rice\r\nUnverified data from captured ghtree snapshot: Born: 10 APR 1846; Died: 01/01/1800; Details: birth_date: 10 APR 1846; birth_location: Emmett, Calhoun, Michiga; death_date: 01/01/1800; death_location: United States",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1141154Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3618461Z"
     },
     {
       "display_name": "Olive G Stafford",
@@ -11542,7 +13669,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1144387Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3619387Z"
     },
     {
       "display_name": "William John Ludwig Sclorf",
@@ -11563,7 +13690,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1147707Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3636428Z"
     },
     {
       "display_name": "Mary Johannsen",
@@ -11572,7 +13699,8 @@
       "died": "1951 Shawano County, Wisconsin, USA",
       "parents": [
         "Johannsen",
-        "Elena M Johannsen"
+        "Elena M Johannsen",
+        "Elena Margaretha Johannsen"
       ],
       "spouse": [],
       "other_parents": [
@@ -11585,9 +13713,9 @@
       "duplicate": false,
       "original_name": "Mary Johannsen",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified details from GitHub ghtree.json: birth_date: 28 Nov 1868; birth_location: Tondern, Schleswig-Holstein, Deutschland; death_date: 01/01/1951; death_location: Shawano County, Wisconsin, United States\r\nUnverified data from captured ghtree snapshot: Born: 28 Nov 1868; Died: 01/01/1951; Details: birth_date: 28 Nov 1868; birth_location: Tondern, Schleswig-Holstein, Deutschland; death_date: 01/01/1951; death_location: Shawano County, Wisconsin, United States",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1151102Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3637495Z"
     },
     {
       "display_name": "James McCabe",
@@ -11608,7 +13736,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1154382Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3638419Z"
     },
     {
       "display_name": "Mary",
@@ -11629,7 +13757,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1157827Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3639311Z"
     },
     {
       "display_name": "James McAvoy",
@@ -11653,7 +13781,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1161084Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3640198Z"
     },
     {
       "display_name": "Rosamund Sloan",
@@ -11677,7 +13805,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1164283Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3641094Z"
     },
     {
       "display_name": "James Elliott",
@@ -11699,9 +13827,9 @@
       "duplicate": false,
       "original_name": "James Elliott",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG673245; Born: Apr 1817; Died: 1906; Parents: John Elliott, Margaret Scott",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1167404Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3641951Z"
     },
     {
       "display_name": "John Elliott",
@@ -11722,7 +13850,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1170717Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3642828Z"
     },
     {
       "display_name": "Margaret Jane Boudin",
@@ -11746,7 +13874,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1173997Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3643736Z"
     },
     {
       "display_name": "Charles McQuiston",
@@ -11770,7 +13898,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1177414Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3690194Z"
     },
     {
       "display_name": "Mary Thorpe",
@@ -11794,7 +13922,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1180820Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3691710Z"
     },
     {
       "display_name": "John Isaac Smith",
@@ -11818,7 +13946,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1182990Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3692521Z"
     },
     {
       "display_name": "Ruanna Hamilton",
@@ -11842,7 +13970,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1186252Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3693803Z"
     },
     {
       "display_name": "Charles Prickett",
@@ -11866,7 +13994,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1189431Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3695057Z"
     },
     {
       "display_name": "Adaline A Holderman",
@@ -11890,7 +14018,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1192730Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3845625Z"
     },
     {
       "display_name": "Abel Bowman",
@@ -11914,7 +14042,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1196614Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3847021Z"
     },
     {
       "display_name": "Mary Martha Shumaker",
@@ -11938,7 +14066,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1200109Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3847983Z"
     },
     {
       "display_name": "Aaron Lorenzo Lambert",
@@ -11962,7 +14090,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1203134Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3848884Z"
     },
     {
       "display_name": "Tabitha Ann Brown",
@@ -11986,7 +14114,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1206018Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3849783Z"
     },
     {
       "display_name": "George Maynard",
@@ -12010,7 +14138,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1208811Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3850693Z"
     },
     {
       "display_name": "Margaret Rose Sansom",
@@ -12034,7 +14162,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1211566Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3851575Z"
     },
     {
       "display_name": "Fred Ernest Hillman",
@@ -12060,7 +14188,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1213616Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3852214Z"
     },
     {
       "display_name": "Agnes Maria Platt",
@@ -12084,7 +14212,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1216463Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3853089Z"
     },
     {
       "display_name": "August Friedrich Hedtke",
@@ -12110,7 +14238,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1219243Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3853979Z"
     },
     {
       "display_name": "Amelia Carolina Luedtke",
@@ -12133,7 +14261,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1222039Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3854876Z"
     },
     {
       "display_name": "Josef Kiehlbauch",
@@ -12157,7 +14285,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1224842Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3855784Z"
     },
     {
       "display_name": "Barbara Beck",
@@ -12181,7 +14309,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1227582Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3856652Z"
     },
     {
       "display_name": "Patrick Henry Shapley",
@@ -12203,9 +14331,9 @@
       "duplicate": false,
       "original_name": "Patrick Henry Shapley",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG491628; Born: 10 APR 1846; Parents: William Shapley, Clarissa Gridley",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1230310Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3857533Z"
     },
     {
       "display_name": "Mary Rice",
@@ -12229,7 +14357,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1233006Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3858399Z"
     },
     {
       "display_name": "William Mark Stafford",
@@ -12253,7 +14381,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1235906Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3859248Z"
     },
     {
       "display_name": "Alice Waite",
@@ -12277,7 +14405,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1238659Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3860125Z"
     },
     {
       "display_name": "Johannsen",
@@ -12287,7 +14415,8 @@
       "parents": [],
       "spouse": [],
       "other_parents": [
-        "Elena M Johannsen"
+        "Elena M Johannsen",
+        "Elena Margaretha Johannsen"
       ],
       "children": [
         "Mary Johannsen"
@@ -12296,9 +14425,9 @@
       "duplicate": false,
       "original_name": "Johannsen",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified details from GitHub ghtree.json: birth_date: 01/01/1833; birth_location: Germany; death_date: 26 March 1919; death_location: Germany\r\nUnverified data from captured ghtree snapshot: Born: 01/01/1833; Died: 26 March 1919; Details: birth_date: 01/01/1833; birth_location: Germany; death_date: 26 March 1919; death_location: Germany",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1241415Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3861019Z"
     },
     {
       "display_name": "Elena M Johannsen",
@@ -12311,7 +14440,8 @@
       ],
       "spouse": [],
       "other_parents": [
-        "Johannsen"
+        "Johannsen",
+        "Elena Margaretha Johannsen"
       ],
       "children": [
         "Mary Johannsen"
@@ -12322,7 +14452,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1244266Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3862083Z"
     },
     {
       "display_name": "Patrick McAvoy",
@@ -12343,7 +14473,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1247294Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3863097Z"
     },
     {
       "display_name": "Mary Evett",
@@ -12364,7 +14494,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1250113Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3863948Z"
     },
     {
       "display_name": "John Sloan",
@@ -12385,7 +14515,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1252862Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3864794Z"
     },
     {
       "display_name": "Ann McGowan",
@@ -12406,7 +14536,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1255688Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3865624Z"
     },
     {
       "display_name": "Margaret Scott",
@@ -12427,7 +14557,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1258472Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3866512Z"
     },
     {
       "display_name": "Johann Jacob Friedrich Huber",
@@ -12448,7 +14578,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1261191Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3867411Z"
     },
     {
       "display_name": "Frederika Regkukel",
@@ -12469,7 +14599,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1264113Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3868311Z"
     },
     {
       "display_name": "Marshall McQuiston",
@@ -12490,7 +14620,7 @@
       "record_override": null,
       "notes": "",
       "verify": "11/11/2026",
-      "captured_at_utc": "2026-11-20T00:19:11.1266784Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3869168Z"
     },
     {
       "display_name": "Rebecca Grannis",
@@ -12511,7 +14641,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1269507Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3870063Z"
     },
     {
       "display_name": "William Thorpe",
@@ -12532,7 +14662,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1272208Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3870930Z"
     },
     {
       "display_name": "Mary Jane Sumner",
@@ -12553,7 +14683,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1274874Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3871769Z"
     },
     {
       "display_name": "William Smith",
@@ -12574,7 +14704,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1277518Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3872585Z"
     },
     {
       "display_name": "Lucy Ann Kreidler",
@@ -12595,7 +14725,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1280258Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3873446Z"
     },
     {
       "display_name": "Thomas Cleophas Hamilton",
@@ -12614,9 +14744,9 @@
       "duplicate": false,
       "original_name": "Thomas Cleophas Hamilton",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG407091; Born: 1 Feb 1784; Died: 23 Feb 1872",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1283895Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3874293Z"
     },
     {
       "display_name": "Sarah Elizabeth Marlow",
@@ -12637,7 +14767,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1293962Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3875157Z"
     },
     {
       "display_name": "James Prickett",
@@ -12659,7 +14789,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1297006Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3876103Z"
     },
     {
       "display_name": "Rebecca Wisham",
@@ -12681,7 +14811,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1299865Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3904813Z"
     },
     {
       "display_name": "Jacob Holderman Sr",
@@ -12702,7 +14832,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1302667Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3905830Z"
     },
     {
       "display_name": "Mercy Caroline Loveland",
@@ -12723,7 +14853,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1305608Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3906717Z"
     },
     {
       "display_name": "George W Bowman Jr",
@@ -12742,9 +14872,9 @@
       "duplicate": false,
       "original_name": "George W Bowman Jr",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG587699; Born: Oct 1787; Died: 5 Aug 1874",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1308341Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3907587Z"
     },
     {
       "display_name": "Mary Catherine Eisenhower",
@@ -12765,7 +14895,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1311014Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3908431Z"
     },
     {
       "display_name": "Thomas J Shoemake",
@@ -12786,7 +14916,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1313804Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3909307Z"
     },
     {
       "display_name": "Jemima Blunk",
@@ -12807,7 +14937,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1316427Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3910152Z"
     },
     {
       "display_name": "Henry Ira Lambert",
@@ -12828,7 +14958,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1319213Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3911046Z"
     },
     {
       "display_name": "Sarah \u0027Sally\u0027 M Craven",
@@ -12849,7 +14979,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1321959Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3914224Z"
     },
     {
       "display_name": "John W Brown",
@@ -12870,7 +15000,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1324806Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3915259Z"
     },
     {
       "display_name": "Nancy Jan Wilhite",
@@ -12891,7 +15021,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1327528Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3916113Z"
     },
     {
       "display_name": "William Maynard",
@@ -12912,7 +15042,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1330172Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3916968Z"
     },
     {
       "display_name": "Sarah Parsons",
@@ -12933,7 +15063,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1333018Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3917836Z"
     },
     {
       "display_name": "Riley Sansom",
@@ -12954,7 +15084,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1335784Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3918706Z"
     },
     {
       "display_name": "Sarah Sally Kline",
@@ -12975,7 +15105,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1338468Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3919570Z"
     },
     {
       "display_name": "Levi Colburn Hillman",
@@ -12996,7 +15126,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1342512Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3921474Z"
     },
     {
       "display_name": "Mary Marinda Shelly",
@@ -13017,7 +15147,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1345479Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3922377Z"
     },
     {
       "display_name": "David C Platt",
@@ -13038,7 +15168,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1348266Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3923250Z"
     },
     {
       "display_name": "Miranda McLane",
@@ -13059,7 +15189,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1350924Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3924094Z"
     },
     {
       "display_name": "Johann E Hedtke",
@@ -13080,7 +15210,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1353714Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3924970Z"
     },
     {
       "display_name": "Florentine Henriette Florence Hedtke",
@@ -13101,7 +15231,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1356768Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3925792Z"
     },
     {
       "display_name": "Joseph Sr Kiehlbauch",
@@ -13122,7 +15252,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1359443Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3926631Z"
     },
     {
       "display_name": "Johanna Knoepfle",
@@ -13143,7 +15273,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1362127Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3927480Z"
     },
     {
       "display_name": "Constantin Beck",
@@ -13164,7 +15294,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1364811Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3928346Z"
     },
     {
       "display_name": "Barbara Maier/Beck",
@@ -13185,7 +15315,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1367479Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3929185Z"
     },
     {
       "display_name": "Clarissa Gridley",
@@ -13206,7 +15336,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1370213Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3934419Z"
     },
     {
       "display_name": "Ica Foster Rice",
@@ -13225,9 +15355,9 @@
       "duplicate": false,
       "original_name": "Ica Foster Rice",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG893959; Born: 1805; Died: 01 Jan 1859",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1373752Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3936850Z"
     },
     {
       "display_name": "Kezia Bair",
@@ -13248,7 +15378,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1376694Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3937812Z"
     },
     {
       "display_name": "Joseph W Stafford",
@@ -13269,7 +15399,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1379549Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3938746Z"
     },
     {
       "display_name": "Hulda Sylvah",
@@ -13290,7 +15420,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1382334Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3939926Z"
     },
     {
       "display_name": "Barton J Waite",
@@ -13309,9 +15439,9 @@
       "duplicate": false,
       "original_name": "Barton J Waite",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG740772; Born: 1792; Died: 1862/1870",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1384953Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3941337Z"
     },
     {
       "display_name": "Susannah Clark Bacon",
@@ -13330,9 +15460,9 @@
       "duplicate": false,
       "original_name": "Susannah Clark Bacon",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG733873; Born: 20 August 1790; Died: December 1870",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1387696Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3942277Z"
     },
     {
       "display_name": "Lorenz Hinrichsen",
@@ -13353,7 +15483,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1390407Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3943163Z"
     },
     {
       "display_name": "Sophia Margaretha Hinrichsen",
@@ -13374,7 +15504,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1393080Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3944102Z"
     },
     {
       "display_name": "Mary Richards Marlow",
@@ -13394,7 +15524,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1395277Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3944682Z"
     },
     {
       "display_name": "Leonard Marlow Sr",
@@ -13411,9 +15541,9 @@
       "duplicate": false,
       "original_name": "Leonard Marlow Sr",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG204761",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1398307Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3945583Z"
     },
     {
       "display_name": "Samuel Marlow Jr",
@@ -13430,9 +15560,9 @@
       "duplicate": false,
       "original_name": "Samuel Marlow Jr",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG204221",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1400952Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3946425Z"
     },
     {
       "display_name": "Raymon Vester Bowman",
@@ -13455,7 +15585,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1402726Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3947003Z"
     },
     {
       "display_name": "Beulah Berniece Bowman Kirk",
@@ -13474,7 +15604,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1405325Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3948284Z"
     },
     {
       "display_name": "James Thomas \u0022Tuffy\u0022 Bowman Sr",
@@ -13493,7 +15623,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1407933Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3949097Z"
     },
     {
       "display_name": "Jane Ellen Prickett",
@@ -13511,9 +15641,9 @@
       "duplicate": false,
       "original_name": "Jane Ellen Prickett",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1835; Died: 1852 (aged 16\u0026ndash;17)",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1409372Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3949563Z"
     },
     {
       "display_name": "F. Howard Hillman",
@@ -13530,9 +15660,9 @@
       "duplicate": false,
       "original_name": "F. Howard Hillman",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1881; Died: 1963 (aged 81\u201382)",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1412044Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3950409Z"
     },
     {
       "display_name": "Clare Levi Hillman",
@@ -13551,7 +15681,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1414725Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3951597Z"
     },
     {
       "display_name": "Joseph Kiehlbauch",
@@ -13573,7 +15703,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1416693Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3952289Z"
     },
     {
       "display_name": "Johanna Kiehlbauch",
@@ -13590,9 +15720,9 @@
       "duplicate": false,
       "original_name": "Johanna Kiehlbauch",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG204672",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1419458Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3953198Z"
     },
     {
       "display_name": "Johanna Kiehlbauch Setzer",
@@ -13609,9 +15739,9 @@
       "duplicate": false,
       "original_name": "Johanna Kiehlbauch Setzer",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG206921",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1422116Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3954030Z"
     },
     {
       "display_name": "Louisa Kiehlbauch",
@@ -13628,9 +15758,9 @@
       "duplicate": false,
       "original_name": "Louisa Kiehlbauch",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG200915",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1424665Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3954840Z"
     },
     {
       "display_name": "John Rossow",
@@ -13651,7 +15781,7 @@
       "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1426607Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3955527Z"
     },
     {
       "display_name": "Louise Rossow Deutscher",
@@ -13668,9 +15798,9 @@
       "duplicate": false,
       "original_name": "Louise Rossow Deutscher",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG204295",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1429223Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3956398Z"
     },
     {
       "display_name": "Charles Rossow",
@@ -13687,9 +15817,9 @@
       "duplicate": false,
       "original_name": "Charles Rossow",
       "record_override": null,
-      "notes": "",
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG201598",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1432128Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3957223Z"
     },
     {
       "display_name": "Minnie Sophia Rossow Schroeder",
@@ -13706,9 +15836,1734 @@
       "duplicate": false,
       "original_name": "Minnie Sophia Rossow Schroeder",
       "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG208990",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3958024Z"
+    },
+    {
+      "display_name": "Abram Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Abram Holderman",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Parents: Jacob Holderman, Madalena Holderman",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3963631Z"
+    },
+    {
+      "display_name": "Adeline Amanda Holderman Prickett",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Adeline Amanda Holderman Prickett",
+      "record_override": null,
       "notes": "",
       "verify": "",
-      "captured_at_utc": "2026-11-20T00:19:11.1444351Z"
+      "captured_at_utc": "2026-11-20T16:25:00.3964568Z"
+    },
+    {
+      "display_name": "Agnes Loretta Pendergast Hillman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Agnes Loretta Pendergast Hillman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3965426Z"
+    },
+    {
+      "display_name": "Agnes Maria Platt Hillman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Agnes Maria Platt Hillman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3966252Z"
+    },
+    {
+      "display_name": "Alpha M. Bryant Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Alpha M. Bryant Bailey",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3967072Z"
+    },
+    {
+      "display_name": "Anna Casey Cushman Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Anna Casey Cushman Emerson",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3967894Z"
+    },
+    {
+      "display_name": "Anson Fredrick Perry",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Anson Fredrick Perry",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3968728Z"
+    },
+    {
+      "display_name": "Arno Erwin Schmelter",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Arno Erwin Schmelter",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3969552Z"
+    },
+    {
+      "display_name": "Benjamin Hill Clawson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Benjamin Hill Clawson",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3970376Z"
+    },
+    {
+      "display_name": "Caroline A Morris Boyer",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Caroline A Morris Boyer",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.3971204Z"
+    },
+    {
+      "display_name": "Carson Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Carson Shapley",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1 Sep 1868; Died: 1950 (aged 81\u201382)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4005268Z"
+    },
+    {
+      "display_name": "Charles Henry Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Charles Henry Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4006264Z"
+    },
+    {
+      "display_name": "Charles McQuistion",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Charles McQuistion",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG972783; Born: 23 Nov 1813; Died: 22 Dec 1872",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4007114Z"
+    },
+    {
+      "display_name": "Charles Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Charles Shapley",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4007947Z"
+    },
+    {
+      "display_name": "Charlotte O\u0027Neal Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Charlotte O\u0027Neal Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4008745Z"
+    },
+    {
+      "display_name": "Clyde Prickett",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Clyde Prickett",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4009551Z"
+    },
+    {
+      "display_name": "Dyson Miller",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Dyson Miller",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 23 Dec 1829; Died: 4 Jan 1917 (aged 87)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4010345Z"
+    },
+    {
+      "display_name": "Edith Mae Boyer Stocks",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Edith Mae Boyer Stocks",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4011123Z"
+    },
+    {
+      "display_name": "Edith Marie Perry Gabel",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Edith Marie Perry Gabel",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4011893Z"
+    },
+    {
+      "display_name": "Eleanor Emerson Davis",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Eleanor Emerson Davis",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4012707Z"
+    },
+    {
+      "display_name": "Eleanor Gail Nordstrom Kennington",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Eleanor Gail Nordstrom Kennington",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 28 May 1910; Died: 26 Feb 1996 (aged 85)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4017229Z"
+    },
+    {
+      "display_name": "Elijah Prickett",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Elijah Prickett",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4018085Z"
+    },
+    {
+      "display_name": "Elizabeth Heyhoe Coke King Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Elizabeth Heyhoe Coke King Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4018885Z"
+    },
+    {
+      "display_name": "Ella Marie Grounds Bowman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Ella Marie Grounds Bowman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4019686Z"
+    },
+    {
+      "display_name": "Emily Hensel Ryan",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Emily Hensel Ryan",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4020520Z"
+    },
+    {
+      "display_name": "Ernest Dennis Perry",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Ernest Dennis Perry",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4021519Z"
+    },
+    {
+      "display_name": "Ernest Robert Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Ernest Robert Schlorff",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4022338Z"
+    },
+    {
+      "display_name": "Ervin F Schmelter",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Ervin F Schmelter",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4023168Z"
+    },
+    {
+      "display_name": "Ethel E. Maynard",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Ethel E. Maynard",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1912; Died: 2010 (aged 97\u0026ndash;98)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4023997Z"
+    },
+    {
+      "display_name": "Everett Milton Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Everett Milton Bailey",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4024813Z"
+    },
+    {
+      "display_name": "Frank A. Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Frank A. Schlorff",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 15 Sep 1908; Died: 11 May 2002 (aged 93)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4025661Z"
+    },
+    {
+      "display_name": "Frank A. Schlorff VVeteran",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Frank A. Schlorff VVeteran",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 15 Sep 1908; Died: 11 May 2002 (aged 93)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4026487Z"
+    },
+    {
+      "display_name": "Frank Earl \u201CTub\u201D Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Frank Earl \u201CTub\u201D Bailey",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 19 Apr 1884; Died: 26 Mar 1961 (aged 76)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4027319Z"
+    },
+    {
+      "display_name": "Gael Agnes Hillman Welsh",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Gael Agnes Hillman Welsh",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 21 Sep 1884; Died: 12 Apr 1982 (aged 97)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4028121Z"
+    },
+    {
+      "display_name": "Gael Marguerite Maynard Biederman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Gael Marguerite Maynard Biederman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4028914Z"
+    },
+    {
+      "display_name": "George Clarence Bryant",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "George Clarence Bryant",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 17 Apr 1880; Died: 29 Jan 1948 (aged 67)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4029730Z"
+    },
+    {
+      "display_name": "George M Prickett",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "George M Prickett",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4030573Z"
+    },
+    {
+      "display_name": "George T Bowman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "George T Bowman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4031418Z"
+    },
+    {
+      "display_name": "Gertrude E. \u201CGertie\u201D Bryant Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Gertrude E. \u201CGertie\u201D Bryant Bailey",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 19 Nov 1882; Died: 23 Oct 1952 (aged 69)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4032225Z"
+    },
+    {
+      "display_name": "Gilderoy Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Gilderoy Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4033040Z"
+    },
+    {
+      "display_name": "Hannah M. Schlorff Hensel",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Hannah M. Schlorff Hensel",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1903; Died: Aug 1984 (aged 80\u201381)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4033876Z"
+    },
+    {
+      "display_name": "Harriet Holderman Miller",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Harriet Holderman Miller",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4034686Z"
+    },
+    {
+      "display_name": "Henry Clark Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Henry Clark Shapley",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4035497Z"
+    },
+    {
+      "display_name": "Henry Francis \u0022Francis\u0022 Bryant",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Henry Francis \u0022Francis\u0022 Bryant",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4036287Z"
+    },
+    {
+      "display_name": "Hortense Hull Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Hortense Hull Emerson",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4037114Z"
+    },
+    {
+      "display_name": "Irene Sophie Schmelter Zaitz",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Irene Sophie Schmelter Zaitz",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4037949Z"
+    },
+    {
+      "display_name": "Isaac Newton Ross",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Isaac Newton Ross",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 4 Apr 1812; Died: 21 May 1889 (aged 77)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4038794Z"
+    },
+    {
+      "display_name": "Jacine Beatrice Bryant Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Jacine Beatrice Bryant Emerson",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 26 Mar 1909; Died: 3 Oct 1981 (aged 72)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4039588Z"
+    },
+    {
+      "display_name": "Jacine Beatrice Bryant Emerson [Find a Grave 63103033]",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Jacine Beatrice Bryant Emerson [Find a Grave 63103033]",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 26 Mar 1909; Died: 3 Oct 1981 (aged 72)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4040376Z"
+    },
+    {
+      "display_name": "Jane Ellen Prickett Miller",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Jane Ellen Prickett Miller",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4041319Z"
+    },
+    {
+      "display_name": "Jason Lorenza Bryant",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Jason Lorenza Bryant",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 15 Jul 1880; Died: 25 Dec 1947 (aged 67)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4042174Z"
+    },
+    {
+      "display_name": "Jeanette Siebrandt Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Jeanette Siebrandt Schlorff",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4042983Z"
+    },
+    {
+      "display_name": "Joel R. Prickett",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Joel R. Prickett",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4043805Z"
+    },
+    {
+      "display_name": "John Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "John Schlorff",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4047316Z"
+    },
+    {
+      "display_name": "Leland Josiah Andrews",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Leland Josiah Andrews",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4048118Z"
+    },
+    {
+      "display_name": "Leland Vaughn Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Leland Vaughn Shapley",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4048887Z"
+    },
+    {
+      "display_name": "Louise Schmelter Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Louise Schmelter Schlorff",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1912; Died: 10 Jul 2011 (aged 99)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4049655Z"
+    },
+    {
+      "display_name": "Lura Gladys Boyer Perry",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Lura Gladys Boyer Perry",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1888; Died: 7 Aug 1963 (aged 74\u0026ndash;75)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4050426Z"
+    },
+    {
+      "display_name": "Marcia Jewell Emerson Gay",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Marcia Jewell Emerson Gay",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4051192Z"
+    },
+    {
+      "display_name": "Mark Raymond Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mark Raymond Emerson",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 14 Jun 1905; Died: 25 Mar 1973 (aged 67)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4051971Z"
+    },
+    {
+      "display_name": "Martha Gravenow Schmelter",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Martha Gravenow Schmelter",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4052735Z"
+    },
+    {
+      "display_name": "Martha H. Coke Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Martha H. Coke Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4053485Z"
+    },
+    {
+      "display_name": "Mary E. Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mary E. Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4054290Z"
+    },
+    {
+      "display_name": "Mary E. Turner Bryant",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mary E. Turner Bryant",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4055067Z"
+    },
+    {
+      "display_name": "Mary Isabella Hillman Scofield",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mary Isabella Hillman Scofield",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4055825Z"
+    },
+    {
+      "display_name": "Mary Johansson Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mary Johansson Schlorff",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4056593Z"
+    },
+    {
+      "display_name": "Mary McCabe",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mary McCabe",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4057363Z"
+    },
+    {
+      "display_name": "Mary Rice Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mary Rice Shapley",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: TG/code: TG762503; Born: Feb 1849; Parents: Ica Foster Rice, Kezia Bair",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4058164Z"
+    },
+    {
+      "display_name": "Mathia Lunde Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mathia Lunde Shapley",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4058946Z"
+    },
+    {
+      "display_name": "Mattie E. Boyer Ball",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Mattie E. Boyer Ball",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4059713Z"
+    },
+    {
+      "display_name": "Maude Belle Shapley Shankland",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Maude Belle Shapley Shankland",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4060470Z"
+    },
+    {
+      "display_name": "Milton Rufus Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Milton Rufus Bailey",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4061376Z"
+    },
+    {
+      "display_name": "Minnie Schlorff Andrews",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Minnie Schlorff Andrews",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1 Mar 1905; Died: 12 Apr 1946 (aged 41)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4062161Z"
+    },
+    {
+      "display_name": "Myra Scofield Poe",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Myra Scofield Poe",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4062963Z"
+    },
+    {
+      "display_name": "Nettie Emmaline Kirkendoll Bryant",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Nettie Emmaline Kirkendoll Bryant",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4063716Z"
+    },
+    {
+      "display_name": "Olive Gertrude Stafford Shapley Dawley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Olive Gertrude Stafford Shapley Dawley",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4064469Z"
+    },
+    {
+      "display_name": "Otis Commodore Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Otis Commodore Bailey",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4065236Z"
+    },
+    {
+      "display_name": "Otis Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Otis Emerson",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4066012Z"
+    },
+    {
+      "display_name": "Percy Wayne Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [
+        "William Shapley"
+      ],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Percy Wayne Shapley",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 6 May 1901; Died: 11 Sep 1946 (aged 45)\r\nUnverified data from captured ghtree snapshot: Born: 6 May 1901; Died: 11 Sep 1946 (aged 45); Details: birth_date: 6 May 1901; birth_location: Floyd County, Iowa, USA; death_date: 11 Sep 1946 (aged 45); death_location: Pasco, Franklin County, Washington, USA",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4066883Z"
+    },
+    {
+      "display_name": "Phillip Hull Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Phillip Hull Emerson",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4067667Z"
+    },
+    {
+      "display_name": "Rachel Emma Lineberry Bailey",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Rachel Emma Lineberry Bailey",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4068418Z"
+    },
+    {
+      "display_name": "Rev William Jasper Bowman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Rev William Jasper Bowman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4069167Z"
+    },
+    {
+      "display_name": "Ronald Mayo Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Ronald Mayo Shapley",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4069930Z"
+    },
+    {
+      "display_name": "Rosa Ann \u201CRosie\u201D Prickett Smith Washburn Clawson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Rosa Ann \u201CRosie\u201D Prickett Smith Washburn Clawson",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 30 Jul 1869; Died: 28 Oct 1952 (aged 83)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4070685Z"
+    },
+    {
+      "display_name": "Samuel H. Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Samuel H. Holderman",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 9 Oct 1828; Died: 14 Dec 1886 (aged 58)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4071446Z"
+    },
+    {
+      "display_name": "Stanley Cushman Emerson",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Stanley Cushman Emerson",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4072202Z"
+    },
+    {
+      "display_name": "Sylvia Adelia Shapley Roberts",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Sylvia Adelia Shapley Roberts",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4072953Z"
+    },
+    {
+      "display_name": "Venza E. Bowman Rodgers",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Venza E. Bowman Rodgers",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4073703Z"
+    },
+    {
+      "display_name": "Walter F \u0022Bud\u0022 Hensel",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Walter F \u0022Bud\u0022 Hensel",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4074468Z"
+    },
+    {
+      "display_name": "Walter F. Hensel",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Walter F. Hensel",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4075229Z"
+    },
+    {
+      "display_name": "William Ira \u201CWill\u201D Shapley",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "William Ira \u201CWill\u201D Shapley",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 10 Oct 1871; Died: 1 Sep 1940 (aged 68)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4075976Z"
+    },
+    {
+      "display_name": "William Joseph Hillman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "William Joseph Hillman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4076725Z"
+    },
+    {
+      "display_name": "William Schlorff",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "William Schlorff",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 1867; Died: 1937 (aged 69\u201370)",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4077501Z"
+    },
+    {
+      "display_name": "Elena Margaretha Johannsen",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [
+        "Johannsen",
+        "Elena M Johannsen"
+      ],
+      "children": [
+        "Mary Johannsen"
+      ],
+      "details": "birth_date: 01/01/1836; birth_location: Germany; death_date: 01/01/1920; death_location: Germany",
+      "duplicate": false,
+      "original_name": "Elena Margaretha Johannsen",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 01/01/1836; Died: 01/01/1920; Details: birth_date: 01/01/1836; birth_location: Germany; death_date: 01/01/1920; death_location: Germany",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4078441Z"
+    },
+    {
+      "display_name": "William (John Ludwig) Schlorf",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "birth_date: 21JUL1867; death_date: 01/01/1937; death_location: Wisconsin, USA",
+      "duplicate": false,
+      "original_name": "William (John Ludwig) Schlorf",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 21JUL1867; Died: 01/01/1937; Details: birth_date: 21JUL1867; death_date: 01/01/1937; death_location: Wisconsin, USA",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4079224Z"
+    },
+    {
+      "display_name": "Abram1 Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [
+        "Jacob Holderman",
+        "Madalena Holderman"
+      ],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA",
+      "duplicate": false,
+      "original_name": "Abram1 Holderman",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Details: birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA\r\nUnverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Details: birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA1; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA1",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4080034Z"
+    },
+    {
+      "display_name": "Jacob Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [
+        "Madalena Holderman"
+      ],
+      "children": [
+        "Abram1 Holderman",
+        "Abram1 Holderman1"
+      ],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Jacob Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4081097Z"
+    },
+    {
+      "display_name": "Madalena Holderman",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [],
+      "other_parents": [
+        "Jacob Holderman"
+      ],
+      "children": [
+        "Abram1 Holderman",
+        "Abram1 Holderman1"
+      ],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Madalena Holderman",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4082067Z"
+    },
+    {
+      "display_name": "Abram1 Holderman1",
+      "tg_number": "",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [
+        "Jacob Holderman",
+        "Madalena Holderman"
+      ],
+      "spouse": [],
+      "other_parents": [],
+      "children": [],
+      "details": "birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA1; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA1",
+      "duplicate": false,
+      "original_name": "Abram1 Holderman1",
+      "record_override": null,
+      "notes": "Unverified data from captured ghtree snapshot: Born: 8 Feb 1781; Died: 8 May 1861; Details: birth_date: 8 Feb 1781; birth_location: Chester County, Pennsylvania, USA1; death_date: 8 May 1861; death_location: Kendall County, Illinois, USA1",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4082916Z"
+    },
+    {
+      "display_name": "Fri20",
+      "tg_number": "TG207225",
+      "born": "See original notes",
+      "died": "See original notes",
+      "parents": [],
+      "spouse": [
+        "Jeremiah O\u0027Neal"
+      ],
+      "other_parents": [],
+      "children": [],
+      "details": "",
+      "duplicate": false,
+      "original_name": "Fri20",
+      "record_override": null,
+      "notes": "",
+      "verify": "",
+      "captured_at_utc": "2026-11-20T16:25:00.4083845Z"
     }
   ]
 }

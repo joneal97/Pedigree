@@ -6,7 +6,9 @@
         "Dudley McCabe",
         "mom"
       ],
-      "spouses": [],
+      "spouses": [
+        "Fri20"
+      ],
       "children": [],
       "justification": "Automatically matched by exact family-member name.",
       "manual": false,
@@ -2711,7 +2713,8 @@
         "Madalena Holderman"
       ],
       "children": [
-        "Abram1 Holderman"
+        "Abram1 Holderman",
+        "Abram1 Holderman1"
       ],
       "justification": "Automatically matched by exact family-member name.",
       "manual": false,
@@ -2724,8 +2727,32 @@
         "Jacob Holderman"
       ],
       "children": [
-        "Abram1 Holderman"
+        "Abram1 Holderman",
+        "Abram1 Holderman1"
       ],
+      "justification": "Automatically matched by exact family-member name.",
+      "manual": false,
+      "matched": true
+    },
+    {
+      "display_name": "Abram1 Holderman1",
+      "parents": [
+        "Jacob Holderman",
+        "Madalena Holderman"
+      ],
+      "spouses": [],
+      "children": [],
+      "justification": "Automatically matched by exact family-member name.",
+      "manual": false,
+      "matched": true
+    },
+    {
+      "display_name": "Fri20",
+      "parents": [],
+      "spouses": [
+        "Jeremiah O\u0027Neal"
+      ],
+      "children": [],
       "justification": "Automatically matched by exact family-member name.",
       "manual": false,
       "matched": true
