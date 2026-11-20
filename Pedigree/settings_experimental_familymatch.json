@@ -6,9 +6,7 @@
         "Dudley McCabe",
         "mom"
       ],
-      "spouses": [
-        "Fri20"
-      ],
+      "spouses": [],
       "children": [],
       "justification": "Automatically matched by exact family-member name.",
       "manual": false,
@@ -2741,17 +2739,6 @@
         "Madalena Holderman"
       ],
       "spouses": [],
-      "children": [],
-      "justification": "Automatically matched by exact family-member name.",
-      "manual": false,
-      "matched": true
-    },
-    {
-      "display_name": "Fri20",
-      "parents": [],
-      "spouses": [
-        "Jeremiah O\u0027Neal"
-      ],
       "children": [],
       "justification": "Automatically matched by exact family-member name.",
       "manual": false,

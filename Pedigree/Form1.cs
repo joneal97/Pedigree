@@ -56,6 +56,7 @@ namespace Pedigree
         private readonly HashSet<string> _blueCodes = new(StringComparer.OrdinalIgnoreCase);
         private readonly HashSet<string> _purpleCodes = new(StringComparer.OrdinalIgnoreCase);
         private readonly HashSet<string> _excludedChronologicalNames = new(StringComparer.OrdinalIgnoreCase);
+        private Button? _deathStatusButton;
         private sealed record GeographyRow(string Name, string Location, string LocationBasis,
             string TimePeriod, string RecommendedSources, int Difficulty, string DifficultyReason);
         private sealed record PersonRow(string Name, string Tg, string Details, string Verify, string OriginalName)
@@ -73,6 +74,7 @@ namespace Pedigree
         {
             _isExperimental = false;
             InitializeComponent();
+            InitializeDeathStatusControls();
             InitializeExportTab();
         }
 
@@ -569,6 +571,7 @@ namespace Pedigree
         {
             _isExperimental = experimental;
             InitializeComponent();
+            InitializeDeathStatusControls();
             if (experimental) ConfigureExperimentalMatching();
         }
 
@@ -578,6 +581,37 @@ namespace Pedigree
             CreateExperimentalView();
             tabControl.TabPages.Remove(mainTabPage);
             tabControl.SelectedTab = experimentalTabPage;
+        }
+
+        private void InitializeDeathStatusControls()
+        {
+            detailsTableLayout.Controls.Remove(deathValueLabel);
+            var deathRow = new FlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                FlowDirection = FlowDirection.LeftToRight,
+                WrapContents = false,
+                Margin = Padding.Empty,
+                Padding = Padding.Empty
+            };
+            deathValueLabel.AutoSize = false;
+            deathValueLabel.Dock = DockStyle.None;
+            deathValueLabel.Margin = new Padding(0, 0, 8, 0);
+            deathValueLabel.Size = new Size(760, 40);
+            deathValueLabel.TextAlign = ContentAlignment.MiddleLeft;
+            _deathStatusButton = new Button
+            {
+                AutoSize = false,
+                Size = new Size(170, 32),
+                Margin = new Padding(0, 4, 0, 0),
+                BackColor = Color.FromArgb(225, 236, 252),
+                Enabled = false,
+                Visible = false
+            };
+            _deathStatusButton.Click += DeathStatusButton_Click;
+            deathRow.Controls.Add(deathValueLabel);
+            deathRow.Controls.Add(_deathStatusButton);
+            detailsTableLayout.Controls.Add(deathRow, 1, 3);
         }
 
         private void InitializeView()
@@ -1400,6 +1434,60 @@ namespace Pedigree
             }
         }
 
+        private static void ApplyRequestedFamilyUpdates(JsonObject document)
+        {
+            JsonArray people = EnsureArray(document, "people");
+            JsonArray identifiers = EnsureArray(document, "identifiers");
+            if (document["record_overrides"] is not JsonArray overrides)
+                document["record_overrides"] = overrides = new JsonArray();
+
+            void AddOverride(string code, string field, string value)
+            {
+                JsonNode? identifier = identifiers.FirstOrDefault(item =>
+                    Value(item, "code").Equals(code, StringComparison.OrdinalIgnoreCase));
+                if (identifier == null)
+                    throw new InvalidDataException($"Requested update identifier '{code}' was not found.");
+                string name = Value(identifier, "display_name");
+                JsonNode? person = people.FirstOrDefault(item =>
+                    Value(item, "display_name").Equals(name, StringComparison.OrdinalIgnoreCase));
+                if (person == null)
+                    throw new InvalidDataException($"Requested update person '{name}' ({code}) was not found.");
+                JsonNode? existing = overrides.FirstOrDefault(item =>
+                    Value(item, "field").Equals(field, StringComparison.OrdinalIgnoreCase) &&
+                    Value(item, "code").Equals(code, StringComparison.OrdinalIgnoreCase));
+                if (existing != null) return;
+                overrides.Add(new JsonObject
+                {
+                    ["display_name"] = name,
+                    ["code"] = code,
+                    ["field"] = field,
+                    ["original_value"] = Value(person, "details"),
+                    ["value"] = value,
+                    ["source"] = "User-provided update (2026-11-20)",
+                    ["reason"] = "User-supplied information; retained as unverified until explicitly reviewed.",
+                    ["verified"] = false,
+                    ["recorded"] = false
+                });
+            }
+
+            foreach ((string Code, string Value) update in new[]
+            {
+                ("TG708346", "26 May 1985 Kittanning, Armstrong, Pennsylvania, USA"),
+                ("TG879461", "2015 San Diego, CA"),
+                ("TG150984", "2015 San Diego, CA"),
+                ("TG307645", "1900 Pennsylvania"),
+                ("TG759401", "22 May 1946 Charles City, Floyd, Iowa, USA"),
+                ("TG749502", "Unknown"),
+                ("TG356814", "28 Sep 1918 Yuma County, Colorado, USA"),
+                ("TG835097", "15 July 1923 Tyndall, Bon Homme, South Dakota"),
+                ("TG491628", "Unknown"),
+                ("TG151970", "Unknown")
+            })
+                AddOverride(update.Code, "died", update.Value);
+
+            AddOverride("TG749502", "born", "About 1836");
+        }
+
         private void ReadBuiltInDocument()
         {
             // Every member of the original family tree is encoded in
@@ -1417,6 +1505,7 @@ namespace Pedigree
             }
             _document = loaded;
             ApplyChangeRequestStatus(loaded);
+            ApplyRequestedFamilyUpdates(loaded);
             if (EnsureArray(loaded, "people").Count != 129)
                 throw new InvalidDataException("Built-in tree must contain 129 original people.");
             _currentPath = null;
@@ -2515,6 +2604,12 @@ namespace Pedigree
         {
             nameValueLabel.Text = tgValueLabel.Text = birthValueLabel.Text = deathValueLabel.Text =
                 parentsValueLabel.Text = spouseValueLabel.Text = childrenValueLabel.Text = funFactTextBox.Text = "";
+            if (_deathStatusButton != null)
+            {
+                _deathStatusButton.Visible = false;
+                _deathStatusButton.Enabled = false;
+                _deathStatusButton.Tag = null;
+            }
         }
         private IEnumerable<string> ParentsOf(string name) => RelationshipArray
             .Where(r => Value(r, "child") == name && Value(r, "relation") == "parent")
@@ -2579,7 +2674,7 @@ namespace Pedigree
             {
                 ["display_name"] = person.Name,
                 ["tg_number"] = person.Tg,
-                ["born"] = Provisional(person.Name, "birth_date") ?? "See original notes",
+                ["born"] = BirthDateOf(person.Name) ?? "See original notes",
                 ["died"] = DeathInfoOf(person.Name).Value ?? "See original notes",
                 ["parents"] = ToJsonArray(ParentsOf(person.Name)),
                 ["spouse"] = ToJsonArray(SpousesOf(person.Name)),
@@ -2636,30 +2731,39 @@ namespace Pedigree
                 .Select(f => Value(f, "value")).FirstOrDefault(v => !string.IsNullOrWhiteSpace(v));
         }
 
-        private (string? Value, string Status) DeathInfoOf(string name)
+        private JsonNode? PersonFieldOverride(PersonRow? person, string field)
         {
-            string? provisionalDeath = Provisional(name, "death_date");
-            if (!string.IsNullOrWhiteSpace(provisionalDeath)) return (provisionalDeath, "unverified");
-
-            PersonRow? person = _people.FirstOrDefault(candidate =>
-                candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-            string originalName = person?.OriginalName ?? name;
+            if (person == null || _document == null) return null;
             var codes = IdentifierArray.Where(identifier =>
-                    Value(identifier, "display_name").Equals(originalName, StringComparison.OrdinalIgnoreCase))
+                    Value(identifier, "display_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase))
                 .Select(identifier => Value(identifier, "code"))
-                .Append(person?.Tg ?? "")
+                .Append(person.Tg)
                 .Where(code => !string.IsNullOrWhiteSpace(code))
                 .ToHashSet(StringComparer.OrdinalIgnoreCase);
-            JsonNode? deathOverride = RecordOverrides.FirstOrDefault(item =>
-                Value(item, "field") == "died" &&
-                (Value(item, "display_name").Equals(originalName, StringComparison.OrdinalIgnoreCase) ||
+            return RecordOverrides.FirstOrDefault(item =>
+                Value(item, "field").Equals(field, StringComparison.OrdinalIgnoreCase) &&
+                (Value(item, "display_name").Equals(person.OriginalName, StringComparison.OrdinalIgnoreCase) ||
+                 Value(item, "display_name").Equals(person.Name, StringComparison.OrdinalIgnoreCase) ||
                  codes.Contains(Value(item, "code"))));
+        }
+
+        private (string? Value, string Status) DeathInfoOf(string name)
+        {
+            PersonRow? person = _people.FirstOrDefault(candidate =>
+                candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            JsonNode? deathOverride = PersonFieldOverride(person, "died");
             string overrideValue = Value(deathOverride, "value").Trim();
             if (!string.IsNullOrWhiteSpace(overrideValue) &&
                 !overrideValue.Equals("still verifying", StringComparison.OrdinalIgnoreCase) &&
                 !overrideValue.Equals("See original notes", StringComparison.OrdinalIgnoreCase))
-                return (overrideValue, Flag(deathOverride, "verified") ? "verified" : "unverified");
+            {
+                string status = Flag(deathOverride, "verified") ? "verified" :
+                    Flag(deathOverride, "recorded") ? "recorded" : "unverified";
+                return (overrideValue, status);
+            }
 
+            string? provisionalDeath = Provisional(name, "death_date");
+            if (!string.IsNullOrWhiteSpace(provisionalDeath)) return (provisionalDeath, "unverified");
             string? provisionalDescription = Provisional(name, "death_description");
             if (!string.IsNullOrWhiteSpace(provisionalDescription)) return (provisionalDescription, "unverified");
 
@@ -2670,16 +2774,18 @@ namespace Pedigree
             Match death = Regex.Match(details, @"\bD:\s*(.*)$", RegexOptions.IgnoreCase);
             if (death.Success && !string.IsNullOrWhiteSpace(death.Groups[1].Value))
                 return (death.Groups[1].Value.Trim().TrimEnd(' ', '.', ';'), "from original notes");
-            return (null, "");
+            return ("Not recorded", "not recorded");
         }
 
         private string? BirthDateOf(string name)
         {
-            string? recordedDate = Provisional(name, "birth_date");
-            if (!string.IsNullOrWhiteSpace(recordedDate)) return recordedDate;
-
             PersonRow? person = _people.FirstOrDefault(candidate =>
                 candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            string proposedBirth = Value(PersonFieldOverride(person, "born"), "value");
+            if (!string.IsNullOrWhiteSpace(proposedBirth)) return proposedBirth;
+
+            string? recordedDate = Provisional(name, "birth_date");
+            if (!string.IsNullOrWhiteSpace(recordedDate)) return recordedDate;
             string details = person?.Details ?? "";
             Match birth = Regex.Match(details, @"\bB:\s*(.*?)(?=\s+D:|$)", RegexOptions.IgnoreCase);
             if (birth.Success && !string.IsNullOrWhiteSpace(birth.Groups[1].Value)) return birth.Groups[1].Value.Trim();
@@ -2700,6 +2806,10 @@ namespace Pedigree
                     if (year.HasValue) return year;
                 }
             }
+
+            string proposedBirth = BirthDateOf(name) ?? "";
+            int? proposedYear = ExtractYear(proposedBirth);
+            if (proposedYear.HasValue) return proposedYear;
 
             PersonRow? person = _people.FirstOrDefault(candidate =>
                 candidate.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
@@ -2733,11 +2843,10 @@ namespace Pedigree
             if (familyListBox.SelectedItem is not PersonRow person) { ClearPerson(); return; }
             nameValueLabel.Text = person.Name;
             tgValueLabel.Text = string.IsNullOrEmpty(person.Tg) ? "Unassigned" : person.Tg;
-            birthValueLabel.Text = BirthDateOf(person.Name) is string bd ? bd + " (recorded)" : "See original notes";
-            var deathInfo = DeathInfoOf(person.Name);
-            string? death = deathInfo.Value;
-            string deathStatus = deathInfo.Status;
-            deathValueLabel.Text = death is not null ? $"{death} ({deathStatus})" : "See original notes";
+            JsonNode? birthOverride = PersonFieldOverride(person, "born");
+            string birthStatus = birthOverride == null ? "recorded" : Flag(birthOverride, "verified") ? "verified" : "unverified";
+            birthValueLabel.Text = BirthDateOf(person.Name) is string bd ? $"{bd} ({birthStatus})" : "See original notes";
+            UpdateDeathStatusDisplay(person);
             parentsValueLabel.Text = ListOrUnknown(ParentsOf(person.Name));
             spouseValueLabel.Text = ListOrUnknown(SpousesOf(person.Name));
             if (CoparentsOf(person.Name).Any())
@@ -2758,6 +2867,59 @@ namespace Pedigree
                 .Where(x => !string.IsNullOrWhiteSpace(x)));
             if (string.IsNullOrWhiteSpace(funFactTextBox.Text)) funFactTextBox.Text = "No notes recorded.";
             UpdateStatus($"Showing {person.Name}. Birth/death field suggestions are labeled unverified.");
+        }
+
+        private void UpdateDeathStatusDisplay(PersonRow person)
+        {
+            var deathInfo = DeathInfoOf(person.Name);
+            deathValueLabel.Text = $"{deathInfo.Value ?? "Not recorded"} ({deathInfo.Status})";
+            if (_deathStatusButton == null) return;
+            bool unknownOrNotRecorded = deathInfo.Status == "not recorded" ||
+                Regex.IsMatch(deathInfo.Value ?? "", @"(?i)\bunknown\b|\bnot recorded\b|\bnone\b");
+            _deathStatusButton.Text = deathInfo.Status == "verified" ? "Verified" :
+                deathInfo.Status == "recorded" ? "Recorded" :
+                unknownOrNotRecorded ? "Mark as recorded" : "Mark as verified";
+            _deathStatusButton.Enabled = deathInfo.Status is not ("verified" or "recorded");
+            _deathStatusButton.Visible = true;
+            _deathStatusButton.Tag = person;
+        }
+
+        private void DeathStatusButton_Click(object? sender, EventArgs e)
+        {
+            if (_deathStatusButton?.Tag is not PersonRow person || _document == null) return;
+            var deathInfo = DeathInfoOf(person.Name);
+            bool markRecorded = deathInfo.Status == "not recorded" ||
+                Regex.IsMatch(deathInfo.Value ?? "", @"(?i)\bunknown\b|\bnot recorded\b|\bnone\b");
+            string fieldValue = string.IsNullOrWhiteSpace(deathInfo.Value) ? "Not recorded" : deathInfo.Value;
+            JsonNode? existing = PersonFieldOverride(person, "died");
+            JsonObject deathOverride;
+            if (existing is JsonObject existingObject)
+                deathOverride = existingObject;
+            else
+            {
+                deathOverride = new JsonObject
+                {
+                    ["display_name"] = person.OriginalName,
+                    ["code"] = person.Tg,
+                    ["field"] = "died",
+                    ["original_value"] = person.Details,
+                    ["source"] = "User-reviewed in Pedigree app"
+                };
+                RecordOverrides.Add(deathOverride);
+            }
+
+            deathOverride["value"] = fieldValue;
+            deathOverride["verified"] = !markRecorded;
+            deathOverride["recorded"] = true;
+            deathOverride["status_updated_at_utc"] = DateTime.UtcNow.ToString("O");
+            deathOverride["reason"] = markRecorded
+                ? "The death status (unknown/not recorded) was explicitly recorded by the user; no death date is asserted."
+                : "The displayed death information was explicitly marked verified by the user.";
+            RefreshPeople(person.Name);
+            SynchronizeExperimentalView();
+            UpdateStatus(markRecorded
+                ? $"Marked the death status for {person.Name} as recorded without asserting a death date."
+                : $"Marked the death information for {person.Name} as verified.");
         }
 
         private void searchTextBox_TextChanged(object? sender, EventArgs e) => RefreshPeople();
